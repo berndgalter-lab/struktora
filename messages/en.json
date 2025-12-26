@@ -12,7 +12,8 @@
     "copy": "Copy",
     "copied": "Copied!",
     "error": "Error",
-    "success": "Success"
+    "success": "Success",
+    "all": "All"
   },
   "auth": {
     "login": "Login",
@@ -65,18 +66,18 @@
       "subtitle": "No IT Project Required",
       "description": "Your employees use AI. From day 1. Without training.",
       "cta": "Start Free Trial",
-      "ctaSecondary": "Watch Demo"
+      "ctaSecondary": "See how it works"
     },
     "problem": {
-      "title": "The Problem",
+      "title": "Sound familiar?",
       "item1": "ChatGPT chaos without control",
       "item2": "Everyone prompts differently",
       "item3": "No time for AI training",
       "item4": "IT has other priorities"
     },
     "solution": {
-      "title": "The Solution",
-      "description": "Ready-made AI workflows that work immediately"
+      "title": "The Solution: Struktora",
+      "description": "Ready-made AI workflows that work immediately – no onboarding, no IT project"
     },
     "features": {
       "title": "Why Struktora?",
@@ -100,14 +101,27 @@
     "pricing": {
       "title": "Simple Pricing",
       "subtitle": "No hidden costs",
-      "monthly": "per month",
-      "cta": "Get Started"
+      "monthly": "month",
+      "cta": "Get Started",
+      "popular": "Popular"
+    },
+    "cta": {
+      "title": "Ready for AI Workflows?",
+      "description": "Start now with a free 14-day trial. No credit card required."
+    },
+    "footer": {
+      "impressum": "Legal Notice",
+      "datenschutz": "Privacy Policy",
+      "agb": "Terms",
+      "copyright": "All rights reserved."
     }
   },
   "dashboard": {
     "welcome": "Welcome back",
     "recentRecipes": "Recently used",
     "allRecipes": "All Workflows",
+    "profileWarning": "Fill out your company profile so AI responses match your business.",
+    "fillProfile": "Fill profile",
     "categories": {
       "kommunikation": "Communication",
       "texte": "Texts",
@@ -172,4 +186,3 @@
     }
   }
 }
-

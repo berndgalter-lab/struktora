@@ -12,7 +12,8 @@
     "copy": "Kopieren",
     "copied": "Kopiert!",
     "error": "Fehler",
-    "success": "Erfolg"
+    "success": "Erfolg",
+    "all": "Alle"
   },
   "auth": {
     "login": "Anmelden",
@@ -65,18 +66,18 @@
       "subtitle": "Ohne IT-Projekt",
       "description": "Ihre Mitarbeiter nutzen KI. Ab Tag 1. Ohne Schulung.",
       "cta": "Kostenlos testen",
-      "ctaSecondary": "Demo ansehen"
+      "ctaSecondary": "So funktioniert's"
     },
     "problem": {
-      "title": "Das Problem",
+      "title": "Das kennen Sie",
       "item1": "ChatGPT-Chaos ohne Kontrolle",
       "item2": "Jeder promptet anders",
       "item3": "Keine Zeit für KI-Schulungen",
       "item4": "IT hat andere Prioritäten"
     },
     "solution": {
-      "title": "Die Lösung",
-      "description": "Fertige AI-Workflows, die sofort funktionieren"
+      "title": "Die Lösung: Struktora",
+      "description": "Fertige AI-Workflows, die sofort funktionieren – ohne Einarbeitung, ohne IT-Projekt"
     },
     "features": {
       "title": "Warum Struktora?",
@@ -100,14 +101,27 @@
     "pricing": {
       "title": "Einfache Preise",
       "subtitle": "Keine versteckten Kosten",
-      "monthly": "pro Monat",
-      "cta": "Jetzt starten"
+      "monthly": "Monat",
+      "cta": "Jetzt starten",
+      "popular": "Beliebt"
+    },
+    "cta": {
+      "title": "Bereit für KI-Workflows?",
+      "description": "Starte jetzt mit 14 Tagen kostenlosem Test. Keine Kreditkarte erforderlich."
+    },
+    "footer": {
+      "impressum": "Impressum",
+      "datenschutz": "Datenschutz",
+      "agb": "AGB",
+      "copyright": "Alle Rechte vorbehalten."
     }
   },
   "dashboard": {
     "welcome": "Willkommen zurück",
     "recentRecipes": "Zuletzt verwendet",
     "allRecipes": "Alle Workflows",
+    "profileWarning": "Fülle dein Firmenprofil aus, damit die KI-Antworten zu deinem Unternehmen passen.",
+    "fillProfile": "Profil ausfüllen",
     "categories": {
       "kommunikation": "Kommunikation",
       "texte": "Texte",
@@ -172,4 +186,3 @@
     }
   }
 }
-
