@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,6 +17,8 @@ import {
 } from "@/components/ui/card";
 
 export default function SignupPage() {
+  const t = useTranslations("auth");
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
@@ -29,13 +32,13 @@ export default function SignupPage() {
 
     // Validate passwords match
     if (password !== passwordConfirm) {
-      setError("Die Passwörter stimmen nicht überein.");
+      setError(t("errors.passwordMismatch"));
       return;
     }
 
     // Validate password length
     if (password.length < 8) {
-      setError("Das Passwort muss mindestens 8 Zeichen lang sein.");
+      setError(t("errors.passwordMin"));
       return;
     }
 
@@ -53,9 +56,9 @@ export default function SignupPage() {
 
     if (error) {
       if (error.message.includes("already registered")) {
-        setError("Diese E-Mail-Adresse ist bereits registriert.");
+        setError(t("errors.emailInUse"));
       } else {
-        setError("Ein Fehler ist aufgetreten. Bitte versuche es erneut.");
+        setError(t("errors.generic"));
       }
       setIsLoading(false);
       return;
@@ -70,29 +73,26 @@ export default function SignupPage() {
       <Card>
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold">
-            Bestätige deine E-Mail
+            {t("checkEmailTitle")}
           </CardTitle>
           <CardDescription>
-            Wir haben dir eine E-Mail an <strong>{email}</strong> gesendet.
+            {t("checkEmailDesc", { email })}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="bg-blue-50 text-blue-700 text-sm p-4 rounded-md">
-            <p className="font-medium mb-2">Fast geschafft!</p>
-            <p>
-              Klicke auf den Link in der E-Mail, um dein Konto zu aktivieren.
-              Danach kannst du dich anmelden.
-            </p>
+            <p className="font-medium mb-2">{t("almostDone")}</p>
+            <p>{t("checkEmailHint")}</p>
           </div>
         </CardContent>
         <CardFooter>
           <p className="text-sm text-slate-600 text-center w-full">
-            Keine E-Mail erhalten?{" "}
+            {t("checkEmailRetry")}{" "}
             <button
               onClick={() => setIsSuccess(false)}
               className="text-blue-600 hover:underline"
             >
-              Erneut versuchen
+              {t("checkEmailRetryLink")}
             </button>
           </p>
         </CardFooter>
@@ -103,10 +103,8 @@ export default function SignupPage() {
   return (
     <Card>
       <CardHeader className="space-y-1">
-        <CardTitle className="text-2xl font-bold">Konto erstellen</CardTitle>
-        <CardDescription>
-          Registriere dich für 14 Tage kostenlos.
-        </CardDescription>
+        <CardTitle className="text-2xl font-bold">{t("signupTitle")}</CardTitle>
+        <CardDescription>{t("signupSubtitle")}</CardDescription>
       </CardHeader>
       <form onSubmit={handleSignup}>
         <CardContent className="space-y-4">
@@ -116,11 +114,11 @@ export default function SignupPage() {
             </div>
           )}
           <div className="space-y-2">
-            <Label htmlFor="email">E-Mail</Label>
+            <Label htmlFor="email">{t("email")}</Label>
             <Input
               id="email"
               type="email"
-              placeholder="name@firma.de"
+              placeholder={t("emailPlaceholder")}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -128,11 +126,11 @@ export default function SignupPage() {
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="password">Passwort</Label>
+            <Label htmlFor="password">{t("password")}</Label>
             <Input
               id="password"
               type="password"
-              placeholder="Mindestens 8 Zeichen"
+              placeholder={t("passwordPlaceholder")}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -140,11 +138,11 @@ export default function SignupPage() {
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="passwordConfirm">Passwort bestätigen</Label>
+            <Label htmlFor="passwordConfirm">{t("passwordConfirm")}</Label>
             <Input
               id="passwordConfirm"
               type="password"
-              placeholder="Passwort wiederholen"
+              placeholder={t("passwordConfirmPlaceholder")}
               value={passwordConfirm}
               onChange={(e) => setPasswordConfirm(e.target.value)}
               required
@@ -154,12 +152,12 @@ export default function SignupPage() {
         </CardContent>
         <CardFooter className="flex flex-col space-y-4">
           <Button type="submit" className="w-full" disabled={isLoading}>
-            {isLoading ? "Wird erstellt..." : "Konto erstellen"}
+            {isLoading ? t("creatingAccount") : t("signup")}
           </Button>
           <p className="text-sm text-slate-600 text-center">
-            Bereits ein Konto?{" "}
+            {t("hasAccount")}{" "}
             <Link href="/login" className="text-blue-600 hover:underline">
-              Anmelden
+              {t("login")}
             </Link>
           </p>
         </CardFooter>

@@ -1,0 +1,175 @@
+{
+  "common": {
+    "appName": "Struktora",
+    "loading": "Laden...",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "back": "Zurück",
+    "next": "Weiter",
+    "submit": "Absenden",
+    "copy": "Kopieren",
+    "copied": "Kopiert!",
+    "error": "Fehler",
+    "success": "Erfolg"
+  },
+  "auth": {
+    "login": "Anmelden",
+    "logout": "Abmelden",
+    "signup": "Konto erstellen",
+    "email": "E-Mail-Adresse",
+    "password": "Passwort",
+    "passwordConfirm": "Passwort bestätigen",
+    "passwordPlaceholder": "Mindestens 8 Zeichen",
+    "passwordConfirmPlaceholder": "Passwort wiederholen",
+    "emailPlaceholder": "name@firma.de",
+    "forgotPassword": "Passwort vergessen?",
+    "noAccount": "Noch kein Konto?",
+    "hasAccount": "Bereits ein Konto?",
+    "register": "Registrieren",
+    "loginTitle": "Anmelden",
+    "loginSubtitle": "Melde dich mit deinem Konto an, um fortzufahren.",
+    "signupTitle": "Konto erstellen",
+    "signupSubtitle": "Registriere dich für 14 Tage kostenlos.",
+    "checkEmailTitle": "Bestätige deine E-Mail",
+    "checkEmailDesc": "Wir haben dir eine E-Mail an {email} gesendet.",
+    "checkEmailHint": "Klicke auf den Link in der E-Mail, um dein Konto zu aktivieren. Danach kannst du dich anmelden.",
+    "checkEmailRetry": "Keine E-Mail erhalten?",
+    "checkEmailRetryLink": "Erneut versuchen",
+    "almostDone": "Fast geschafft!",
+    "loggingIn": "Wird angemeldet...",
+    "creatingAccount": "Wird erstellt...",
+    "errors": {
+      "invalidCredentials": "E-Mail oder Passwort ist falsch.",
+      "emailRequired": "E-Mail ist erforderlich",
+      "passwordRequired": "Passwort ist erforderlich",
+      "passwordMin": "Das Passwort muss mindestens 8 Zeichen lang sein.",
+      "passwordMismatch": "Die Passwörter stimmen nicht überein.",
+      "emailInUse": "Diese E-Mail-Adresse ist bereits registriert.",
+      "generic": "Ein Fehler ist aufgetreten. Bitte versuche es erneut."
+    }
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "recipes": "Workflows",
+    "settings": "Einstellungen",
+    "profile": "Firmenprofil",
+    "policy": "Kommunikation",
+    "team": "Team",
+    "billing": "Abrechnung"
+  },
+  "landing": {
+    "hero": {
+      "title": "KI-Workflows für den Mittelstand",
+      "subtitle": "Ohne IT-Projekt",
+      "description": "Ihre Mitarbeiter nutzen KI. Ab Tag 1. Ohne Schulung.",
+      "cta": "Kostenlos testen",
+      "ctaSecondary": "Demo ansehen"
+    },
+    "problem": {
+      "title": "Das Problem",
+      "item1": "ChatGPT-Chaos ohne Kontrolle",
+      "item2": "Jeder promptet anders",
+      "item3": "Keine Zeit für KI-Schulungen",
+      "item4": "IT hat andere Prioritäten"
+    },
+    "solution": {
+      "title": "Die Lösung",
+      "description": "Fertige AI-Workflows, die sofort funktionieren"
+    },
+    "features": {
+      "title": "Warum Struktora?",
+      "feature1": {
+        "title": "Fertige Workflows",
+        "description": "12 Best-Practice Vorlagen für typische Aufgaben"
+      },
+      "feature2": {
+        "title": "Ihr Firmenton",
+        "description": "Automatisch in jedem Output – ohne Copy-Paste"
+      },
+      "feature3": {
+        "title": "Keine IT nötig",
+        "description": "Setup in 10 Minuten, keine Installation"
+      },
+      "feature4": {
+        "title": "DSGVO-konform",
+        "description": "EU-Hosting, keine Datenweitergabe"
+      }
+    },
+    "pricing": {
+      "title": "Einfache Preise",
+      "subtitle": "Keine versteckten Kosten",
+      "monthly": "pro Monat",
+      "cta": "Jetzt starten"
+    }
+  },
+  "dashboard": {
+    "welcome": "Willkommen zurück",
+    "recentRecipes": "Zuletzt verwendet",
+    "allRecipes": "Alle Workflows",
+    "categories": {
+      "kommunikation": "Kommunikation",
+      "texte": "Texte",
+      "meetings": "Meetings",
+      "sales": "Sales",
+      "support": "Support"
+    }
+  },
+  "recipes": {
+    "generate": "Generieren",
+    "regenerate": "Neu generieren",
+    "copyOutput": "Antwort kopieren",
+    "newInput": "Neue Eingabe",
+    "generating": "Wird generiert...",
+    "output": "Ergebnis",
+    "estimatedTime": "Geschätzte Zeit"
+  },
+  "settings": {
+    "profile": {
+      "title": "Firmenprofil",
+      "description": "Informationen über Ihr Unternehmen",
+      "companyName": "Firmenname",
+      "industry": "Branche",
+      "companyDescription": "Beschreibung",
+      "companyDescriptionHint": "Was macht Ihr Unternehmen? (2-3 Sätze)",
+      "products": "Produkte / Services",
+      "saved": "Profil gespeichert"
+    },
+    "policy": {
+      "title": "Kommunikations-Policy",
+      "description": "Wie soll Struktora kommunizieren?",
+      "anrede": "Anrede",
+      "anredeSie": "Sie (formell)",
+      "anredeDu": "Du (informell)",
+      "tonality": "Tonalität",
+      "tonalityFormell": "Formell",
+      "tonalitySachlich": "Sachlich",
+      "tonalityLocker": "Locker",
+      "nogoWords": "No-Go-Wörter",
+      "nogoWordsHint": "Wörter die vermieden werden sollen (kommagetrennt)",
+      "greeting": "Grußformel",
+      "saved": "Policy gespeichert"
+    },
+    "team": {
+      "title": "Team verwalten",
+      "description": "Laden Sie Mitarbeiter ein",
+      "inviteEmail": "E-Mail-Adresse",
+      "inviteButton": "Einladen",
+      "inviteSent": "Einladung gesendet",
+      "members": "Teammitglieder",
+      "role": "Rolle",
+      "admin": "Admin",
+      "member": "Mitglied",
+      "remove": "Entfernen",
+      "pending": "Ausstehend"
+    },
+    "billing": {
+      "title": "Abrechnung",
+      "currentPlan": "Aktueller Plan",
+      "manage": "Abo verwalten",
+      "upgrade": "Upgrade"
+    }
+  }
+}
+
