@@ -1,3 +1,10 @@
-// Supabase Browser Client - TODO: Implement
-// This file will contain the browser-side Supabase client
+import { createBrowserClient } from "@supabase/ssr";
+import type { Database } from "@/types/database";
 
+// Browser client for Client Components
+export const createClient = () => {
+  return createBrowserClient<Database>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  );
+};
