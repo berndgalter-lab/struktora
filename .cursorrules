@@ -1,0 +1,556 @@
+# STRUKTORA – Cursor Project Rules
+
+Du arbeitest an **Struktora**, einer B2B SaaS Plattform für AI-Workflows im deutschen Mittelstand.
+
+## PRODUKT-ÜBERSICHT
+
+### Was ist Struktora?
+Struktora bietet **geführte AI-Workflows ("Recipes")** für den deutschen Mittelstand. Statt Freestyle-Prompting bekommen Mitarbeiter strukturierte Wizards, die sie Schritt für Schritt durch AI-gestützte Aufgaben führen.
+
+### Kernproblem das wir lösen
+- Mittelständische Unternehmen (50-500 MA) wollen KI nutzen
+- Aber: Keine IT-Kapazität für ein KI-Projekt
+- Ergebnis: ChatGPT-Chaos, keine Governance, inkonsistente Qualität
+
+### Unsere Lösung
+- Fertige AI-Workflows (Recipes)
+- Zero-Config Setup (kein IT-Projekt nötig)
+- Firmenprofil wird automatisch in jeden Output eingebaut
+- DSGVO-konform (EU-Hosting)
+
+### Haupt-Claim
+**"KI für den Mittelstand – ohne IT-Projekt"**
+
+---
+
+## TECH STACK
+
+### Frontend
+- **Next.js 14** (App Router)
+- **TypeScript** (strict mode)
+- **Tailwind CSS**
+- **shadcn/ui** (UI Components)
+
+### Backend / Services
+- **Supabase** (Auth + PostgreSQL Database)
+  - Region: Frankfurt (eu-central-1)
+- **Azure OpenAI** (AI API)
+  - Region: Sweden Central (EU)
+  - Model: GPT-4.1
+  - Deployment Name: gpt-4.1
+- **LemonSqueezy** (Payments)
+- **Vercel** (Hosting)
+
+### Wichtige Packages
+```json
+{
+  "@supabase/supabase-js": "latest",
+  "@supabase/ssr": "latest",
+  "openai": "latest",
+  "zod": "latest",
+  "zustand": "latest"
+}
+```
+
+---
+
+## ARCHITEKTUR
+
+### Projekt-Struktur
+```
+src/
+├── app/
+│   ├── (marketing)/
+│   │   ├── page.tsx                 # Landing Page
+│   │   ├── pricing/page.tsx         # Pricing Page
+│   │   └── layout.tsx
+│   ├── (auth)/
+│   │   ├── login/page.tsx
+│   │   ├── signup/page.tsx
+│   │   ├── invite/[token]/page.tsx  # Team-Einladung
+│   │   └── layout.tsx
+│   ├── (dashboard)/
+│   │   ├── layout.tsx               # Dashboard Layout mit Sidebar
+│   │   ├── page.tsx                 # Recipe-Übersicht (Home)
+│   │   ├── recipes/
+│   │   │   └── [id]/page.tsx        # Recipe Wizard
+│   │   ├── settings/
+│   │   │   ├── page.tsx             # Redirect zu /profile
+│   │   │   ├── profile/page.tsx     # Firmenprofil
+│   │   │   ├── policy/page.tsx      # Kommunikations-Policy
+│   │   │   ├── team/page.tsx        # Team verwalten
+│   │   │   └── billing/page.tsx     # Abo & Rechnung
+│   │   └── admin/
+│   │       └── page.tsx             # Admin Dashboard (Stats)
+│   ├── api/
+│   │   ├── ai/
+│   │   │   └── route.ts             # AI Generation Endpoint
+│   │   ├── webhooks/
+│   │   │   └── lemonsqueezy/route.ts
+│   │   └── team/
+│   │       └── invite/route.ts
+│   ├── layout.tsx                   # Root Layout
+│   └── globals.css
+├── components/
+│   ├── ui/                          # shadcn/ui components
+│   ├── marketing/
+│   │   ├── hero.tsx
+│   │   ├── features.tsx
+│   │   ├── pricing-cards.tsx
+│   │   └── footer.tsx
+│   ├── dashboard/
+│   │   ├── sidebar.tsx
+│   │   ├── header.tsx
+│   │   └── recipe-card.tsx
+│   ├── recipes/
+│   │   ├── recipe-wizard.tsx
+│   │   ├── recipe-output.tsx
+│   │   └── wizard-fields/
+│   │       ├── textarea-field.tsx
+│   │       ├── select-field.tsx
+│   │       └── radio-field.tsx
+│   └── settings/
+│       ├── profile-form.tsx
+│       ├── policy-form.tsx
+│       └── team-list.tsx
+├── lib/
+│   ├── supabase/
+│   │   ├── client.ts                # Browser client
+│   │   ├── server.ts                # Server client
+│   │   └── middleware.ts            # Auth middleware
+│   ├── azure-openai.ts              # Azure OpenAI client
+│   ├── lemonsqueezy.ts              # Payment helpers
+│   ├── recipes/
+│   │   ├── index.ts                 # Recipe definitions
+│   │   ├── email-sachlich.ts
+│   │   ├── email-freundlich.ts
+│   │   └── ... (alle 12 recipes)
+│   └── utils.ts
+├── types/
+│   ├── database.ts                  # Supabase generated types
+│   ├── recipes.ts                   # Recipe type definitions
+│   └── index.ts
+└── hooks/
+    ├── use-user.ts
+    ├── use-team.ts
+    └── use-recipe.ts
+```
+
+---
+
+## DATENMODELL (Supabase)
+
+### Tabellen
+
+```sql
+-- Teams (Firmen)
+CREATE TABLE teams (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name TEXT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  subscription_status TEXT DEFAULT 'trial', -- 'trial', 'active', 'cancelled', 'past_due'
+  subscription_tier TEXT DEFAULT 'starter', -- 'starter', 'team', 'business'
+  subscription_id TEXT, -- LemonSqueezy subscription ID
+  trial_ends_at TIMESTAMPTZ DEFAULT (NOW() + INTERVAL '14 days')
+);
+
+-- Firmenprofil
+CREATE TABLE company_profiles (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  team_id UUID REFERENCES teams(id) ON DELETE CASCADE,
+  company_name TEXT NOT NULL,
+  industry TEXT,
+  description TEXT,
+  products TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE(team_id)
+);
+
+-- Kommunikations-Policy
+CREATE TABLE company_policies (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  team_id UUID REFERENCES teams(id) ON DELETE CASCADE,
+  anrede TEXT DEFAULT 'Sie', -- 'Sie' oder 'Du'
+  tonality TEXT DEFAULT 'sachlich', -- 'formell', 'sachlich', 'locker'
+  nogo_words TEXT[] DEFAULT '{}',
+  greeting TEXT DEFAULT 'Mit freundlichen Grüßen',
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE(team_id)
+);
+
+-- Users
+CREATE TABLE users (
+  id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+  email TEXT NOT NULL,
+  full_name TEXT,
+  team_id UUID REFERENCES teams(id) ON DELETE SET NULL,
+  role TEXT DEFAULT 'member', -- 'admin' oder 'member'
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Team-Einladungen
+CREATE TABLE team_invites (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  team_id UUID REFERENCES teams(id) ON DELETE CASCADE,
+  email TEXT NOT NULL,
+  token TEXT UNIQUE NOT NULL,
+  invited_by UUID REFERENCES users(id),
+  expires_at TIMESTAMPTZ DEFAULT (NOW() + INTERVAL '7 days'),
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Nutzungsstatistiken (anonymisiert, keine Inhalte!)
+CREATE TABLE usage_stats (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  team_id UUID REFERENCES teams(id) ON DELETE CASCADE,
+  user_id UUID REFERENCES users(id) ON DELETE SET NULL,
+  recipe_id TEXT NOT NULL,
+  tokens_used INTEGER,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+```
+
+### Row Level Security (RLS)
+- Users können nur ihre eigenen Daten sehen
+- Team-Daten nur für Team-Mitglieder
+- Admin-Rolle kann Team-Einstellungen ändern
+
+---
+
+## RECIPES (AI-WORKFLOWS)
+
+### Die 12 MVP Recipes
+
+| ID | Name | Kategorie |
+|----|------|-----------|
+| email-sachlich | E-Mail Antwort (sachlich) | Kommunikation |
+| email-freundlich | E-Mail Antwort (freundlich) | Kommunikation |
+| absage | Absage formulieren | Kommunikation |
+| followup | Follow-up schreiben | Kommunikation |
+| rueckfragen | Rückfragen stellen | Kommunikation |
+| text-kuerzen | Text kürzen | Texte |
+| zusammenfassung | Zusammenfassung | Texte |
+| meeting-tasks | Meeting-Notizen → Aufgaben | Meetings |
+| handover | Übergabe/Handover | Meetings |
+| angebot | Angebot formulieren | Sales |
+| reklamation | Reklamation beantworten | Support |
+| anfrage-quali | Anfrage qualifizieren | Sales |
+
+### Recipe-Struktur (TypeScript)
+
+```typescript
+interface Recipe {
+  id: string;
+  name: string;
+  description: string;
+  category: 'kommunikation' | 'texte' | 'meetings' | 'sales' | 'support';
+  icon: string; // Lucide icon name
+  estimatedTime: string; // z.B. "2-3 Min"
+  fields: RecipeField[];
+  promptTemplate: string;
+}
+
+interface RecipeField {
+  id: string;
+  label: string;
+  type: 'textarea' | 'select' | 'radio';
+  placeholder?: string;
+  required: boolean;
+  options?: { value: string; label: string }[]; // für select/radio
+}
+```
+
+### Beispiel Recipe: email-sachlich
+
+```typescript
+const emailSachlich: Recipe = {
+  id: 'email-sachlich',
+  name: 'E-Mail Antwort (sachlich)',
+  description: 'Professionelle, sachliche Antwort auf E-Mails',
+  category: 'kommunikation',
+  icon: 'Mail',
+  estimatedTime: '2-3 Min',
+  fields: [
+    {
+      id: 'original_email',
+      label: 'Original-E-Mail',
+      type: 'textarea',
+      placeholder: 'Füge die E-Mail ein, auf die du antworten möchtest...',
+      required: true,
+    },
+    {
+      id: 'recipient_type',
+      label: 'An wen?',
+      type: 'select',
+      required: true,
+      options: [
+        { value: 'kunde', label: 'Kunde / Interessent' },
+        { value: 'lieferant', label: 'Lieferant / Partner' },
+        { value: 'kollege', label: 'Kollege (intern)' },
+        { value: 'behoerde', label: 'Behörde' },
+      ],
+    },
+    {
+      id: 'key_message',
+      label: 'Kernaussage',
+      type: 'textarea',
+      placeholder: 'Was willst du inhaltlich sagen? Stichpunkte reichen.',
+      required: true,
+    },
+    {
+      id: 'next_step',
+      label: 'Nächster Schritt',
+      type: 'select',
+      required: true,
+      options: [
+        { value: 'zusagen', label: 'Ich bestätige / sage zu' },
+        { value: 'pruefen', label: 'Ich muss erst prüfen' },
+        { value: 'ablehnen', label: 'Ich lehne ab' },
+        { value: 'rueckfrage', label: 'Ich brauche mehr Infos' },
+        { value: 'info', label: 'Nur zur Info' },
+      ],
+    },
+  ],
+  promptTemplate: `Du bist Mitarbeiter eines Unternehmens und schreibst eine professionelle E-Mail-Antwort.
+
+UNTERNEHMENSPROFIL:
+- Firma: {{company_name}}
+- Branche: {{industry}}
+- Beschreibung: {{description}}
+
+KOMMUNIKATIONS-POLICY:
+- Anrede: {{anrede}}
+- Tonalität: {{tonality}}
+- Vermeide diese Wörter: {{nogo_words}}
+- Grußformel: {{greeting}}
+
+KONTEXT DER ANTWORT:
+- Empfänger-Typ: {{recipient_type}}
+- Nächster Schritt: {{next_step}}
+
+REGELN:
+- Halte die Mail kurz und präzise (max. 150 Wörter)
+- Keine Marketing-Floskeln
+- Komm schnell zum Punkt
+{{#if recipient_type === 'kollege'}}
+- Weniger formell, aber professionell
+{{/if}}
+{{#if next_step === 'pruefen'}}
+- Nenne einen konkreten Zeitrahmen für Rückmeldung
+{{/if}}
+{{#if next_step === 'ablehnen'}}
+- Bleibe freundlich und respektvoll
+- Halte die Tür für zukünftige Zusammenarbeit offen
+{{/if}}
+
+ORIGINAL-E-MAIL:
+"""
+{{original_email}}
+"""
+
+KERNAUSSAGE:
+"""
+{{key_message}}
+"""
+
+Schreibe jetzt die Antwort-E-Mail. Beginne direkt mit der Anrede.`,
+};
+```
+
+---
+
+## UI/UX GUIDELINES
+
+### Design-Prinzipien
+- **Clean & Professional**: Deutsche B2B-Ästhetik, nicht zu verspielt
+- **Deutsch als Hauptsprache**: Alle UI-Texte auf Deutsch
+- **Mobile-friendly**: Responsive, aber Desktop-first
+- **Schnell zum Ziel**: Minimale Klicks bis zum Output
+
+### Farben (Tailwind)
+```javascript
+// Primärfarbe: Professionelles Blau
+primary: {
+  50: '#eff6ff',
+  500: '#3b82f6',
+  600: '#2563eb',
+  700: '#1d4ed8',
+}
+// Grautöne für Text und Backgrounds
+// Grün für Erfolg, Rot für Fehler (Standard)
+```
+
+### Komponenten-Stil
+- shadcn/ui als Basis
+- Abgerundete Ecken (rounded-lg)
+- Subtile Schatten (shadow-sm)
+- Klare Hierarchie durch Schriftgrößen
+
+---
+
+## WICHTIGE FLOWS
+
+### 1. Signup & Onboarding
+```
+1. User klickt "Kostenlos testen"
+2. Email + Passwort eingeben
+3. Email bestätigen
+4. Firmenprofil ausfüllen (Name, Branche, Beschreibung)
+5. Policy setzen (Anrede, Tonalität)
+6. → Dashboard mit Recipes
+```
+
+### 2. Recipe nutzen
+```
+1. User wählt Recipe aus Dashboard
+2. Wizard zeigt Felder
+3. User füllt aus, klickt "Generieren"
+4. Loading State (2-5 Sekunden)
+5. Output erscheint
+6. User kann: Kopieren, Neu generieren, Bearbeiten
+```
+
+### 3. Team einladen (Admin)
+```
+1. Admin geht zu Settings → Team
+2. Gibt Email ein, klickt "Einladen"
+3. Eingeladener bekommt Email mit Link
+4. Klickt Link → Passwort setzen → Im Team
+```
+
+---
+
+## API ENDPOINTS
+
+### POST /api/ai
+Generiert AI-Output für ein Recipe.
+
+```typescript
+// Request
+{
+  recipeId: string;
+  inputs: Record<string, string>;
+}
+
+// Response
+{
+  output: string;
+  tokensUsed: number;
+}
+```
+
+### POST /api/team/invite
+Lädt neues Team-Mitglied ein.
+
+```typescript
+// Request
+{
+  email: string;
+}
+
+// Response
+{
+  success: boolean;
+  inviteId: string;
+}
+```
+
+---
+
+## ENVIRONMENT VARIABLES
+
+```env
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
+SUPABASE_SERVICE_ROLE_KEY=eyJ...
+
+# Azure OpenAI
+AZURE_OPENAI_ENDPOINT=https://bernd-mjln39by-swedencentral.cognitiveservices.azure.com/
+AZURE_OPENAI_API_KEY=xxx
+AZURE_OPENAI_DEPLOYMENT_NAME=gpt-4.1
+AZURE_OPENAI_API_VERSION=2024-02-15-preview
+
+# LemonSqueezy
+LEMONSQUEEZY_API_KEY=xxx
+LEMONSQUEEZY_STORE_ID=xxx
+LEMONSQUEEZY_WEBHOOK_SECRET=xxx
+
+# App
+NEXT_PUBLIC_APP_URL=https://struktora.com
+```
+
+---
+
+## CODE CONVENTIONS
+
+### TypeScript
+- Strict mode aktiviert
+- Interfaces über Types bevorzugen
+- Zod für Runtime-Validierung
+
+### Komponenten
+- Funktionale Komponenten mit Arrow Functions
+- Props als Interface definieren
+- 'use client' nur wenn nötig
+
+### Dateibenennung
+- Komponenten: kebab-case (recipe-wizard.tsx)
+- Utilities: kebab-case (azure-openai.ts)
+- Types: PascalCase in der Datei
+
+### Commits
+- Deutsch oder Englisch konsistent
+- Conventional Commits: feat:, fix:, chore:
+
+---
+
+## SICHERHEIT
+
+### Authentication
+- Supabase Auth mit Email/Password
+- Session in Cookies (httpOnly)
+- Middleware prüft Auth für /dashboard/*
+
+### API Security
+- Rate Limiting auf /api/ai
+- Input-Validierung mit Zod
+- Keine Secrets im Frontend
+
+### Datenschutz
+- Keine Prompt-Inhalte speichern
+- Nur Nutzungsstatistiken (anonym)
+- EU-Hosting (Supabase Frankfurt, Azure Sweden)
+
+---
+
+## AKTUELLER STATUS
+
+### Erledigt
+- [x] Supabase Account + Projekt (Frankfurt)
+- [x] Azure OpenAI (Sweden Central, GPT-4.1)
+- [x] LemonSqueezy Store
+- [x] GitHub Repo
+- [x] Vercel Account
+
+### Als Nächstes
+- [ ] Next.js Projekt Setup
+- [ ] Supabase Schema + Auth
+- [ ] Landing Page
+- [ ] Dashboard Layout
+- [ ] Recipe Wizard
+- [ ] AI Integration
+- [ ] Settings Pages
+- [ ] Payment Integration
+
+---
+
+## ANWEISUNGEN FÜR CURSOR
+
+1. **Sprache**: Code-Kommentare auf Englisch, UI-Texte auf Deutsch
+2. **Keine Overengineering**: Einfache Lösungen bevorzugen
+3. **Schrittweise**: Ein Feature nach dem anderen
+4. **Testen**: Nach jedem Schritt prüfen ob es läuft
+5. **Commits**: Nach jedem funktionierenden Feature committen
