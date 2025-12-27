@@ -126,7 +126,7 @@ export const useUser = () => {
     // Listen for auth state changes
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, session) => {
+    } = supabase.auth.onAuthStateChange((_event: string, session: { user?: unknown } | null) => {
       if (session?.user) {
         loadUserData();
       } else {

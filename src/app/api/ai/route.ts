@@ -45,29 +45,32 @@ export async function POST(request: Request) {
     const serviceClient = createServiceClient();
 
     // Get user's team ID
-    const { data: userData, error: userError } = await serviceClient
+    const userResult = await serviceClient
       .from("users")
       .select("team_id")
       .eq("id", user.id)
       .single();
 
-    console.log("[AI POST] User data:", userData, "Error:", userError?.message);
+    // Type assertion needed because Supabase types can be tricky
+    const teamId: string | null = (userResult.data as { team_id: string | null } | null)?.team_id ?? null;
+
+    console.log("[AI POST] Team ID:", teamId, "Error:", userResult.error?.message);
 
     // Get company profile and policy (if user has a team)
-    let companyProfile = null;
-    let companyPolicy = null;
+    let companyProfile: { company_name?: string; industry?: string; description?: string } | null = null;
+    let companyPolicy: { anrede?: string; tonality?: string; greeting?: string; nogo_words?: string[] } | null = null;
 
-    if (userData?.team_id) {
+    if (teamId) {
       const [profileResult, policyResult] = await Promise.all([
         serviceClient
           .from("company_profiles")
-          .select("*")
-          .eq("team_id", userData.team_id)
+          .select("company_name, industry, description")
+          .eq("team_id", teamId)
           .single(),
         serviceClient
           .from("company_policies")
-          .select("*")
-          .eq("team_id", userData.team_id)
+          .select("anrede, tonality, greeting, nogo_words")
+          .eq("team_id", teamId)
           .single(),
       ]);
 
@@ -119,16 +122,16 @@ export async function POST(request: Request) {
     const { content, tokensUsed } = await generateCompletion(prompt);
 
     // Save usage stats (non-blocking)
-    if (userData?.team_id) {
+    if (teamId) {
       serviceClient
         .from("usage_stats")
         .insert({
-          team_id: userData.team_id,
+          team_id: teamId,
           user_id: user.id,
           recipe_id: recipeId,
           tokens_used: tokensUsed,
         })
-        .then(({ error }) => {
+        .then(({ error }: { error: unknown }) => {
           if (error) {
             console.error("Failed to save usage stats:", error);
           }

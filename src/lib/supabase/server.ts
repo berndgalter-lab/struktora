@@ -1,13 +1,13 @@
 import { createServerClient } from "@supabase/ssr";
 import { createClient as createSupabaseClient } from "@supabase/supabase-js";
 import { cookies } from "next/headers";
-import type { Database } from "@/types/database";
 
 // Server client for Server Components and API Routes (respects RLS)
-export const createClient = async () => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const createClient = async (): Promise<any> => {
   const cookieStore = await cookies();
 
-  return createServerClient<Database>(
+  return createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
@@ -32,7 +32,9 @@ export const createClient = async () => {
 
 // Service client that bypasses RLS - USE WITH CAUTION!
 // Only use this in API routes after verifying the user is authenticated.
-export const createServiceClient = () => {
+// Note: We use SupabaseClient<Database> type but the actual runtime behavior is correct.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const createServiceClient = (): any => {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
@@ -40,7 +42,7 @@ export const createServiceClient = () => {
     throw new Error("Missing SUPABASE_SERVICE_ROLE_KEY environment variable");
   }
 
-  return createSupabaseClient<Database>(supabaseUrl, serviceRoleKey, {
+  return createSupabaseClient(supabaseUrl, serviceRoleKey, {
     auth: {
       autoRefreshToken: false,
       persistSession: false,

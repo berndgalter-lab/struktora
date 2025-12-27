@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Loader2, CheckCircle, ExternalLink } from "lucide-react";
@@ -17,7 +17,8 @@ interface SubscriptionData {
   hasCustomerId: boolean;
 }
 
-export default function BillingSettingsPage() {
+// Inner component that uses useSearchParams
+function BillingContent() {
   const t = useTranslations("settings.billing");
   const searchParams = useSearchParams();
   const success = searchParams.get("success");
@@ -166,5 +167,20 @@ export default function BillingSettingsPage() {
         </Card>
       )}
     </div>
+  );
+}
+
+// Wrapper component with Suspense boundary
+export default function BillingSettingsPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex items-center justify-center py-12">
+          <Loader2 className="h-8 w-8 animate-spin text-slate-400" />
+        </div>
+      }
+    >
+      <BillingContent />
+    </Suspense>
   );
 }
