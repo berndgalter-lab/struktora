@@ -147,6 +147,14 @@ export default function AGBPage() {
               (4) Abonnements verlängern sich automatisch um den jeweiligen 
               Abrechnungszeitraum (Monat), sofern nicht gemäß § 9 gekündigt wird.
             </p>
+            <p className="mt-4">
+              (5) Die Zahlungsabwicklung und Abonnementverwaltung erfolgen über 
+              Lemon Squeezy, LLC. LemonSqueezy kann im Rahmen des Bestellvorgangs 
+              als Wiederverkäufer (Merchant of Record) auftreten und stellt in diesem 
+              Fall die Rechnung aus sowie führt anfallende Steuern ab. Unabhängig 
+              davon ist Vertragspartner für die Nutzung der Plattform Struktora die 
+              BG Online Media (haftungsbeschränkt).
+            </p>
           </section>
 
           {/* § 6 */}
@@ -182,6 +190,11 @@ export default function AGBPage() {
             </div>
             <p className="mt-4">
               (3) Diese Zustimmung wird im Rahmen des Bestellvorgangs eingeholt.
+            </p>
+            <p className="mt-4">
+              (4) Sofern der Vertrag über LemonSqueezy abgewickelt wird, erfolgt die 
+              technische Abwicklung des Widerrufs und etwaiger Rückerstattungen über 
+              LemonSqueezy. Deine gesetzlichen Rechte bleiben hiervon unberührt.
             </p>
           </section>
 
