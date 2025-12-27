@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
@@ -9,7 +8,6 @@ import {
   Settings,
   LogOut,
   Menu,
-  User,
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -17,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Logo } from "@/components/ui/logo";
 import { createClient } from "@/lib/supabase/client";
 import { useUser } from "@/hooks/use-user";
 
@@ -34,7 +33,6 @@ const SidebarContent = ({ onNavigate }: SidebarContentProps) => {
   const pathname = usePathname();
   const router = useRouter();
   const t = useTranslations("nav");
-  const tCommon = useTranslations("common");
   const tAuth = useTranslations("auth");
   const { user, authUser, isLoading } = useUser();
 
@@ -75,13 +73,7 @@ const SidebarContent = ({ onNavigate }: SidebarContentProps) => {
     <div className="flex h-full flex-col">
       {/* Logo */}
       <div className="flex h-16 items-center px-6">
-        <Link
-          href="/dashboard"
-          className="text-xl font-bold text-slate-900"
-          onClick={onNavigate}
-        >
-          {tCommon("appName")}
-        </Link>
+        <Logo href="/dashboard" size="md" onClick={onNavigate} />
       </div>
 
       <Separator />
