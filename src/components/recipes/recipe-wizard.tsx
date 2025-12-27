@@ -51,7 +51,7 @@ export const RecipeWizard = ({ recipe }: RecipeWizardProps) => {
 
   const handleGenerate = async () => {
     if (!validateInputs()) {
-      setError("Bitte fülle alle Pflichtfelder aus.");
+      setError("Füll bitte alle Pflichtfelder aus.");
       return;
     }
 

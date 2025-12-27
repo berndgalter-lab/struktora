@@ -182,7 +182,24 @@
       "title": "Billing",
       "currentPlan": "Current Plan",
       "manage": "Manage Subscription",
-      "upgrade": "Upgrade"
+      "upgrade": "Upgrade",
+      "active": "Active",
+      "activeDescription": "Your subscription is active",
+      "cancelled": "Cancelled",
+      "cancelledDescription": "Your subscription has been cancelled",
+      "pastDue": "Payment Due",
+      "pastDueDescription": "Your last payment failed",
+      "trialDescription": "Free trial period",
+      "choosePlan": "Choose Plan",
+      "selectPlan": "Select",
+      "selectPlanDescription": "Choose a plan to continue after your trial.",
+      "manageViaPortal": "Manage your subscription via the customer portal.",
+      "manageSubscription": "Manage subscription in portal",
+      "customerPortal": "Customer Portal",
+      "customerPortalDescription": "Manage your subscription, change your plan or update your payment method.",
+      "openPortal": "Open Portal",
+      "checkoutSuccess": "Payment successful!",
+      "checkoutSuccessDescription": "Your subscription has been activated. Thank you!"
     }
   }
 }

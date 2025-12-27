@@ -27,17 +27,17 @@
     "emailPlaceholder": "name@firma.de",
     "forgotPassword": "Passwort vergessen?",
     "noAccount": "Noch kein Konto?",
-    "hasAccount": "Bereits ein Konto?",
+    "hasAccount": "Schon ein Konto?",
     "register": "Registrieren",
-    "loginTitle": "Anmelden",
-    "loginSubtitle": "Melde dich mit deinem Konto an, um fortzufahren.",
-    "signupTitle": "Konto erstellen",
-    "signupSubtitle": "Registriere dich für 14 Tage kostenlos.",
-    "checkEmailTitle": "Bestätige deine E-Mail",
-    "checkEmailDesc": "Wir haben dir eine E-Mail an {email} gesendet.",
-    "checkEmailHint": "Klicke auf den Link in der E-Mail, um dein Konto zu aktivieren. Danach kannst du dich anmelden.",
-    "checkEmailRetry": "Keine E-Mail erhalten?",
-    "checkEmailRetryLink": "Erneut versuchen",
+    "loginTitle": "Willkommen zurück",
+    "loginSubtitle": "Melde dich an, um fortzufahren.",
+    "signupTitle": "Los geht's",
+    "signupSubtitle": "Erstelle dein Konto – 14 Tage kostenlos.",
+    "checkEmailTitle": "Check deine E-Mails",
+    "checkEmailDesc": "Wir haben dir einen Link an {email} geschickt.",
+    "checkEmailHint": "Klick auf den Link, um dein Konto zu aktivieren. Danach kannst du dich anmelden.",
+    "checkEmailRetry": "Keine E-Mail bekommen?",
+    "checkEmailRetryLink": "Nochmal senden",
     "almostDone": "Fast geschafft!",
     "loggingIn": "Wird angemeldet...",
     "creatingAccount": "Wird erstellt...",
@@ -45,10 +45,10 @@
       "invalidCredentials": "E-Mail oder Passwort ist falsch.",
       "emailRequired": "E-Mail ist erforderlich",
       "passwordRequired": "Passwort ist erforderlich",
-      "passwordMin": "Das Passwort muss mindestens 8 Zeichen lang sein.",
-      "passwordMismatch": "Die Passwörter stimmen nicht überein.",
-      "emailInUse": "Diese E-Mail-Adresse ist bereits registriert.",
-      "generic": "Ein Fehler ist aufgetreten. Bitte versuche es erneut."
+      "passwordMin": "Mindestens 8 Zeichen nötig.",
+      "passwordMismatch": "Passwörter stimmen nicht überein.",
+      "emailInUse": "Diese E-Mail ist schon registriert.",
+      "generic": "Da ist was schiefgelaufen. Versuch's nochmal."
     }
   },
   "nav": {
@@ -64,12 +64,12 @@
     "hero": {
       "title": "KI-Workflows für den Mittelstand",
       "subtitle": "Ohne IT-Projekt",
-      "description": "Ihre Mitarbeiter nutzen KI. Ab Tag 1. Ohne Schulung.",
+      "description": "Dein Team nutzt KI. Ab Tag 1. Ohne Schulung.",
       "cta": "Kostenlos testen",
       "ctaSecondary": "So funktioniert's"
     },
     "problem": {
-      "title": "Das kennen Sie",
+      "title": "Kommt dir bekannt vor?",
       "item1": "ChatGPT-Chaos ohne Kontrolle",
       "item2": "Jeder promptet anders",
       "item3": "Keine Zeit für KI-Schulungen",
@@ -86,7 +86,7 @@
         "description": "12 Best-Practice Vorlagen für typische Aufgaben"
       },
       "feature2": {
-        "title": "Ihr Firmenton",
+        "title": "Dein Firmenton",
         "description": "Automatisch in jedem Output – ohne Copy-Paste"
       },
       "feature3": {
@@ -107,7 +107,7 @@
     },
     "cta": {
       "title": "Bereit für KI-Workflows?",
-      "description": "Starte jetzt mit 14 Tagen kostenlosem Test. Keine Kreditkarte erforderlich."
+      "description": "Starte jetzt mit 14 Tagen kostenlosem Test. Keine Kreditkarte nötig."
     },
     "footer": {
       "impressum": "Impressum",
@@ -120,7 +120,7 @@
     "welcome": "Willkommen zurück",
     "recentRecipes": "Zuletzt verwendet",
     "allRecipes": "Alle Workflows",
-    "profileWarning": "Fülle dein Firmenprofil aus, damit die KI-Antworten zu deinem Unternehmen passen.",
+    "profileWarning": "Füll dein Firmenprofil aus, damit die KI-Antworten zu deinem Unternehmen passen.",
     "fillProfile": "Profil ausfüllen",
     "categories": {
       "kommunikation": "Kommunikation",
@@ -142,11 +142,11 @@
   "settings": {
     "profile": {
       "title": "Firmenprofil",
-      "description": "Informationen über Ihr Unternehmen",
+      "description": "Infos über dein Unternehmen",
       "companyName": "Firmenname",
       "industry": "Branche",
       "companyDescription": "Beschreibung",
-      "companyDescriptionHint": "Was macht Ihr Unternehmen? (2-3 Sätze)",
+      "companyDescriptionHint": "Was macht dein Unternehmen? (2-3 Sätze)",
       "products": "Produkte / Services",
       "saved": "Profil gespeichert"
     },
@@ -167,10 +167,10 @@
     },
     "team": {
       "title": "Team verwalten",
-      "description": "Laden Sie Mitarbeiter ein",
+      "description": "Lade Teammitglieder ein",
       "inviteEmail": "E-Mail-Adresse",
       "inviteButton": "Einladen",
-      "inviteSent": "Einladung gesendet",
+      "inviteSent": "Einladung verschickt",
       "members": "Teammitglieder",
       "role": "Rolle",
       "admin": "Admin",
@@ -180,9 +180,26 @@
     },
     "billing": {
       "title": "Abrechnung",
-      "currentPlan": "Aktueller Plan",
+      "currentPlan": "Dein Plan",
       "manage": "Abo verwalten",
-      "upgrade": "Upgrade"
+      "upgrade": "Upgrade",
+      "active": "Aktiv",
+      "activeDescription": "Dein Abo ist aktiv",
+      "cancelled": "Gekündigt",
+      "cancelledDescription": "Dein Abo wurde gekündigt",
+      "pastDue": "Zahlung ausstehend",
+      "pastDueDescription": "Deine letzte Zahlung ist fehlgeschlagen",
+      "trialDescription": "Kostenloser Testzeitraum",
+      "choosePlan": "Plan wählen",
+      "selectPlan": "Auswählen",
+      "selectPlanDescription": "Wähl einen Plan, um nach dem Trial weiterzumachen.",
+      "manageViaPortal": "Verwalte dein Abo über das Kundenportal.",
+      "manageSubscription": "Abo im Kundenportal verwalten",
+      "customerPortal": "Kundenportal",
+      "customerPortalDescription": "Verwalte dein Abo, ändere deinen Plan oder aktualisiere deine Zahlungsmethode.",
+      "openPortal": "Portal öffnen",
+      "checkoutSuccess": "Zahlung erfolgreich!",
+      "checkoutSuccessDescription": "Dein Abo ist jetzt aktiv. Danke!"
     }
   }
 }

@@ -1,106 +1,170 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { CreditCard, Clock, Sparkles } from "lucide-react";
+import { Loader2, CheckCircle, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { SubscriptionStatus } from "@/components/settings/subscription-status";
+import { PricingCards } from "@/components/settings/pricing-cards";
+import type { PlanTier } from "@/lib/lemonsqueezy";
+
+interface SubscriptionData {
+  status: "trial" | "active" | "cancelled" | "past_due";
+  tier: PlanTier;
+  trialEndsAt: string | null;
+  hasCustomerId: boolean;
+}
 
 export default function BillingSettingsPage() {
   const t = useTranslations("settings.billing");
+  const searchParams = useSearchParams();
+  const success = searchParams.get("success");
+
+  const [subscription, setSubscription] = useState<SubscriptionData | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [isLoadingPortal, setIsLoadingPortal] = useState(false);
+
+  useEffect(() => {
+    const fetchBillingData = async () => {
+      try {
+        const response = await fetch("/api/billing");
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || "Fehler beim Laden");
+        }
+
+        setSubscription(data.subscription || {
+          status: "trial",
+          tier: "starter",
+          trialEndsAt: null,
+          hasCustomerId: false,
+        });
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Ein Fehler ist aufgetreten");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchBillingData();
+  }, []);
+
+  const handleManageSubscription = async () => {
+    setIsLoadingPortal(true);
+
+    try {
+      const response = await fetch("/api/billing/portal", {
+        method: "POST",
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Portal nicht verfügbar");
+      }
+
+      // Open portal in new tab
+      window.open(data.portalUrl, "_blank");
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Ein Fehler ist aufgetreten");
+    } finally {
+      setIsLoadingPortal(false);
+    }
+  };
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center py-12">
+        <Loader2 className="h-8 w-8 animate-spin text-slate-400" />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="bg-red-50 text-red-600 p-4 rounded-lg">
+        {error}
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">
-      {/* Current Plan */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <CreditCard className="h-5 w-5" />
-            {t("currentPlan")}
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50">
-                <Sparkles className="h-6 w-6 text-blue-600" />
+      {/* Success message after checkout */}
+      {success === "true" && (
+        <Card className="border-green-200 bg-green-50">
+          <CardContent className="pt-6">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100">
+                <CheckCircle className="h-5 w-5 text-green-600" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-slate-900">Trial</h3>
-                <p className="text-sm text-slate-500">Kostenloser Testzeitraum</p>
+                <h3 className="font-semibold text-green-900">
+                  {t("checkoutSuccess")}
+                </h3>
+                <p className="text-sm text-green-700">
+                  {t("checkoutSuccessDescription")}
+                </p>
               </div>
             </div>
-            <Badge variant="secondary" className="gap-1">
-              <Clock className="h-3 w-3" />
-              14 Tage
-            </Badge>
-          </div>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      )}
 
-      {/* Trial Info */}
-      <Card className="border-blue-200 bg-blue-50/50">
-        <CardContent className="pt-6">
-          <div className="text-center space-y-4">
-            <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
-              <Sparkles className="h-8 w-8 text-blue-600" />
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-slate-900">
-                14 Tage kostenlos testen
-              </h3>
-              <p className="mt-1 text-slate-600">
-                Voller Zugang zu allen Features. Keine Kreditkarte erforderlich.
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
+      {/* Subscription Status */}
+      {subscription && (
+        <SubscriptionStatus
+          status={subscription.status}
+          tier={subscription.tier}
+          trialEndsAt={subscription.trialEndsAt}
+        />
+      )}
 
-      {/* Upgrade Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle>{t("upgrade")}</CardTitle>
-          <CardDescription>
-            Nach der Testphase kannst du ein Abo wählen.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {/* Starter */}
-            <div className="rounded-lg border border-slate-200 p-4">
-              <h4 className="font-semibold">Starter</h4>
-              <p className="text-2xl font-bold mt-2">
-                €49<span className="text-sm font-normal text-slate-500">/Monat</span>
-              </p>
-              <p className="text-sm text-slate-500 mt-1">5 Nutzer</p>
-            </div>
+      {/* Pricing Cards */}
+      {subscription && (
+        <PricingCards
+          currentTier={subscription.tier}
+          subscriptionStatus={subscription.status}
+          onManageSubscription={
+            subscription.hasCustomerId ? handleManageSubscription : undefined
+          }
+        />
+      )}
 
-            {/* Team */}
-            <div className="rounded-lg border-2 border-blue-600 p-4 relative">
-              <Badge className="absolute -top-2 right-2">Beliebt</Badge>
-              <h4 className="font-semibold">Team</h4>
-              <p className="text-2xl font-bold mt-2">
-                €149<span className="text-sm font-normal text-slate-500">/Monat</span>
-              </p>
-              <p className="text-sm text-slate-500 mt-1">15 Nutzer</p>
+      {/* Customer Portal Button (for active subscriptions) */}
+      {subscription?.hasCustomerId && (
+        <Card>
+          <CardContent className="pt-6">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <h3 className="font-semibold text-slate-900">
+                  {t("customerPortal")}
+                </h3>
+                <p className="text-sm text-slate-500 mt-1">
+                  {t("customerPortalDescription")}
+                </p>
+              </div>
+              <Button
+                variant="outline"
+                onClick={handleManageSubscription}
+                disabled={isLoadingPortal}
+                className="gap-2 flex-shrink-0"
+              >
+                {isLoadingPortal ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <ExternalLink className="h-4 w-4" />
+                )}
+                {t("openPortal")}
+              </Button>
             </div>
-
-            {/* Business */}
-            <div className="rounded-lg border border-slate-200 p-4">
-              <h4 className="font-semibold">Business</h4>
-              <p className="text-2xl font-bold mt-2">
-                €399<span className="text-sm font-normal text-slate-500">/Monat</span>
-              </p>
-              <p className="text-sm text-slate-500 mt-1">Unbegrenzt</p>
-            </div>
-          </div>
-
-          <Button className="w-full mt-6" disabled>
-            {t("manage")} (bald verfügbar)
-          </Button>
-        </CardContent>
-      </Card>
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 }

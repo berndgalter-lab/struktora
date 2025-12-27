@@ -9,14 +9,16 @@ import {
   Settings,
   LogOut,
   Menu,
-  X,
+  User,
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { createClient } from "@/lib/supabase/client";
+import { useUser } from "@/hooks/use-user";
 
 const navItems = [
   { href: "/dashboard", icon: LayoutDashboard, labelKey: "dashboard" },
@@ -34,12 +36,39 @@ const SidebarContent = ({ onNavigate }: SidebarContentProps) => {
   const t = useTranslations("nav");
   const tCommon = useTranslations("common");
   const tAuth = useTranslations("auth");
+  const { user, authUser, isLoading } = useUser();
+
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
 
   const handleLogout = async () => {
+    setIsLoggingOut(true);
     const supabase = createClient();
     await supabase.auth.signOut();
-    router.push("/login");
+    router.push("/");
     router.refresh();
+  };
+
+  // Get user initials for avatar
+  const getInitials = () => {
+    if (user?.full_name) {
+      return user.full_name
+        .split(" ")
+        .map((n) => n[0])
+        .join("")
+        .toUpperCase()
+        .slice(0, 2);
+    }
+    if (authUser?.email) {
+      return authUser.email[0].toUpperCase();
+    }
+    return "U";
+  };
+
+  // Get display name
+  const getDisplayName = () => {
+    if (user?.full_name) return user.full_name;
+    if (authUser?.email) return authUser.email.split("@")[0];
+    return "User";
   };
 
   return (
@@ -88,14 +117,35 @@ const SidebarContent = ({ onNavigate }: SidebarContentProps) => {
       <Separator />
 
       {/* User section */}
-      <div className="p-3">
+      <div className="p-3 space-y-2">
+        {/* User info */}
+        <div className="flex items-center gap-3 px-3 py-2">
+          <Avatar className="h-9 w-9">
+            <AvatarFallback className="bg-blue-100 text-blue-700 text-sm font-medium">
+              {isLoading ? "..." : getInitials()}
+            </AvatarFallback>
+          </Avatar>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-medium text-slate-900 truncate">
+              {isLoading ? "Laden..." : getDisplayName()}
+            </p>
+            {authUser?.email && (
+              <p className="text-xs text-slate-500 truncate">
+                {authUser.email}
+              </p>
+            )}
+          </div>
+        </div>
+
+        {/* Logout button */}
         <Button
-          variant="ghost"
-          className="w-full justify-start gap-3 text-slate-600 hover:text-slate-900"
+          variant="outline"
+          className="w-full justify-start gap-3 text-slate-600 hover:text-red-600 hover:border-red-200 hover:bg-red-50"
           onClick={handleLogout}
+          disabled={isLoggingOut}
         >
-          <LogOut className="h-5 w-5" />
-          {tAuth("logout")}
+          <LogOut className="h-4 w-4" />
+          {isLoggingOut ? "Wird abgemeldet..." : tAuth("logout")}
         </Button>
       </div>
     </div>

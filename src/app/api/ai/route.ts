@@ -162,28 +162,28 @@ export async function POST(request: Request) {
 
       if (error.message.includes("429") || error.message.includes("Rate limit")) {
         return NextResponse.json(
-          { error: "Zu viele Anfragen. Bitte warte einen Moment." },
+          { error: "Zu viele Anfragen – warte kurz und versuch's nochmal." },
           { status: 429 }
         );
       }
 
       if (error.message.includes("quota") || error.message.includes("exceeded")) {
         return NextResponse.json(
-          { error: "AI-Kontingent erschöpft. Bitte kontaktiere den Support." },
+          { error: "AI-Kontingent aufgebraucht. Melde dich beim Support." },
           { status: 503 }
         );
       }
 
       if (error.message.includes("content_filter")) {
         return NextResponse.json(
-          { error: "Der Inhalt konnte nicht verarbeitet werden. Bitte überprüfe deine Eingabe." },
+          { error: "Der Inhalt konnte nicht verarbeitet werden. Check deine Eingabe." },
           { status: 400 }
         );
       }
     }
 
     return NextResponse.json(
-      { error: "Ein Fehler ist aufgetreten. Bitte versuche es erneut." },
+      { error: "Da ist was schiefgelaufen. Versuch's nochmal." },
       { status: 500 }
     );
   }

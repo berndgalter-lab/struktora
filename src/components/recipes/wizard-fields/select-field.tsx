@@ -31,7 +31,7 @@ export const SelectField = ({
       </Label>
       <Select value={value} onValueChange={onChange} disabled={disabled}>
         <SelectTrigger id={field.id}>
-          <SelectValue placeholder="Bitte wählen..." />
+          <SelectValue placeholder="Auswählen..." />
         </SelectTrigger>
         <SelectContent>
           {field.options?.map((option) => (

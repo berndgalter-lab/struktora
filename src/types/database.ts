@@ -12,6 +12,7 @@ export interface Database {
           subscription_tier: "starter" | "team" | "business";
           subscription_id: string | null;
           trial_ends_at: string;
+          lemon_squeezy_customer_id: string | null;
         };
         Insert: {
           id?: string;
@@ -21,6 +22,7 @@ export interface Database {
           subscription_tier?: "starter" | "team" | "business";
           subscription_id?: string | null;
           trial_ends_at?: string;
+          lemon_squeezy_customer_id?: string | null;
         };
         Update: {
           id?: string;
@@ -30,6 +32,7 @@ export interface Database {
           subscription_tier?: "starter" | "team" | "business";
           subscription_id?: string | null;
           trial_ends_at?: string;
+          lemon_squeezy_customer_id?: string | null;
         };
       };
       company_profiles: {
