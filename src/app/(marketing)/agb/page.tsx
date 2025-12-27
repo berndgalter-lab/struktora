@@ -13,9 +13,10 @@ export default function AGBPage() {
           Zurück zur Startseite
         </Link>
 
-        <h1 className="mb-8 text-3xl font-bold text-slate-900">
+        <h1 className="mb-2 text-3xl font-bold text-slate-900">
           Allgemeine Geschäftsbedingungen (AGB)
         </h1>
+        <p className="mb-8 text-sm text-slate-500">Stand: Dezember 2025</p>
 
         <div className="space-y-8 text-slate-700 leading-relaxed">
           <section>
@@ -23,21 +24,12 @@ export default function AGBPage() {
               § 1 Geltungsbereich
             </h2>
             <p>
-              (1) Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die
-              Nutzung der SaaS-Plattform „Struktora" (erreichbar unter
-              struktora.com), betrieben von:
+              (1) Diese Allgemeinen Geschäftsbedingungen gelten für die Nutzung 
+              der Plattform Struktora (struktora.com), betrieben von BG Online Media 
+              (haftungsbeschränkt), Grünwiesenstraße 33, 74321 Bietigheim-Bissingen.
             </p>
             <p className="mt-4">
-              BG Online Media (haftungsbeschränkt)
-              <br />
-              Grünwiesenstraße 33
-              <br />
-              74321 Bietigheim-Bissingen
-              <br />
-              Deutschland
-            </p>
-            <p className="mt-4">
-              (2) Abweichende Bedingungen des Nutzers werden nicht anerkannt, es
+              (2) Abweichende Bedingungen des Nutzers werden nicht anerkannt, es 
               sei denn, wir stimmen ihrer Geltung ausdrücklich schriftlich zu.
             </p>
           </section>
@@ -47,64 +39,42 @@ export default function AGBPage() {
               § 2 Vertragsgegenstand
             </h2>
             <p>
-              (1) Struktora ist eine SaaS-Plattform, die KI-gestützte Workflows
-              („Recipes") für die Erstellung von Geschäftstexten bereitstellt.
+              (1) Struktora ist eine Software-as-a-Service (SaaS) Plattform für 
+              KI-gestützte Workflows zur Texterstellung und -bearbeitung.
             </p>
-            <p className="mt-4">(2) Der Leistungsumfang umfasst:</p>
-            <ul className="list-disc list-inside space-y-1 ml-4 mt-2">
-              <li>Zugang zu strukturierten KI-Workflows</li>
-              <li>Generierung von Texten mittels künstlicher Intelligenz</li>
-              <li>Team-Funktionen zur gemeinsamen Nutzung</li>
-              <li>Firmenprofil und Kommunikations-Policy-Einstellungen</li>
-            </ul>
             <p className="mt-4">
-              (3) Wir bieten verschiedene Tarife an (Starter, Team, Business), die
-              sich im Funktionsumfang und in den enthaltenen Generierungen
-              unterscheiden.
+              (2) Der Funktionsumfang richtet sich nach dem jeweils gewählten 
+              Tarif (Starter, Team, Business).
             </p>
           </section>
 
           <section>
             <h2 className="mb-4 text-xl font-semibold text-slate-900">
-              § 3 Registrierung und Nutzerkonto
+              § 3 Vertragsschluss und Registrierung
             </h2>
             <p>
-              (1) Für die Nutzung von Struktora ist eine Registrierung
-              erforderlich.
+              (1) Die Registrierung setzt die Vollendung des 18. Lebensjahres voraus.
             </p>
-            <p className="mt-4">(2) Bei der Registrierung verpflichtet sich der Nutzer:</p>
-            <ul className="list-disc list-inside space-y-1 ml-4 mt-2">
-              <li>Wahrheitsgemäße und vollständige Angaben zu machen</li>
-              <li>Das Mindestalter von 18 Jahren erreicht zu haben</li>
-              <li>Pro Person oder Unternehmen nur einen Account anzulegen</li>
-              <li>Die Zugangsdaten geheim zu halten und vor Dritten zu schützen</li>
-            </ul>
             <p className="mt-4">
-              (3) Der Nutzer haftet für alle Aktivitäten, die unter seinem Account
-              erfolgen.
+              (2) Mit der Registrierung gibst du ein Angebot zum Vertragsschluss ab. 
+              Der Vertrag kommt mit unserer Bestätigung zustande.
+            </p>
+            <p className="mt-4">
+              (3) Du bist verpflichtet, wahrheitsgemäße Angaben zu machen und deine 
+              Zugangsdaten geheim zu halten.
             </p>
           </section>
 
           <section>
             <h2 className="mb-4 text-xl font-semibold text-slate-900">
-              § 4 Leistungsbeschreibung
+              § 4 Testphase
             </h2>
             <p>
-              (1) Neue Nutzer erhalten einen kostenlosen Testzeitraum von 14
-              Tagen.
+              (1) Wir bieten eine kostenlose Testphase von 14 Tagen an.
             </p>
             <p className="mt-4">
-              (2) Die Anzahl der verfügbaren Generierungen richtet sich nach dem
-              gewählten Tarif.
-            </p>
-            <p className="mt-4">
-              (3) Wir bemühen uns um eine hohe Verfügbarkeit des Dienstes, können
-              jedoch keine Garantie für eine unterbrechungsfreie Nutzung geben.
-              Angestrebt wird eine Verfügbarkeit von 99%.
-            </p>
-            <p className="mt-4">
-              (4) Wartungsarbeiten werden nach Möglichkeit vorab angekündigt und
-              in nutzungsarmen Zeiten durchgeführt.
+              (2) Die Testphase endet automatisch. Eine automatische Umwandlung 
+              in ein kostenpflichtiges Abonnement erfolgt nicht.
             </p>
           </section>
 
@@ -113,177 +83,150 @@ export default function AGBPage() {
               § 5 Preise und Zahlung
             </h2>
             <p>
-              (1) Die aktuellen Preise sind auf unserer Website einsehbar. Alle
-              Preise verstehen sich in Euro zuzüglich der gesetzlichen
-              Mehrwertsteuer.
-            </p>
-            <p className="mt-4">(2) Die Abrechnung erfolgt monatlich im Voraus.</p>
-            <p className="mt-4">
-              (3) Die Zahlung erfolgt über unseren Zahlungsdienstleister
-              LemonSqueezy. Es gelten dessen Zahlungsbedingungen.
+              (1) Die aktuellen Preise sind auf unserer Website einsehbar. Alle 
+              Preise verstehen sich zzgl. der gesetzlichen Mehrwertsteuer.
             </p>
             <p className="mt-4">
-              (4) Das Abonnement verlängert sich automatisch um den jeweiligen
-              Abrechnungszeitraum, sofern es nicht gekündigt wird.
+              (2) Die Zahlung erfolgt über unseren Zahlungsdienstleister LemonSqueezy. 
+              Es gelten zusätzlich dessen Nutzungsbedingungen.
+            </p>
+            <p className="mt-4">
+              (3) Abonnements verlängern sich automatisch um den jeweiligen 
+              Abrechnungszeitraum, sofern nicht gekündigt wird.
             </p>
           </section>
 
           <section>
             <h2 className="mb-4 text-xl font-semibold text-slate-900">
-              § 6 Kündigung
+              § 6 Nutzungsrechte
             </h2>
             <p>
-              (1) Das Abonnement kann jederzeit zum Ende des aktuellen
-              Abrechnungszeitraums gekündigt werden.
+              (1) Mit Vertragsschluss erhältst du ein einfaches, nicht übertragbares 
+              Recht zur Nutzung der Plattform.
             </p>
             <p className="mt-4">
-              (2) Die Kündigung erfolgt über die Account-Einstellungen oder per
-              E-Mail an support@struktora.com.
-            </p>
-            <p className="mt-4">
-              (3) Bereits gezahlte Beträge für den laufenden Abrechnungszeitraum
-              werden nicht anteilig erstattet.
-            </p>
-            <p className="mt-4">
-              (4) Nach der Kündigung bleibt der Zugang bis zum Ende des bezahlten
-              Zeitraums aktiv.
+              (2) Eine Unterlizenzierung oder Weitergabe des Accounts ist nicht gestattet.
             </p>
           </section>
 
           <section>
             <h2 className="mb-4 text-xl font-semibold text-slate-900">
-              § 7 Nutzungsrechte
+              § 7 Pflichten des Nutzers
             </h2>
             <p>
-              (1) Mit Abschluss des Vertrags erhält der Nutzer ein einfaches,
-              nicht übertragbares Recht zur Nutzung von Struktora für die Dauer
-              des Vertragsverhältnisses.
+              (1) Du verpflichtest dich, die Plattform nicht für rechtswidrige 
+              Zwecke zu nutzen.
             </p>
-            <p className="mt-4">
-              (2) Die generierten Inhalte darf der Nutzer frei für geschäftliche
-              und private Zwecke verwenden.
-            </p>
-            <p className="mt-4">(3) Nicht gestattet ist:</p>
+            <p className="mt-4">(2) Insbesondere ist untersagt:</p>
             <ul className="list-disc list-inside space-y-1 ml-4 mt-2">
-              <li>Die Weitergabe des Accounts an Dritte</li>
-              <li>
-                Das Reverse Engineering, Dekompilieren oder Disassemblieren der
-                Software
-              </li>
-              <li>Die Nutzung für automatisierte Massenverarbeitung</li>
+              <li>Die Generierung rechtswidriger, beleidigender oder diskriminierender Inhalte</li>
+              <li>Die systematische Umgehung von Nutzungslimits</li>
+              <li>Die Weitergabe von Zugangsdaten an Dritte</li>
             </ul>
+            <p className="mt-4">
+              (3) Bei Verstößen behalten wir uns die sofortige Sperrung des Accounts vor.
+            </p>
           </section>
 
           <section>
             <h2 className="mb-4 text-xl font-semibold text-slate-900">
-              § 8 Verbotene Nutzung
-            </h2>
-            <p>Folgende Nutzungen sind untersagt:</p>
-            <ul className="list-disc list-inside space-y-1 ml-4 mt-4">
-              <li>
-                Erstellung illegaler, beleidigender, diskriminierender oder
-                anderweitig rechtswidriger Inhalte
-              </li>
-              <li>Spam oder Massenversand von generierten Inhalten</li>
-              <li>Umgehung von Nutzungslimits oder technischen Schutzmaßnahmen</li>
-              <li>Weitergabe von API-Zugängen oder Integrations-Tokens</li>
-              <li>Nutzung, die den Dienst oder andere Nutzer beeinträchtigt</li>
-            </ul>
-          </section>
-
-          <section>
-            <h2 className="mb-4 text-xl font-semibold text-slate-900">
-              § 9 Haftung
+              § 8 KI-generierte Inhalte
             </h2>
             <p>
-              (1) Wir haften unbeschränkt bei Vorsatz und grober Fahrlässigkeit.
+              (1) Die Plattform nutzt KI-Modelle zur Texterstellung. Die Ergebnisse 
+              können fehlerhaft oder unvollständig sein.
             </p>
             <p className="mt-4">
-              (2) Bei leichter Fahrlässigkeit haften wir nur bei Verletzung
-              wesentlicher Vertragspflichten (Kardinalpflichten). Die Haftung ist
-              in diesen Fällen auf den vorhersehbaren, vertragstypischen Schaden
-              begrenzt.
+              (2) Du bist für die Prüfung und Verwendung der generierten Inhalte 
+              selbst verantwortlich.
             </p>
             <div className="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-4">
               <p className="font-medium text-amber-900">
-                (3) Wir übernehmen keine Haftung für die Richtigkeit, Vollständigkeit
-                oder Eignung der KI-generierten Inhalte. Der Nutzer ist selbst für
-                die Prüfung und Verwendung der Outputs verantwortlich.
+                (3) Wir übernehmen keine Haftung für die Richtigkeit, Vollständigkeit 
+                oder Eignung der KI-generierten Inhalte.
               </p>
             </div>
-            <p className="mt-4">
-              (4) Die maximale Haftungssumme ist auf den Betrag begrenzt, den der
-              Nutzer in den letzten 12 Monaten an uns gezahlt hat.
+          </section>
+
+          <section>
+            <h2 className="mb-4 text-xl font-semibold text-slate-900">
+              § 9 Kündigung
+            </h2>
+            <p>
+              (1) Du kannst dein Abonnement jederzeit zum Ende des aktuellen 
+              Abrechnungszeitraums kündigen.
             </p>
             <p className="mt-4">
-              (5) Die vorstehenden Haftungsbeschränkungen gelten nicht bei
-              Verletzung von Leben, Körper oder Gesundheit.
+              (2) Die Kündigung ist über die Account-Einstellungen oder per E-Mail möglich.
+            </p>
+            <p className="mt-4">
+              (3) Bereits gezahlte Beträge für den laufenden Abrechnungszeitraum 
+              werden nicht erstattet.
             </p>
           </section>
 
           <section>
             <h2 className="mb-4 text-xl font-semibold text-slate-900">
-              § 10 Datenschutz
+              § 10 Haftung
             </h2>
             <p>
-              Die Verarbeitung personenbezogener Daten erfolgt gemäß unserer{" "}
-              <Link href="/datenschutz" className="text-blue-600 hover:underline">
-                Datenschutzerklärung
-              </Link>
-              .
+              (1) Wir haften unbeschränkt für Schäden aus der Verletzung des Lebens, 
+              des Körpers oder der Gesundheit sowie für Vorsatz und grobe Fahrlässigkeit.
+            </p>
+            <p className="mt-4">
+              (2) Für leichte Fahrlässigkeit haften wir nur bei Verletzung wesentlicher 
+              Vertragspflichten. In diesem Fall ist die Haftung auf den vorhersehbaren, 
+              vertragstypischen Schaden begrenzt.
+            </p>
+            <p className="mt-4">
+              (3) Die Haftung ist in jedem Fall begrenzt auf die von dir in den 
+              letzten 12 Monaten gezahlten Beträge.
             </p>
           </section>
 
           <section>
             <h2 className="mb-4 text-xl font-semibold text-slate-900">
-              § 11 Änderungen der AGB
+              § 11 Verfügbarkeit
             </h2>
             <p>
-              (1) Wir behalten uns vor, diese AGB mit Wirkung für die Zukunft zu
-              ändern.
+              (1) Wir bemühen uns um eine hohe Verfügbarkeit der Plattform, können 
+              diese jedoch nicht garantieren.
             </p>
             <p className="mt-4">
-              (2) Änderungen werden dem Nutzer mindestens 30 Tage vor Inkrafttreten
-              per E-Mail mitgeteilt.
-            </p>
-            <p className="mt-4">
-              (3) Widerspricht der Nutzer den Änderungen nicht innerhalb von 30
-              Tagen nach Zugang der Mitteilung, gelten die Änderungen als
-              akzeptiert. Auf diese Rechtsfolge wird in der
-              Änderungsmitteilung hingewiesen.
-            </p>
-            <p className="mt-4">
-              (4) Bei Widerspruch haben beide Parteien das Recht, den Vertrag zum
-              Änderungszeitpunkt zu kündigen.
+              (2) Wartungsarbeiten werden nach Möglichkeit angekündigt.
             </p>
           </section>
 
           <section>
             <h2 className="mb-4 text-xl font-semibold text-slate-900">
-              § 12 Schlussbestimmungen
+              § 12 Änderungen der AGB
             </h2>
             <p>
-              (1) Es gilt das Recht der Bundesrepublik Deutschland unter
-              Ausschluss des UN-Kaufrechts.
+              (1) Wir behalten uns vor, diese AGB mit einer Ankündigungsfrist von 
+              30 Tagen zu ändern.
             </p>
             <p className="mt-4">
-              (2) Sofern der Nutzer Kaufmann, juristische Person des öffentlichen
-              Rechts oder öffentlich-rechtliches Sondervermögen ist, ist
-              ausschließlicher Gerichtsstand für alle Streitigkeiten aus diesem
-              Vertrag Stuttgart.
-            </p>
-            <p className="mt-4">
-              (3) Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder
-              werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.
-              Anstelle der unwirksamen Bestimmung gilt eine wirksame Bestimmung
-              als vereinbart, die dem wirtschaftlichen Zweck der unwirksamen
-              Bestimmung am nächsten kommt.
+              (2) Du wirst über Änderungen per E-Mail informiert. Widersprichst du 
+              nicht innerhalb von 30 Tagen, gelten die geänderten AGB als akzeptiert.
             </p>
           </section>
 
-          <p className="text-sm text-slate-500 pt-4">
-            Stand: Dezember 2025
-          </p>
+          <section>
+            <h2 className="mb-4 text-xl font-semibold text-slate-900">
+              § 13 Schlussbestimmungen
+            </h2>
+            <p>
+              (1) Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss 
+              des UN-Kaufrechts.
+            </p>
+            <p className="mt-4">
+              (2) Gerichtsstand ist, soweit gesetzlich zulässig, Stuttgart.
+            </p>
+            <p className="mt-4">
+              (3) Sollten einzelne Bestimmungen unwirksam sein, bleibt die Wirksamkeit 
+              der übrigen Bestimmungen unberührt.
+            </p>
+          </section>
         </div>
 
         <div className="mt-12 border-t border-slate-200 pt-8">
