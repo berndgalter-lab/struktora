@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, createServiceClient } from "@/lib/supabase/server";
 import { getRecipeById } from "@/lib/recipes";
 import { generateCompletion } from "@/lib/azure-openai";
 
@@ -29,7 +29,10 @@ export async function POST(request: Request) {
     const supabase = await createClient();
     const {
       data: { user },
+      error: authError,
     } = await supabase.auth.getUser();
+
+    console.log("[AI POST] Auth user:", user?.id, "Error:", authError?.message);
 
     if (!user) {
       return NextResponse.json(
@@ -38,12 +41,17 @@ export async function POST(request: Request) {
       );
     }
 
+    // Use service client to bypass RLS
+    const serviceClient = createServiceClient();
+
     // Get user's team ID
-    const { data: userData } = await supabase
+    const { data: userData, error: userError } = await serviceClient
       .from("users")
       .select("team_id")
       .eq("id", user.id)
       .single();
+
+    console.log("[AI POST] User data:", userData, "Error:", userError?.message);
 
     // Get company profile and policy (if user has a team)
     let companyProfile = null;
@@ -51,12 +59,12 @@ export async function POST(request: Request) {
 
     if (userData?.team_id) {
       const [profileResult, policyResult] = await Promise.all([
-        supabase
+        serviceClient
           .from("company_profiles")
           .select("*")
           .eq("team_id", userData.team_id)
           .single(),
-        supabase
+        serviceClient
           .from("company_policies")
           .select("*")
           .eq("team_id", userData.team_id)
@@ -65,6 +73,8 @@ export async function POST(request: Request) {
 
       companyProfile = profileResult.data;
       companyPolicy = policyResult.data;
+
+      console.log("[AI POST] Profile:", companyProfile?.company_name, "Policy:", companyPolicy?.anrede);
     }
 
     // Build the prompt by replacing placeholders
@@ -110,7 +120,7 @@ export async function POST(request: Request) {
 
     // Save usage stats (non-blocking)
     if (userData?.team_id) {
-      supabase
+      serviceClient
         .from("usage_stats")
         .insert({
           team_id: userData.team_id,
