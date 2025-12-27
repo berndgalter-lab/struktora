@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase/server";
 import { getRecipeById } from "@/lib/recipes";
+import { generateCompletion } from "@/lib/azure-openai";
 
 // Request validation schema
 const requestSchema = z.object({
@@ -84,10 +85,7 @@ export async function POST(request: Request) {
     );
 
     // Replace policy placeholders
-    prompt = prompt.replace(
-      /\{\{anrede\}\}/g,
-      companyPolicy?.anrede || "Sie"
-    );
+    prompt = prompt.replace(/\{\{anrede\}\}/g, companyPolicy?.anrede || "Sie");
     prompt = prompt.replace(
       /\{\{tonality\}\}/g,
       companyPolicy?.tonality || "sachlich"
@@ -107,29 +105,34 @@ export async function POST(request: Request) {
       prompt = prompt.replace(regex, value || "");
     }
 
-    // TODO: Replace with actual Azure OpenAI call in next iteration
-    // For now, return a placeholder response
-    const placeholderOutput = `[AI Output Placeholder]
+    // Call Azure OpenAI
+    const { content, tokensUsed } = await generateCompletion(prompt);
 
-Recipe: ${recipe.name}
-Inputs erhalten: ${Object.keys(inputs).join(", ")}
-
----
-
-Dies ist ein Platzhalter-Text. Die echte KI-Integration (Azure OpenAI) wird im nächsten Schritt implementiert.
-
-Der generierte Prompt hätte ${prompt.length} Zeichen.
-
-Firmenprofil geladen: ${companyProfile ? "Ja" : "Nein"}
-Policy geladen: ${companyPolicy ? "Ja" : "Nein"}`;
+    // Save usage stats (non-blocking)
+    if (userData?.team_id) {
+      supabase
+        .from("usage_stats")
+        .insert({
+          team_id: userData.team_id,
+          user_id: user.id,
+          recipe_id: recipeId,
+          tokens_used: tokensUsed,
+        })
+        .then(({ error }) => {
+          if (error) {
+            console.error("Failed to save usage stats:", error);
+          }
+        });
+    }
 
     return NextResponse.json({
-      output: placeholderOutput,
-      tokensUsed: 0,
+      output: content,
+      tokensUsed,
     });
   } catch (error) {
     console.error("AI API Error:", error);
 
+    // Handle Zod validation errors
     if (error instanceof z.ZodError) {
       return NextResponse.json(
         { error: "Ungültige Anfrage", details: error.errors },
@@ -137,8 +140,40 @@ Policy geladen: ${companyPolicy ? "Ja" : "Nein"}`;
       );
     }
 
+    // Handle Azure OpenAI specific errors
+    if (error instanceof Error) {
+      // Check for common Azure OpenAI errors
+      if (error.message.includes("401") || error.message.includes("Unauthorized")) {
+        return NextResponse.json(
+          { error: "AI-Service Authentifizierung fehlgeschlagen" },
+          { status: 500 }
+        );
+      }
+
+      if (error.message.includes("429") || error.message.includes("Rate limit")) {
+        return NextResponse.json(
+          { error: "Zu viele Anfragen. Bitte warte einen Moment." },
+          { status: 429 }
+        );
+      }
+
+      if (error.message.includes("quota") || error.message.includes("exceeded")) {
+        return NextResponse.json(
+          { error: "AI-Kontingent erschöpft. Bitte kontaktiere den Support." },
+          { status: 503 }
+        );
+      }
+
+      if (error.message.includes("content_filter")) {
+        return NextResponse.json(
+          { error: "Der Inhalt konnte nicht verarbeitet werden. Bitte überprüfe deine Eingabe." },
+          { status: 400 }
+        );
+      }
+    }
+
     return NextResponse.json(
-      { error: "Ein Fehler ist aufgetreten" },
+      { error: "Ein Fehler ist aufgetreten. Bitte versuche es erneut." },
       { status: 500 }
     );
   }
