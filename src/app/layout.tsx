@@ -18,6 +18,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Struktora – KI für den Mittelstand",
   description: "KI-Workflows für den Mittelstand – ohne IT-Projekt",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default async function RootLayout({
