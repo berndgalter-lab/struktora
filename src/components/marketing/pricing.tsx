@@ -9,7 +9,7 @@ const plans = [
     description: "Für kleine Teams",
     features: [
       "Zugriff auf alle Kern-Workflows",
-      "Begrenztes Generierungskontingent",
+      "Für den täglichen Einsatz im Arbeitsalltag ausgelegt",
       "Unbegrenzte Teammitglieder",
       "EU-Datenhaltung",
       "E-Mail-Support",
@@ -21,7 +21,7 @@ const plans = [
     price: "149",
     description: "Für Abteilungen und wachsende Teams",
     features: [
-      "Höheres Generierungskontingent",
+      "Großzügiges Kontingent für Teams",
       "Gemeinsame Unternehmens-Policy",
       "Priorisierter Support",
       "Alle Starter-Features inklusive",
@@ -33,7 +33,7 @@ const plans = [
     price: "399",
     description: "Für mehrere Teams",
     features: [
-      "Sehr hohes Generierungskontingent",
+      "Kontingent für unternehmensweiten Einsatz",
       "Geeignet für breiten Roll-out",
       "Alle Team-Features inklusive",
     ],

@@ -29,22 +29,22 @@ export const Hero = () => {
         </div>
 
         {/* Trust Checkmarks */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-slate-500">
+        <div className="mt-12 grid grid-cols-2 gap-x-6 gap-y-3 text-sm text-slate-500 md:flex md:flex-wrap md:items-center md:justify-center md:gap-x-8">
           <span className="flex items-center gap-2">
-            <span className="text-green-600">✓</span>
-            Keine Schulung nötig
+            <span className="flex-shrink-0 text-green-600">✓</span>
+            <span>Keine Schulung nötig</span>
           </span>
           <span className="flex items-center gap-2">
-            <span className="text-green-600">✓</span>
-            Daten bleiben in der EU
+            <span className="flex-shrink-0 text-green-600">✓</span>
+            <span>Daten bleiben in der EU</span>
           </span>
           <span className="flex items-center gap-2">
-            <span className="text-green-600">✓</span>
-            Für den deutschen Mittelstand gebaut
+            <span className="flex-shrink-0 text-green-600">✓</span>
+            <span>Für den deutschen Mittelstand gebaut</span>
           </span>
           <span className="flex items-center gap-2">
-            <span className="text-green-600">✓</span>
-            Keine IT-Projekte, sofort einsatzbereit
+            <span className="flex-shrink-0 text-green-600">✓</span>
+            <span>Keine IT-Projekte, sofort einsatzbereit</span>
           </span>
         </div>
       </div>

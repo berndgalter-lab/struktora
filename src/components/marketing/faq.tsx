@@ -24,6 +24,11 @@ const faqs = [
     answer:
       "Ja. Du kannst Struktora 14 Tage kostenlos testen – ohne Verpflichtung.",
   },
+  {
+    question: "Wie aufwendig ist die Einführung von Struktora?",
+    answer:
+      "Der Einstieg ist bewusst einfach gehalten. Es sind keine IT-Projekte, Systemanpassungen oder Schulungen notwendig. Mitarbeiter können Struktora sofort im Arbeitsalltag nutzen.",
+  },
 ];
 
 export const FAQ = () => {
