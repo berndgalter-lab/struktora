@@ -5,6 +5,7 @@ import { Problem } from "@/components/marketing/problem";
 import { Solution } from "@/components/marketing/solution";
 import { Features } from "@/components/marketing/features";
 import { Pricing } from "@/components/marketing/pricing";
+import { FAQ } from "@/components/marketing/faq";
 import { CTA } from "@/components/marketing/cta";
 
 export default function LandingPage() {
@@ -26,6 +27,7 @@ export default function LandingPage() {
       <Demo />
       <UseCases />
       <Pricing />
+      <FAQ />
       <Problem />
       <Solution />
       <Features />
