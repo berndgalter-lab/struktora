@@ -50,8 +50,6 @@ export default function AVVPage() {
               </p>
               <p className="mt-4">
                 E-Mail: support@struktora.com
-                <br />
-                Telefon: +49 176 22372958
               </p>
               <p className="mt-4">
                 Geschäftsführer: Bernd Galter
@@ -158,7 +156,7 @@ export default function AVVPage() {
               <div>
                 <p className="font-medium">Technische Daten:</p>
                 <ul className="list-disc list-inside space-y-1 ml-4 mt-1 text-slate-600">
-                  <li>IP-Adresse (anonymisiert)</li>
+                  <li>IP-Adresse (gekürzt/pseudonymisiert, soweit technisch möglich)</li>
                   <li>Browsertyp und -version</li>
                   <li>Betriebssystem</li>
                   <li>Gerätetyp</li>
@@ -168,8 +166,8 @@ export default function AVVPage() {
               <div>
                 <p className="font-medium">Inhaltsdaten:</p>
                 <ul className="list-disc list-inside space-y-1 ml-4 mt-1 text-slate-600">
-                  <li>Eingaben in KI-Workflows (temporär, keine dauerhafte Speicherung)</li>
-                  <li>Generierte Texte (temporär, keine dauerhafte Speicherung)</li>
+                  <li>Eingaben in KI-Workflows (keine dauerhafte Speicherung über die zur Leistungserbringung technisch notwendige Dauer hinaus)</li>
+                  <li>Generierte Texte (keine Speicherung zu eigenen Zwecken des Auftragsverarbeiters)</li>
                 </ul>
               </div>
             </div>
@@ -341,7 +339,7 @@ export default function AVVPage() {
             <p className="mt-4">
               (2) Der Auftragsverarbeiter informiert den Verantwortlichen über 
               beabsichtigte Änderungen in Bezug auf Unterauftragsverarbeiter. 
-              Der Verantwortliche kann innerhalb von 14 Tagen Einspruch erheben.
+              Der Verantwortliche kann innerhalb einer angemessenen Frist (mindestens 14 Tage) Einspruch erheben.
             </p>
             <p className="mt-4">(3) Folgende Unterauftragsverarbeiter werden eingesetzt:</p>
             
@@ -357,33 +355,33 @@ export default function AVVPage() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="border border-slate-300 px-3 py-2">Vercel Inc.</td>
+                    <td className="border border-slate-300 px-3 py-2">Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA</td>
                     <td className="border border-slate-300 px-3 py-2">Hosting, Analytics</td>
-                    <td className="border border-slate-300 px-3 py-2">EU</td>
+                    <td className="border border-slate-300 px-3 py-2">Primär EU, ggf. Drittland (USA), abgesichert durch SCC</td>
                     <td className="border border-slate-300 px-3 py-2">
                       <a href="https://vercel.com/legal/dpa" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">DPA</a>
                     </td>
                   </tr>
                   <tr className="bg-slate-50">
-                    <td className="border border-slate-300 px-3 py-2">Supabase Inc.</td>
-                    <td className="border border-slate-300 px-3 py-2">Auth, Datenbank</td>
-                    <td className="border border-slate-300 px-3 py-2">Frankfurt (EU)</td>
+                    <td className="border border-slate-300 px-3 py-2">Supabase Inc., 970 Toa Payoh North #07-04, Singapore 318992</td>
+                    <td className="border border-slate-300 px-3 py-2">Authentifizierung, Datenbank</td>
+                    <td className="border border-slate-300 px-3 py-2">Frankfurt (EU), ggf. Drittland, abgesichert durch SCC</td>
                     <td className="border border-slate-300 px-3 py-2">
                       <a href="https://supabase.com/legal/dpa" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">DPA</a>
                     </td>
                   </tr>
                   <tr>
-                    <td className="border border-slate-300 px-3 py-2">Microsoft Ireland Operations Ltd.</td>
-                    <td className="border border-slate-300 px-3 py-2">KI (Azure OpenAI)</td>
-                    <td className="border border-slate-300 px-3 py-2">Sweden (EU)</td>
+                    <td className="border border-slate-300 px-3 py-2">Microsoft Ireland Operations Limited, Dublin, Ireland</td>
+                    <td className="border border-slate-300 px-3 py-2">KI-Verarbeitung (Azure OpenAI)</td>
+                    <td className="border border-slate-300 px-3 py-2">Sweden Central (EU)</td>
                     <td className="border border-slate-300 px-3 py-2">
                       <a href="https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">DPA</a>
                     </td>
                   </tr>
                   <tr className="bg-slate-50">
-                    <td className="border border-slate-300 px-3 py-2">Lemon Squeezy, LLC</td>
-                    <td className="border border-slate-300 px-3 py-2">Zahlung, MoR</td>
-                    <td className="border border-slate-300 px-3 py-2">USA + SCC</td>
+                    <td className="border border-slate-300 px-3 py-2">Lemon Squeezy, LLC, 222 South Main Street, Salt Lake City, UT 84101, USA</td>
+                    <td className="border border-slate-300 px-3 py-2">Zahlungsabwicklung</td>
+                    <td className="border border-slate-300 px-3 py-2">Drittland (USA), abgesichert durch SCC</td>
                     <td className="border border-slate-300 px-3 py-2">
                       <a href="https://www.lemonsqueezy.com/dpa" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">DPA</a>
                     </td>
@@ -458,7 +456,8 @@ export default function AVVPage() {
             <p className="mt-4">
               (2) Der Auftragsverarbeiter ermöglicht Überprüfungen durch den 
               Verantwortlichen oder einen beauftragten Prüfer. Die Kosten trägt 
-              der Verantwortliche. Eine Ankündigung muss mindestens 14 Tage im 
+              der Verantwortliche, sofern kein Verstoß des Auftragsverarbeiters 
+              festgestellt wird. Eine Ankündigung muss mindestens 14 Tage im 
               Voraus erfolgen.
             </p>
             <p className="mt-4">
@@ -475,8 +474,8 @@ export default function AVVPage() {
               § 11 Haftung
             </h2>
             <p>
-              Die Haftung richtet sich nach den gesetzlichen Bestimmungen und den 
-              Regelungen in den{" "}
+              Die Haftung richtet sich nach Art. 82 DSGVO sowie den Regelungen 
+              in den{" "}
               <Link href="/agb" className="text-blue-600 hover:underline">
                 Allgemeinen Geschäftsbedingungen
               </Link>
@@ -515,8 +514,6 @@ export default function AVVPage() {
               <p className="font-semibold">BG Online Media (haftungsbeschränkt)</p>
               <p className="mt-2">
                 E-Mail: support@struktora.com
-                <br />
-                Telefon: +49 176 22372958
               </p>
             </div>
           </section>
