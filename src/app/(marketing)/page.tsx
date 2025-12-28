@@ -1,4 +1,5 @@
 import { Hero } from "@/components/marketing/hero";
+import { Demo } from "@/components/marketing/demo";
 import { Problem } from "@/components/marketing/problem";
 import { Solution } from "@/components/marketing/solution";
 import { Features } from "@/components/marketing/features";
@@ -10,10 +11,10 @@ export default function LandingPage() {
     <>
       <Hero />
 
-      {/* Context Block - Übergang zwischen Hero und Problem */}
+      {/* Context Block - Übergang zwischen Hero und Demo */}
       <div className="bg-slate-50/50 py-12 md:py-16">
         <p className="mx-auto max-w-3xl px-4 text-center text-lg text-slate-600 md:text-xl">
-          Für wiederkehrende Arbeitsabläufe Ihrer Mitarbeiter.
+          Für wiederkehrende Arbeitsabläufe deiner Mitarbeiter.
           <br className="hidden sm:block" />
           Zum Beispiel für Kunden-E-Mails, Angebotskommunikation, Reklamationsantworten
           <br className="hidden md:block" />
@@ -21,6 +22,7 @@ export default function LandingPage() {
         </p>
       </div>
 
+      <Demo />
       <Problem />
       <Solution />
       <Features />
