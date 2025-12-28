@@ -9,6 +9,18 @@ export default function LandingPage() {
   return (
     <>
       <Hero />
+
+      {/* Context Block - Übergang zwischen Hero und Problem */}
+      <div className="bg-slate-50/50 py-12 md:py-16">
+        <p className="mx-auto max-w-3xl px-4 text-center text-lg text-slate-600 md:text-xl">
+          Für wiederkehrende Arbeitsabläufe Ihrer Mitarbeiter.
+          <br className="hidden sm:block" />
+          Zum Beispiel für Kunden-E-Mails, Angebotskommunikation, Reklamationsantworten
+          <br className="hidden md:block" />
+          und interne Dokumentation – überall dort, wo heute manuell formuliert wird.
+        </p>
+      </div>
+
       <Problem />
       <Solution />
       <Features />
