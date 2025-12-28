@@ -1,5 +1,6 @@
 import { Hero } from "@/components/marketing/hero";
 import { Demo } from "@/components/marketing/demo";
+import { UseCases } from "@/components/marketing/use-cases";
 import { Problem } from "@/components/marketing/problem";
 import { Solution } from "@/components/marketing/solution";
 import { Features } from "@/components/marketing/features";
@@ -23,6 +24,7 @@ export default function LandingPage() {
       </div>
 
       <Demo />
+      <UseCases />
       <Problem />
       <Solution />
       <Features />
