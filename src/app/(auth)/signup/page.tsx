@@ -156,40 +156,65 @@ export default function SignupPage() {
               disabled={isLoading}
             />
           </div>
-          <div className="flex items-start gap-3 mt-4">
-            <input
-              type="checkbox"
-              id="terms"
-              checked={termsAccepted}
-              onChange={(e) => setTermsAccepted(e.target.checked)}
-              required
-              disabled={isLoading}
-              className="mt-1 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
-            />
-            <label htmlFor="terms" className="text-sm text-slate-600">
-              Ich akzeptiere die{" "}
-              <a
-                href="/agb"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                AGB
-              </a>
-              {" "}und den{" "}
-              <a
-                href="/avv"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                AVV
-              </a>
-              .
-            </label>
+          <div className="space-y-3 mt-6 pt-4 border-t border-slate-100">
+            {/* Haupt-Checkbox: AGB + Datenschutz + AVV */}
+            <div className="flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="terms"
+                checked={termsAccepted}
+                onChange={(e) => setTermsAccepted(e.target.checked)}
+                required
+                disabled={isLoading}
+                className="mt-1 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+              />
+              <label htmlFor="terms" className="text-sm text-slate-600">
+                Ich akzeptiere die{" "}
+                <a
+                  href="/agb"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
+                  AGB
+                </a>
+                {" "}und die{" "}
+                <a
+                  href="/datenschutz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline"
+                >
+                  Datenschutzerklärung
+                </a>
+                .
+                <span className="block text-xs text-slate-400 mt-1">
+                  Für Unternehmenskunden gilt zusätzlich der{" "}
+                  <a
+                    href="/avv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    AVV
+                  </a>
+                  .
+                </span>
+              </label>
+            </div>
+
+            {/* Versions-Hinweis */}
+            <p className="text-xs text-slate-400">
+              Stand: AGB 12/2025 · Datenschutz 12/2025 · AVV 12/2025
+            </p>
+
+            {/* Zielmarkt-Hinweis */}
+            <p className="text-xs text-slate-400">
+              Angebot richtet sich primär an Kunden mit Sitz in der EU (DACH).
+            </p>
           </div>
         </CardContent>
-        <CardFooter className="flex flex-col space-y-4">
+        <CardFooter className="flex flex-col space-y-4 pt-6">
           <Button type="submit" className="w-full" disabled={isLoading}>
             {isLoading ? t("creatingAccount") : t("signup")}
           </Button>
