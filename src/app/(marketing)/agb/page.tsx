@@ -402,7 +402,10 @@ export default function AGBPage() {
               gehen die Regelungen des AVV für datenschutzrechtliche Pflichten vor.
             </p>
             <p className="mt-4">
-              (4) Änderungen des AVV erfolgen nach Maßgabe von § 13 dieser AGB.
+              (4) Änderungen des AVV erfolgen nach Maßgabe von § 13 dieser AGB. 
+              Zwingende datenschutzrechtliche Änderungen (z. B. aufgrund gesetzlicher 
+              Vorgaben oder Behördenanforderungen) können auch ohne Zustimmung erfolgen; 
+              dem Kunden steht in diesem Fall ein Sonderkündigungsrecht zu.
             </p>
           </section>
 
