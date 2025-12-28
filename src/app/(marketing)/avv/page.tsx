@@ -17,7 +17,7 @@ export default function AVVPage() {
           Auftragsverarbeitungsvertrag (AVV)
         </h1>
         <p className="text-slate-600">gemäß Art. 28 DSGVO</p>
-        <p className="mt-2 text-sm text-slate-500">Stand: Dezember 2025</p>
+        <p className="mt-2 font-semibold text-slate-700">Stand: Dezember 2025</p>
 
         <hr className="my-8 border-slate-200" />
 
@@ -197,7 +197,8 @@ export default function AVVPage() {
             <p>
               (1) Der Auftragsverarbeiter verarbeitet personenbezogene Daten 
               ausschließlich auf dokumentierte Weisung des Verantwortlichen, es 
-              sei denn, er ist durch Rechtsvorschriften zur Verarbeitung verpflichtet.
+              sei denn, er ist durch Rechtsvorschriften zur Verarbeitung verpflichtet. 
+              Die Weisungen erfolgen grundsätzlich in Textform.
             </p>
             <p className="mt-4">
               (2) Der Auftragsverarbeiter gewährleistet, dass die zur Verarbeitung 
@@ -414,8 +415,9 @@ export default function AVVPage() {
               <li>Auskunft über gespeicherte Daten</li>
             </ul>
             <p className="mt-4">
-              (2) Der Auftragsverarbeiter informiert den Verantwortlichen unverzüglich 
-              über Datenschutzverletzungen, die die Daten des Verantwortlichen betreffen.
+              (2) Der Auftragsverarbeiter informiert den Verantwortlichen unverzüglich, 
+              spätestens jedoch innerhalb von 48 Stunden nach Bekanntwerden, über 
+              Datenschutzverletzungen, die die Daten des Verantwortlichen betreffen.
             </p>
           </section>
 
