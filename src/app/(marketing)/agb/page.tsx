@@ -39,22 +39,28 @@ export default function AGBPage() {
               </p>
             </div>
             <p className="mt-4">
-              (2) Diese AGB gelten sowohl für Verbraucher als auch für Unternehmer, 
+              (2) Das Angebot von Struktora richtet sich primär an Unternehmer und 
+              Unternehmen mit Sitz in der Europäischen Union, insbesondere im 
+              deutschsprachigen Raum (DACH). Eine aktive Vermarktung außerhalb 
+              der Europäischen Union erfolgt derzeit nicht.
+            </p>
+            <p className="mt-4">
+              (3) Diese AGB gelten sowohl für Verbraucher als auch für Unternehmer, 
               sofern nicht ausdrücklich unterschieden wird.
             </p>
             <p className="mt-4">
-              (3) Verbraucher im Sinne dieser AGB ist jede natürliche Person, die ein 
+              (4) Verbraucher im Sinne dieser AGB ist jede natürliche Person, die ein 
               Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder ihrer gewerblichen 
               noch ihrer selbständigen beruflichen Tätigkeit zugerechnet werden können (§ 13 BGB).
             </p>
             <p className="mt-4">
-              (4) Unternehmer im Sinne dieser AGB ist jede natürliche oder juristische Person 
+              (5) Unternehmer im Sinne dieser AGB ist jede natürliche oder juristische Person 
               oder rechtsfähige Personengesellschaft, die bei Abschluss des Rechtsgeschäfts 
               in Ausübung ihrer gewerblichen oder selbständigen beruflichen Tätigkeit 
               handelt (§ 14 BGB).
             </p>
             <p className="mt-4">
-              (5) Abweichende Bedingungen des Nutzers werden nicht anerkannt, es sei denn, 
+              (6) Abweichende Bedingungen des Nutzers werden nicht anerkannt, es sei denn, 
               wir stimmen ihrer Geltung ausdrücklich schriftlich zu.
             </p>
           </section>
