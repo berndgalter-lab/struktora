@@ -22,6 +22,7 @@ export default function SignupPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
+  const [termsAccepted, setTermsAccepted] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -39,6 +40,12 @@ export default function SignupPage() {
     // Validate password length
     if (password.length < 8) {
       setError(t("errors.passwordMin"));
+      return;
+    }
+
+    // Validate terms accepted
+    if (!termsAccepted) {
+      setError("Bitte akzeptiere die AGB und den AVV.");
       return;
     }
 
@@ -148,6 +155,38 @@ export default function SignupPage() {
               required
               disabled={isLoading}
             />
+          </div>
+          <div className="flex items-start gap-3 mt-4">
+            <input
+              type="checkbox"
+              id="terms"
+              checked={termsAccepted}
+              onChange={(e) => setTermsAccepted(e.target.checked)}
+              required
+              disabled={isLoading}
+              className="mt-1 h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+            />
+            <label htmlFor="terms" className="text-sm text-slate-600">
+              Ich akzeptiere die{" "}
+              <a
+                href="/agb"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                AGB
+              </a>
+              {" "}und den{" "}
+              <a
+                href="/avv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                AVV
+              </a>
+              .
+            </label>
           </div>
         </CardContent>
         <CardFooter className="flex flex-col space-y-4">
