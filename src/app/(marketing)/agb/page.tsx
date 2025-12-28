@@ -395,11 +395,14 @@ export default function AGBPage() {
                 struktora.com/avv
               </Link>{" "}
               abrufbar und wird Bestandteil dieser AGB. Mit Vertragsschluss 
-              akzeptiert der Kunde den AVV in der jeweils gültigen Fassung.
+              akzeptiert der Kunde den AVV in der bei Vertragsschluss gültigen Fassung.
             </p>
             <p className="mt-4">
               (3) Im Fall von Widersprüchen zwischen diesen AGB und dem AVV 
               gehen die Regelungen des AVV für datenschutzrechtliche Pflichten vor.
+            </p>
+            <p className="mt-4">
+              (4) Änderungen des AVV erfolgen nach Maßgabe von § 13 dieser AGB.
             </p>
           </section>
 
