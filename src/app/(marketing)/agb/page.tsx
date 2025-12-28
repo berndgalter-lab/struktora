@@ -382,7 +382,31 @@ export default function AGBPage() {
           {/* § 14 */}
           <section>
             <h2 className="mb-4 text-xl font-semibold text-slate-900">
-              § 14 Schlussbestimmungen
+              § 14 Auftragsverarbeitung
+            </h2>
+            <p>
+              (1) Soweit der Anbieter im Rahmen der Nutzung von Struktora 
+              personenbezogene Daten im Auftrag des Kunden verarbeitet, gilt der 
+              Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO.
+            </p>
+            <p className="mt-4">
+              (2) Der AVV ist unter{" "}
+              <Link href="/avv" className="text-blue-600 hover:underline">
+                struktora.com/avv
+              </Link>{" "}
+              abrufbar und wird Bestandteil dieser AGB. Mit Vertragsschluss 
+              akzeptiert der Kunde den AVV in der jeweils gültigen Fassung.
+            </p>
+            <p className="mt-4">
+              (3) Im Fall von Widersprüchen zwischen diesen AGB und dem AVV 
+              gehen die Regelungen des AVV für datenschutzrechtliche Pflichten vor.
+            </p>
+          </section>
+
+          {/* § 15 */}
+          <section>
+            <h2 className="mb-4 text-xl font-semibold text-slate-900">
+              § 15 Schlussbestimmungen
             </h2>
             <p>
               (1) Es gilt das Recht der Bundesrepublik Deutschland unter 
@@ -404,22 +428,6 @@ export default function AGBPage() {
             </p>
             <p className="mt-4">
               (5) Die Vertragssprache ist Deutsch.
-            </p>
-          </section>
-
-          {/* § 15 */}
-          <section>
-            <h2 className="mb-4 text-xl font-semibold text-slate-900">
-              § 15 Auftragsverarbeitung
-            </h2>
-            <p>
-              Soweit der Kunde im Rahmen der Nutzung von Struktora personenbezogene 
-              Daten verarbeiten lässt, gilt der Auftragsverarbeitungsvertrag (AVV), 
-              abrufbar unter{" "}
-              <Link href="/avv" className="text-blue-600 hover:underline">
-                struktora.com/avv
-              </Link>
-              . Dieser wird mit Vertragsschluss Bestandteil des Vertrags.
             </p>
           </section>
         </div>
