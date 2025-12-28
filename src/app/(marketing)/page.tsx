@@ -25,10 +25,10 @@ export default function LandingPage() {
 
       <Demo />
       <UseCases />
+      <Pricing />
       <Problem />
       <Solution />
       <Features />
-      <Pricing />
       <CTA />
     </>
   );

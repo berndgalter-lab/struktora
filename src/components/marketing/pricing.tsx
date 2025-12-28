@@ -1,62 +1,65 @@
 import Link from "next/link";
-import { useTranslations } from "next-intl";
-import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 const plans = [
   {
     name: "Starter",
     price: "49",
-    features: ["5 Nutzer", "Alle 12 Workflows", "E-Mail Support", "EU-Hosting"],
+    description: "Für kleine Teams",
+    features: [
+      "Zugriff auf alle Kern-Workflows",
+      "Begrenztes Generierungskontingent",
+      "Unbegrenzte Teammitglieder",
+      "EU-Datenhaltung",
+      "E-Mail-Support",
+    ],
     popular: false,
   },
   {
     name: "Team",
     price: "149",
+    description: "Für Abteilungen und wachsende Teams",
     features: [
-      "15 Nutzer",
-      "Alle 12 Workflows",
-      "Prioritäts-Support",
-      "EU-Hosting",
-      "Team-Verwaltung",
+      "Höheres Generierungskontingent",
+      "Gemeinsame Unternehmens-Policy",
+      "Priorisierter Support",
+      "Alle Starter-Features inklusive",
     ],
     popular: true,
   },
   {
     name: "Business",
     price: "399",
+    description: "Für mehrere Teams",
     features: [
-      "Unbegrenzte Nutzer",
-      "Alle 12 Workflows",
-      "Dedicated Support",
-      "EU-Hosting",
-      "SSO (bald)",
-      "Custom Workflows",
+      "Sehr hohes Generierungskontingent",
+      "Geeignet für breiten Roll-out",
+      "Alle Team-Features inklusive",
     ],
     popular: false,
   },
 ];
 
 export const Pricing = () => {
-  const t = useTranslations("landing.pricing");
-
   return (
-    <section className="bg-slate-50 py-20">
-      <div className="mx-auto max-w-6xl px-4">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-slate-900">{t("title")}</h2>
-          <p className="mt-2 text-slate-600">{t("subtitle")}</p>
-        </div>
+    <section className="bg-white py-16 md:py-24">
+      <div className="mx-auto max-w-5xl px-4">
+        {/* Überschrift */}
+        <h2 className="text-center text-2xl font-semibold text-slate-900 md:text-3xl">
+          Klare Preise. Ohne Überraschungen.
+        </h2>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        {/* Pricing Cards */}
+        <div className="mt-12 grid gap-6 md:grid-cols-3 md:gap-8">
           {plans.map((plan) => (
-            <Card
+            <div
               key={plan.name}
               className={cn(
-                "relative",
-                plan.popular && "border-blue-600 shadow-lg"
+                "relative flex flex-col rounded-xl border bg-white p-6 md:p-8",
+                plan.popular
+                  ? "border-blue-600 shadow-lg"
+                  : "border-slate-200"
               )}
             >
               {plan.popular && (
@@ -64,38 +67,87 @@ export const Pricing = () => {
                   Beliebt
                 </div>
               )}
-              <CardHeader className="text-center">
-                <CardTitle className="text-xl">{plan.name}</CardTitle>
-                <div className="mt-4">
-                  <span className="text-4xl font-bold text-slate-900">
-                    €{plan.price}
-                  </span>
-                  <span className="text-slate-600"> / {t("monthly")}</span>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3">
-                      <Check className="h-5 w-5 flex-shrink-0 text-green-600" />
-                      <span className="text-sm text-slate-600">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/signup" className="block mt-6">
-                  <Button
-                    className="w-full"
-                    variant={plan.popular ? "default" : "outline"}
+
+              {/* Plan Name */}
+              <h3 className="text-xl font-semibold text-slate-900">
+                {plan.name}
+              </h3>
+
+              {/* Price */}
+              <div className="mt-3">
+                <span className="text-3xl font-bold text-slate-900 md:text-4xl">
+                  {plan.price} €
+                </span>
+                <span className="text-base font-normal text-slate-500">
+                  {" "}
+                  / Monat
+                </span>
+              </div>
+
+              {/* Description */}
+              <p className="mt-3 text-sm text-slate-500">{plan.description}</p>
+
+              {/* Features */}
+              <ul className="mt-6 flex-1 space-y-3">
+                {plan.features.map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex items-start gap-2 text-sm text-slate-600"
                   >
-                    {t("cta")}
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
+                    <span className="mt-0.5 text-green-600">✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Button */}
+              <Link href="/signup" className="mt-6 block">
+                <Button
+                  className="w-full"
+                  variant={plan.popular ? "default" : "outline"}
+                >
+                  Kostenlos testen
+                </Button>
+              </Link>
+            </div>
           ))}
+        </div>
+
+        {/* Enterprise-Hinweis */}
+        <div className="mt-12 text-center">
+          <h3 className="text-lg font-semibold text-slate-900">Enterprise</h3>
+          <p className="mt-2 text-slate-500">
+            Individuelle Anforderungen wie SSO, Audit-Vorgaben oder spezielle
+            Setups besprechen wir gerne persönlich.
+          </p>
+          <a
+            href="mailto:support@struktora.com"
+            className="mt-3 inline-block text-blue-600 hover:underline"
+          >
+            Kontakt aufnehmen →
+          </a>
+        </div>
+
+        {/* Pflicht-Hinweise */}
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-slate-600 md:text-base">
+          <span className="flex items-center gap-2">
+            <span className="text-green-600">✓</span>
+            Unbegrenzte Teammitglieder in allen Plänen
+          </span>
+          <span className="flex items-center gap-2">
+            <span className="text-green-600">✓</span>
+            Keine Schulung nötig
+          </span>
+          <span className="flex items-center gap-2">
+            <span className="text-green-600">✓</span>
+            Daten bleiben in der EU
+          </span>
+          <span className="flex items-center gap-2">
+            <span className="text-green-600">✓</span>
+            14 Tage kostenlos testen
+          </span>
         </div>
       </div>
     </section>
   );
 };
-
