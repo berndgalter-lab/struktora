@@ -20,6 +20,9 @@ export const Footer = () => {
             <Link href="/widerruf" className="hover:text-slate-900">
               Widerruf
             </Link>
+            <Link href="/avv" className="hover:text-slate-900">
+              AVV
+            </Link>
           </div>
           <div className="text-sm text-slate-500">
             © {new Date().getFullYear()} struktora. Alle Rechte vorbehalten.

@@ -234,6 +234,18 @@ export default function DatenschutzPage() {
                   <li><span className="font-medium">Verarbeitete Daten:</span> Name, E-Mail-Adresse, Zahlungsinformationen</li>
                 </ul>
                 <p className="mt-3 text-sm text-slate-600">
+                  Es besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO. 
+                  Weitere Informationen findest du unter:{" "}
+                  <a 
+                    href="https://www.lemonsqueezy.com/dpa" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    https://www.lemonsqueezy.com/dpa
+                  </a>
+                </p>
+                <p className="mt-3 text-sm text-slate-600">
                   Die Verarbeitung von Zahlungsdaten erfolgt ausschließlich durch LemonSqueezy. 
                   Wir haben keinen Zugriff auf vollständige Zahlungsdaten wie Kreditkartennummern.
                 </p>

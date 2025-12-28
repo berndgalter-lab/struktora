@@ -406,6 +406,22 @@ export default function AGBPage() {
               (5) Die Vertragssprache ist Deutsch.
             </p>
           </section>
+
+          {/* § 15 */}
+          <section>
+            <h2 className="mb-4 text-xl font-semibold text-slate-900">
+              § 15 Auftragsverarbeitung
+            </h2>
+            <p>
+              Soweit der Kunde im Rahmen der Nutzung von Struktora personenbezogene 
+              Daten verarbeiten lässt, gilt der Auftragsverarbeitungsvertrag (AVV), 
+              abrufbar unter{" "}
+              <Link href="/avv" className="text-blue-600 hover:underline">
+                struktora.com/avv
+              </Link>
+              . Dieser wird mit Vertragsschluss Bestandteil des Vertrags.
+            </p>
+          </section>
         </div>
 
         <div className="mt-12 border-t border-slate-200 pt-8">
