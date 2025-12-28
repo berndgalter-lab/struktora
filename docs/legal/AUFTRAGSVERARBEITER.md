@@ -21,5 +21,6 @@ Stand: Dezember 2025
 ## Hinweis
 
 Unterschriebene PDFs werden separat gespeichert (nicht in Git).
-Ablageort: [Google Drive / Notion Link hier einfügen]
+Ablageort: https://drive.google.com/drive/folders/1Wh0YNmwrSekljJIjfovtnwe4vEITpMoC?hl=de
+
 

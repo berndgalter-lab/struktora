@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { createClient } from "@/lib/supabase/client";
+import { LEGAL_VERSIONS } from "@/lib/legal-versions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -53,7 +54,7 @@ export default function SignupPage() {
 
     const supabase = createClient();
 
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
@@ -69,6 +70,22 @@ export default function SignupPage() {
       }
       setIsLoading(false);
       return;
+    }
+
+    // Save consent record (non-blocking)
+    if (data.user) {
+      try {
+        await supabase.from("user_consents").insert({
+          user_id: data.user.id,
+          accepted_terms_version: LEGAL_VERSIONS.terms,
+          accepted_privacy_version: LEGAL_VERSIONS.privacy,
+          accepted_dpa_version: LEGAL_VERSIONS.dpa,
+          user_agent:
+            typeof window !== "undefined" ? window.navigator.userAgent : null,
+        });
+      } catch (consentError) {
+        console.error("Error saving consent:", consentError);
+      }
     }
 
     setIsSuccess(true);
