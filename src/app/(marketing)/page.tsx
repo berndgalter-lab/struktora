@@ -1,12 +1,8 @@
 import { Hero } from "@/components/marketing/hero";
 import { Demo } from "@/components/marketing/demo";
 import { UseCases } from "@/components/marketing/use-cases";
-import { Problem } from "@/components/marketing/problem";
-import { Solution } from "@/components/marketing/solution";
-import { Features } from "@/components/marketing/features";
 import { Pricing } from "@/components/marketing/pricing";
 import { FAQ } from "@/components/marketing/faq";
-import { CTA } from "@/components/marketing/cta";
 
 export default function LandingPage() {
   return (
@@ -28,10 +24,6 @@ export default function LandingPage() {
       <UseCases />
       <Pricing />
       <FAQ />
-      <Problem />
-      <Solution />
-      <Features />
-      <CTA />
     </>
   );
 }
