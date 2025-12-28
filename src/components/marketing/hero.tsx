@@ -42,6 +42,10 @@ export const Hero = () => {
             <span className="text-green-600">✓</span>
             Für den deutschen Mittelstand gebaut
           </span>
+          <span className="flex items-center gap-2">
+            <span className="text-green-600">✓</span>
+            Keine IT-Projekte, sofort einsatzbereit
+          </span>
         </div>
       </div>
     </section>

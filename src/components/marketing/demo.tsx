@@ -62,7 +62,7 @@ export const Demo = () => {
           {/* Schritt 2 – Struktur */}
           <div className="flex flex-col">
             <span className="mb-3 text-center text-sm font-medium text-slate-500">
-              Struktora – fester Ablauf
+              Struktora – standardisierter Ablauf
             </span>
             <div className="rounded-lg border-2 border-blue-200 bg-white p-4 shadow-sm">
               <div className="mb-4 border-b border-slate-100 pb-3">
@@ -107,7 +107,7 @@ export const Demo = () => {
                 {/* Info-Hinweis */}
                 <div className="flex items-start gap-2 rounded bg-blue-50 px-3 py-2 text-xs text-blue-700">
                   <span>ℹ️</span>
-                  <span>Firmenrichtlinien automatisch berücksichtigt</span>
+                  <span>Firmenrichtlinien (z. B. Tonalität, Freigaben, Formulierungen) werden automatisch berücksichtigt</span>
                 </div>
 
                 {/* Button */}
@@ -169,6 +169,9 @@ export const Demo = () => {
               <Button size="lg">14 Tage testen</Button>
             </Link>
           </div>
+          <p className="mt-3 text-sm text-slate-500">
+            Ohne IT-Projekt. Ohne Schulung. Sofort nutzbar.
+          </p>
         </div>
       </div>
     </section>
