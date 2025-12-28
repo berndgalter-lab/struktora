@@ -1,51 +1,46 @@
 import Link from "next/link";
-import { useTranslations } from "next-intl";
-import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
-  const t = useTranslations("landing.hero");
-
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 to-white pb-20 pt-32">
-      {/* Background decoration */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-blue-100/50 blur-3xl" />
-      </div>
-
-      <div className="mx-auto max-w-6xl px-4 text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
-          {t("title")}
-          <span className="mt-2 block text-blue-600">{t("subtitle")}</span>
+    <section className="bg-white py-20 md:py-32">
+      <div className="mx-auto max-w-4xl px-4 text-center">
+        {/* Headline */}
+        <h1 className="text-4xl font-bold tracking-tight text-slate-900 md:text-5xl lg:text-6xl">
+          KI im Unternehmen.
+          <br />
+          Endlich zuverlässig nutzbar.
         </h1>
 
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
-          {t("description")}
+        {/* Sub-Headline */}
+        <p className="mx-auto mt-8 max-w-2xl text-lg text-slate-600 md:text-xl">
+          Struktora macht KI im Arbeitsalltag verlässlich –
+          <br className="hidden sm:block" />
+          mit klaren Abläufen, konsistenten Ergebnissen und EU-Datenhaltung.
         </p>
 
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        {/* CTA Button */}
+        <div className="mt-10">
           <Link href="/signup">
-            <Button size="lg" className="gap-2">
-              {t("cta")}
-              <ArrowRight className="h-4 w-4" />
+            <Button size="lg" className="px-8 py-6 text-base">
+              14 Tage kostenlos testen
             </Button>
           </Link>
-          <Button variant="outline" size="lg" className="gap-2">
-            <Play className="h-4 w-4" />
-            {t("ctaSecondary")}
-          </Button>
         </div>
 
-        {/* Trust badges */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-slate-500">
+        {/* Trust Checkmarks */}
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-slate-500">
           <span className="flex items-center gap-2">
-            ✓ 14 Tage kostenlos
+            <span className="text-green-600">✓</span>
+            Keine Schulung nötig
           </span>
           <span className="flex items-center gap-2">
-            ✓ Keine Kreditkarte
+            <span className="text-green-600">✓</span>
+            Daten bleiben in der EU
           </span>
           <span className="flex items-center gap-2">
-            ✓ DSGVO-konform
+            <span className="text-green-600">✓</span>
+            Für den deutschen Mittelstand gebaut
           </span>
         </div>
       </div>
