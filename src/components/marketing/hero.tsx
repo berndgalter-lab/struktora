@@ -20,7 +20,7 @@ export const Hero = () => {
 
         {/* Kontextzeile */}
         <p className="mt-6 text-sm text-muted-foreground/60 md:mt-8 md:text-base">
-          Für Organisationen, die KI nicht ausprobieren, sondern verlässlich
+          Für Organisationen, die KI als festen Bestandteil ihrer Arbeitsabläufe
           einsetzen wollen.
         </p>
 
