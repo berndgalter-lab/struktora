@@ -1,4 +1,5 @@
 import { Hero } from "@/components/marketing/hero";
+import { Reframe } from "@/components/marketing/reframe";
 import { Demo } from "@/components/marketing/demo";
 import { UseCases } from "@/components/marketing/use-cases";
 import { Pricing } from "@/components/marketing/pricing";
@@ -8,6 +9,7 @@ export default function LandingPage() {
   return (
     <>
       <Hero />
+      <Reframe />
 
       {/* Context Block - Übergang zwischen Hero und Demo */}
       <div className="bg-slate-50/50 py-12 md:py-16">
