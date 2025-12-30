@@ -15,8 +15,8 @@ export const Reframe = () => {
           „passt".
         </p>
         <p className="mt-4 text-base text-muted-foreground md:text-lg">
-          Das mag im Einzelfall funktionieren – im Unternehmenskontext führt es
-          jedoch zu strukturellen Problemen.
+          Im Einzelfall mag das funktionieren – im Unternehmenskontext führt es
+          jedoch zwangsläufig zu strukturellen Problemen.
         </p>
 
         {/* Beobachtbare Realität */}
