@@ -78,7 +78,7 @@ export const StandardDefinition = () => {
         <div className="mx-auto mt-10 max-w-2xl md:mx-0 md:mt-12">
           <p className="text-base font-medium text-foreground md:text-lg">
             Der Arbeitsstandard ersetzt individuelle Entscheidungen durch einen
-            verlässlichen Prozess.
+            definierten Prozess.
           </p>
         </div>
       </div>
