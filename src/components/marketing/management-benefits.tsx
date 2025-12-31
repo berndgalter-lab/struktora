@@ -97,7 +97,7 @@ export const ManagementBenefits = () => {
             Arbeitsstandards machen Arbeit nicht schneller um jeden Preis.
           </p>
           <p className="mt-1 text-base font-medium text-foreground md:text-lg">
-            Sie machen sie steuerbar, überprüfbar und belastbar.
+            Sie machen sie steuerbar, überprüfbar und im Alltag belastbar.
           </p>
         </div>
       </div>
