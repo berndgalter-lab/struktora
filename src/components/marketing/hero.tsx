@@ -6,7 +6,7 @@ export const Hero = () => {
       <div className="mx-auto max-w-4xl px-4 text-center">
         {/* Headline */}
         <h1 className="text-4xl font-bold tracking-tight leading-[1.1] text-foreground md:text-5xl lg:text-6xl">
-          Standardisierte KI-Arbeit
+          Standardisierte KI-Arbeit{" "}
           <br className="hidden md:block" />
           statt individueller Prompts
         </h1>
