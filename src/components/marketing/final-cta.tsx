@@ -10,7 +10,8 @@ export const FinalCTA = () => {
         {/* Einleitung */}
         <p className="mt-6 text-base text-muted-foreground md:text-lg">
           Der Einstieg in Struktora beginnt nicht mit einer Entscheidung für ein
-          System. Er beginnt mit einer konkreten Aufgabe aus dem Arbeitsalltag.
+          System oder eine Plattform. Er beginnt mit einer konkreten Aufgabe aus
+          dem Arbeitsalltag.
         </p>
         <p className="mt-3 text-base text-muted-foreground md:text-lg">
           Ohne Verpflichtung. Ohne Rollout. Ohne Veränderung bestehender
