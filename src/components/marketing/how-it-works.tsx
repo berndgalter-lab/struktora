@@ -13,8 +13,8 @@ export const HowItWorks = () => {
         </p>
         <p className="mt-3 text-base text-muted-foreground md:text-lg">
           Ein Arbeitsstandard ist im System definiert. Der Mitarbeiter folgt
-          diesem Standard Schritt für Schritt – unabhängig von Erfahrung, Stil
-          oder persönlicher Vorliebe.
+          ihm Schritt für Schritt – unabhängig von Erfahrung, Stil oder
+          persönlicher Vorliebe.
         </p>
 
         {/* Einleitung Prozess */}
