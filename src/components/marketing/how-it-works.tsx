@@ -23,10 +23,10 @@ export const HowItWorks = () => {
         </p>
 
         {/* 4 Schritte */}
-        <div className="mt-6 max-w-2xl space-y-6">
+        <div className="mt-6 max-w-2xl space-y-8">
           {/* Schritt 1 */}
-          <div className="flex gap-4">
-            <span className="w-8 shrink-0 font-mono text-sm text-muted-foreground/50">
+          <div className="flex items-start gap-5">
+            <span className="w-12 shrink-0 font-mono text-2xl leading-none text-muted-foreground/30 md:text-3xl">
               01
             </span>
             <div>
@@ -41,8 +41,8 @@ export const HowItWorks = () => {
           </div>
 
           {/* Schritt 2 */}
-          <div className="flex gap-4">
-            <span className="w-8 shrink-0 font-mono text-sm text-muted-foreground/50">
+          <div className="flex items-start gap-5">
+            <span className="w-12 shrink-0 font-mono text-2xl leading-none text-muted-foreground/30 md:text-3xl">
               02
             </span>
             <div>
@@ -57,8 +57,8 @@ export const HowItWorks = () => {
           </div>
 
           {/* Schritt 3 */}
-          <div className="flex gap-4">
-            <span className="w-8 shrink-0 font-mono text-sm text-muted-foreground/50">
+          <div className="flex items-start gap-5">
+            <span className="w-12 shrink-0 font-mono text-2xl leading-none text-muted-foreground/30 md:text-3xl">
               03
             </span>
             <div>
@@ -73,8 +73,8 @@ export const HowItWorks = () => {
           </div>
 
           {/* Schritt 4 */}
-          <div className="flex gap-4">
-            <span className="w-8 shrink-0 font-mono text-sm text-muted-foreground/50">
+          <div className="flex items-start gap-5">
+            <span className="w-12 shrink-0 font-mono text-2xl leading-none text-muted-foreground/30 md:text-3xl">
               04
             </span>
             <div>
@@ -94,6 +94,10 @@ export const HowItWorks = () => {
           Der Mitarbeiter entscheidet nicht wie gearbeitet wird. Er stellt
           sicher, dass korrekt gearbeitet wird.
         </p>
+        <p className="mt-4 text-base font-medium text-foreground md:text-lg">
+          Für die Organisation bedeutet das: Der Ablauf ist unabhängig von
+          einzelnen Personen steuerbar, überprüfbar und skalierbar.
+        </p>
 
         {/* Abschlusssatz */}
         <div className="mt-10 md:mt-12">
@@ -101,7 +105,7 @@ export const HowItWorks = () => {
             Das Ergebnis: Gleiche Aufgabe. Gleicher Ablauf. Gleiche Qualität.
           </p>
           <p className="mt-1 text-base font-medium text-foreground md:text-lg">
-            Unabhängig davon, wer sie ausführt.
+            Unabhängig von Person, Erfahrung oder Tagesform.
           </p>
         </div>
       </div>
