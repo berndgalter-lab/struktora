@@ -11,10 +11,7 @@ import { HowItWorks } from "@/components/marketing/how-it-works";
 import { TargetAudience } from "@/components/marketing/target-audience";
 import { ManagementBenefits } from "@/components/marketing/management-benefits";
 import { GettingStarted } from "@/components/marketing/getting-started";
-import { Demo } from "@/components/marketing/demo";
-import { UseCases } from "@/components/marketing/use-cases";
-import { Pricing } from "@/components/marketing/pricing";
-import { FAQ } from "@/components/marketing/faq";
+import { FinalCTA } from "@/components/marketing/final-cta";
 
 export default function LandingPage() {
   return (
@@ -32,11 +29,7 @@ export default function LandingPage() {
       <TargetAudience />
       <ManagementBenefits />
       <GettingStarted />
-
-      <Demo />
-      <UseCases />
-      <Pricing />
-      <FAQ />
+      <FinalCTA />
     </>
   );
 }
