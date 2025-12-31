@@ -52,7 +52,7 @@ export const WhatStruktoraIsNot = () => {
           {/* Punkt 4 */}
           <div>
             <h3 className="text-base font-medium text-foreground">
-              Keine kreative Textmaschine
+              Kein Kreativwerkzeug
             </h3>
             <p className="mt-1 text-muted-foreground">
               Der Fokus liegt auf Verlässlichkeit, Nachvollziehbarkeit und

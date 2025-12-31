@@ -38,20 +38,6 @@ export const ManagementBenefits = () => {
           {/* Punkt 2 */}
           <div>
             <h3 className="text-base font-semibold text-foreground">
-              Geringere Abhängigkeit von Einzelpersonen
-            </h3>
-            <p className="mt-2 text-muted-foreground">
-              Ergebnisse hängen nicht mehr vom Wissen oder Stil einzelner
-              Mitarbeiter ab.
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground/80">
-              Arbeit bleibt reproduzierbar – auch bei Wechseln oder Wachstum.
-            </p>
-          </div>
-
-          {/* Punkt 3 */}
-          <div>
-            <h3 className="text-base font-semibold text-foreground">
               Klare Verantwortlichkeiten
             </h3>
             <p className="mt-2 text-muted-foreground">

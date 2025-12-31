@@ -56,33 +56,19 @@ export const UseAreas = () => {
           {/* Bereich 3 */}
           <div>
             <h3 className="text-base font-medium text-foreground">
-              Interne Dokumentation
+              Interne Texte und Vorarbeit
             </h3>
             <p className="mt-1 text-muted-foreground">
-              Regelmäßig benötigte Texte werden konsistent und nachvollziehbar
-              erstellt.
+              Regelmäßig benötigte Inhalte, Entwürfe und Vorlagen entstehen nach
+              festen Regeln und sind konsistent sowie nachvollziehbar aufgebaut.
             </p>
             <p className="mt-1 text-sm text-muted-foreground/70">
-              Ohne Standard fehlt Vergleichbarkeit – und jede spätere
-              Entscheidung basiert auf uneinheitlicher Grundlage.
-            </p>
-          </div>
-
-          {/* Bereich 4 */}
-          <div>
-            <h3 className="text-base font-medium text-foreground">
-              Vorbereitende Textarbeit
-            </h3>
-            <p className="mt-1 text-muted-foreground">
-              Strukturierte Entwürfe und Vorlagen entstehen nach festen Regeln.
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground/70">
-              Ohne Standard ist jede Vorarbeit subjektiv – und erzeugt im
+              Ohne Standard bleibt jede Vorlage subjektiv – und erzeugt im
               nächsten Schritt erneuten Prüfaufwand.
             </p>
           </div>
 
-          {/* Bereich 5 */}
+          {/* Bereich 4 */}
           <div>
             <h3 className="text-base font-medium text-foreground">
               Wissensaufbereitung und FAQs

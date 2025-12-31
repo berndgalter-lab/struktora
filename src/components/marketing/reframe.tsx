@@ -31,17 +31,10 @@ export const Reframe = () => {
           </li>
         </ul>
 
-        {/* Verstärkender Hinweis */}
-        <p className="mt-6 text-sm text-muted-foreground/70 md:text-base">
-          Mit wachsender Nutzung verstärken sich diese Effekte – unabhängig
-          davon, welches KI-Modell eingesetzt wird.
-        </p>
-
         {/* Fixierender Schlusssatz */}
         <p className="mt-8 text-base font-medium text-foreground md:mt-10 md:text-lg">
-          Solange KI individuell genutzt wird, bleibt sie ein Experiment. Erst
-          durch standardisierte Abläufe wird KI zu einem verlässlichen
-          Bestandteil der täglichen Arbeit.
+          Solange KI individuell genutzt wird, bleibt sie im Unternehmenskontext
+          ein Experiment.
         </p>
       </div>
     </section>

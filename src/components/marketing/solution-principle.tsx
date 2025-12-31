@@ -23,7 +23,7 @@ export const SolutionPrinciple = () => {
           Ein Arbeitsstandard für KI-Arbeit bedeutet:
         </p>
         <ul className="mt-4 list-none space-y-2 text-base text-muted-foreground">
-          <li>– Aufgaben werden eindeutig beschrieben und abgegrenzt</li>
+          <li>– Aufgaben sind eindeutig abgegrenzt und nicht interpretierbar</li>
           <li>– Eingaben folgen festen Feldern statt freier Formulierungen</li>
           <li>– Abläufe sind vorgegeben und für alle gleich</li>
           <li>– Ergebnisse sind reproduzierbar, überprüfbar und zuordenbar</li>

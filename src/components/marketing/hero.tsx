@@ -6,21 +6,21 @@ export const Hero = () => {
       <div className="mx-auto max-w-4xl px-4 text-center">
         {/* Headline */}
         <h1 className="text-4xl font-bold tracking-tight leading-[1.1] text-foreground md:text-5xl lg:text-6xl">
-          Standardisierte KI-Arbeit{" "}
-          <br className="hidden md:block" />
-          statt individueller Prompts
+          KI-Arbeit braucht Standards.
+          <br />
+          Nicht mehr Prompts.
         </h1>
 
         {/* Sub-Headline */}
         <p className="mx-auto mt-8 max-w-2xl text-base text-muted-foreground md:mt-10 md:text-lg">
-          Struktora macht KI im Unternehmen beherrschbar, indem wiederkehrende
-          Aufgaben als feste Arbeitsstandards ausgeführt werden – mit klaren
-          Abläufen, reproduzierbaren Ergebnissen und klarer Verantwortung.
+          Struktora macht KI im Unternehmen steuerbar, überprüfbar und
+          verantwortbar, indem wiederkehrende Aufgaben als feste
+          Arbeitsstandards ausgeführt werden.
         </p>
 
         {/* Kontextzeile */}
         <p className="mt-6 text-sm text-muted-foreground/60 md:mt-8 md:text-base">
-          Für Organisationen, die KI als festen Bestandteil ihrer Arbeitsabläufe
+          Für Organisationen, die KI als festen Bestandteil ihres Arbeitsalltags
           einsetzen wollen.
         </p>
 

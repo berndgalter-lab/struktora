@@ -65,9 +65,6 @@ export const TargetAudience = () => {
               </li>
               <li>• spontane Einzelanfragen ohne festen Rahmen bearbeiten</li>
               <li>
-                • bewusst unterschiedliche Ergebnisse zulassen oder erwarten
-              </li>
-              <li>
                 • keine klaren Prozesse oder Verantwortlichkeiten etablieren
                 wollen
               </li>
