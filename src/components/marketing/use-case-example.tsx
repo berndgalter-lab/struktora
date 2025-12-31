@@ -22,8 +22,8 @@ export const UseCaseExample = () => {
               Ausgangssituation
             </h3>
             <p className="mb-3 text-muted-foreground">
-              Eine Kundenanfrage geht ein. In vielen Unternehmen entscheidet der
-              einzelne Mitarbeiter:
+              Eine Kundenanfrage geht ein. In vielen Unternehmen liegt diese
+              Entscheidung heute beim einzelnen Mitarbeiter:
             </p>
             <ul className="space-y-1.5 text-muted-foreground">
               <li>– wie die Anfrage interpretiert wird</li>
@@ -32,7 +32,7 @@ export const UseCaseExample = () => {
               <li>– ob und wie geprüft wird</li>
             </ul>
             <p className="mt-4 text-muted-foreground">
-              Das Ergebnis hängt vom jeweiligen Bearbeiter ab.
+              Das Ergebnis ist nicht systemisch abgesichert.
             </p>
           </div>
 
@@ -42,8 +42,7 @@ export const UseCaseExample = () => {
               Standardisierter Ablauf mit Struktora
             </h3>
             <p className="mb-3 text-muted-foreground">
-              Mit einem festen Arbeitsstandard läuft derselbe Vorgang
-              strukturiert ab:
+              Mit einem festen Arbeitsstandard ist der Ablauf klar vorgegeben:
             </p>
             <ul className="space-y-1.5 text-muted-foreground">
               <li>
@@ -69,7 +68,7 @@ export const UseCaseExample = () => {
             <ul className="space-y-1.5 text-muted-foreground">
               <li>– Einheitlicher Ton über alle Antworten hinweg</li>
               <li>– Nachvollziehbare Entscheidungen</li>
-              <li>– Weniger Rückfragen und Nacharbeit</li>
+              <li>– Reduzierter Klärungs- und Korrekturaufwand</li>
               <li>– Klare Verantwortlichkeit</li>
             </ul>
             <p className="mt-4 text-muted-foreground">
@@ -79,7 +78,7 @@ export const UseCaseExample = () => {
         </div>
 
         {/* Abschließender Satz */}
-        <p className="mt-10 text-base font-medium text-foreground md:mt-12 md:text-lg">
+        <p className="mt-12 text-lg font-semibold text-foreground md:mt-14 md:text-xl">
           So wird aus einer einzelnen E-Mail ein reproduzierbarer
           Arbeitsablauf.
         </p>
