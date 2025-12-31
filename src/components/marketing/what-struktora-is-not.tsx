@@ -4,13 +4,14 @@ export const WhatStruktoraIsNot = () => {
       <div className="mx-auto max-w-2xl px-4">
         {/* Überschrift */}
         <h2 className="text-xl font-semibold text-foreground md:text-2xl">
-          Was Struktora nicht ist
+          Was Struktora bewusst nicht ist
         </h2>
 
         {/* Einleitung */}
         <p className="mt-6 text-base text-muted-foreground md:text-lg">
           Struktora ist kein weiteres KI-Tool für individuelle Nutzung. Es ist
-          ein Arbeitssystem für standardisierte Abläufe in Organisationen.
+          ein Arbeitssystem für standardisierte Abläufe in Organisationen –
+          dort, wo Verlässlichkeit wichtiger ist als individuelle Freiheit.
         </p>
 
         {/* Vier Abgrenzungspunkte */}
@@ -44,7 +45,7 @@ export const WhatStruktoraIsNot = () => {
             </h3>
             <p className="mt-1 text-muted-foreground">
               Struktora ist nicht für Ausprobieren oder variierende Ergebnisse
-              konzipiert.
+              konzipiert, sondern für reproduzierbare Abläufe.
             </p>
           </div>
 
@@ -55,7 +56,7 @@ export const WhatStruktoraIsNot = () => {
             </h3>
             <p className="mt-1 text-muted-foreground">
               Der Fokus liegt auf Verlässlichkeit, Nachvollziehbarkeit und
-              Konsistenz – nicht auf Originalität.
+              Konsistenz – nicht auf Originalität oder stilistische Variation.
             </p>
           </div>
         </div>
