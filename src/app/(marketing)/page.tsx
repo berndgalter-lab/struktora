@@ -9,6 +9,7 @@ import { UseCaseExample } from "@/components/marketing/use-case-example";
 import { WhatStruktoraIsNot } from "@/components/marketing/what-struktora-is-not";
 import { HowItWorks } from "@/components/marketing/how-it-works";
 import { TargetAudience } from "@/components/marketing/target-audience";
+import { ManagementBenefits } from "@/components/marketing/management-benefits";
 import { Demo } from "@/components/marketing/demo";
 import { UseCases } from "@/components/marketing/use-cases";
 import { Pricing } from "@/components/marketing/pricing";
@@ -28,6 +29,7 @@ export default function LandingPage() {
       <WhatStruktoraIsNot />
       <HowItWorks />
       <TargetAudience />
+      <ManagementBenefits />
 
       <Demo />
       <UseCases />
