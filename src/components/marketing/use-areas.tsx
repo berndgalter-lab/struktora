@@ -4,16 +4,17 @@ export const UseAreas = () => {
       <div className="mx-auto max-w-2xl px-4">
         {/* Überschrift */}
         <h2 className="text-xl font-semibold text-foreground md:text-2xl">
-          Wo Arbeitsstandards für KI-Arbeit sinnvoll sind
+          Wo Arbeitsstandards für KI-Arbeit notwendig sind
         </h2>
 
         {/* Einordnung */}
         <p className="mt-6 max-w-2xl text-base text-muted-foreground md:text-lg">
-          Arbeitsstandards sind überall dort sinnvoll, wo Aufgaben regelmäßig
+          Arbeitsstandards sind überall dort notwendig, wo Aufgaben regelmäßig
           auftreten und nach ähnlichen Mustern bearbeitet werden.
         </p>
         <p className="mt-3 text-base text-muted-foreground md:text-lg">
-          Nicht für Ausnahmen. Sondern für wiederkehrende Arbeit im Alltag.
+          Nicht für Ausnahmen. Sondern für Arbeit, die im Alltag zuverlässig
+          funktionieren muss.
         </p>
 
         {/* Fünf Einsatzbereiche */}
