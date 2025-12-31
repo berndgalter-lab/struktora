@@ -8,6 +8,7 @@ import { TransitionToExample } from "@/components/marketing/transition-to-exampl
 import { UseCaseExample } from "@/components/marketing/use-case-example";
 import { WhatStruktoraIsNot } from "@/components/marketing/what-struktora-is-not";
 import { HowItWorks } from "@/components/marketing/how-it-works";
+import { TargetAudience } from "@/components/marketing/target-audience";
 import { Demo } from "@/components/marketing/demo";
 import { UseCases } from "@/components/marketing/use-cases";
 import { Pricing } from "@/components/marketing/pricing";
@@ -26,6 +27,7 @@ export default function LandingPage() {
       <UseCaseExample />
       <WhatStruktoraIsNot />
       <HowItWorks />
+      <TargetAudience />
 
       <Demo />
       <UseCases />
