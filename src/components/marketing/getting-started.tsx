@@ -23,8 +23,7 @@ export const GettingStarted = () => {
 
         {/* Einordnung */}
         <p className="mt-6 text-base text-muted-foreground md:text-lg">
-          Ein Arbeitsstandard ersetzt keine Menschen und keine bestehenden
-          Systeme.
+          Ein Arbeitsstandard ersetzt weder Menschen noch bestehende Systeme.
         </p>
         <p className="mt-3 text-base text-muted-foreground md:text-lg">
           Er ersetzt individuelle Entscheidungen durch einen definierten Rahmen
@@ -34,11 +33,11 @@ export const GettingStarted = () => {
         {/* Beobachtbarer Effekt */}
         <div className="mt-6 md:mt-8">
           <p className="text-base font-medium text-foreground">
-            Was sich verändert, wird sichtbar:
+            Was sich verändert, wird messbar:
           </p>
           <ul className="mt-3 space-y-2 text-base text-muted-foreground">
             <li>– Zuverlässigkeit wird messbar</li>
-            <li>– Nacharbeit wird sichtbar reduziert</li>
+            <li>– Nacharbeit wird reduziert</li>
             <li>– Qualität wird reproduzierbar</li>
           </ul>
         </div>
