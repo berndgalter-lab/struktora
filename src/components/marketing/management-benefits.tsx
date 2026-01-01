@@ -27,7 +27,7 @@ export const ManagementBenefits = () => {
               nachträgliche Klärung.
             </p>
             <p className="mt-1 text-sm text-muted-foreground/80">
-              Was erwartet wird, ist definiert – nicht verhandelbar.
+              Was erwartet wird, ist klar definiert.
             </p>
           </div>
 

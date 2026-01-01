@@ -13,10 +13,7 @@ export const SolutionPrinciple = () => {
         </p>
 
         {/* Die vier Prinzipien */}
-        <p className="mt-8 text-base font-medium text-foreground md:mt-10 md:text-lg">
-          Ein Arbeitsstandard für KI-Arbeit bedeutet:
-        </p>
-        <ul className="mb-4 mt-4 list-none space-y-2 text-base text-muted-foreground md:mb-8">
+        <ul className="mb-4 mt-8 list-none space-y-2 text-base text-muted-foreground md:mb-8 md:mt-10">
           <li>– Aufgaben sind eindeutig abgegrenzt und nicht interpretierbar</li>
           <li>– Eingaben folgen festen Feldern statt freier Formulierungen</li>
           <li>– Abläufe sind vorgegeben und für alle gleich</li>

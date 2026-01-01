@@ -2,13 +2,8 @@ export const UseCaseExample = () => {
   return (
     <section className="bg-muted/20 py-16 md:py-20 lg:py-24">
       <div className="mx-auto max-w-3xl px-4">
-        {/* Überschrift */}
-        <h2 className="text-xl font-semibold text-foreground md:text-2xl">
-          Ein Arbeitsstandard im Einsatz: Kundenanfragen beantworten
-        </h2>
-
         {/* Einordnung */}
-        <p className="mt-6 max-w-2xl text-base text-muted-foreground md:text-lg">
+        <p className="max-w-2xl text-base text-muted-foreground md:text-lg">
           Ein typischer Anwendungsfall aus dem Arbeitsalltag: Eine eingehende
           Kundenanfrage per E-Mail soll beantwortet werden – sachlich, korrekt
           und im Ton des Unternehmens.

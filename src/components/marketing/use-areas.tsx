@@ -4,7 +4,7 @@ export const UseAreas = () => {
       <div className="mx-auto max-w-2xl px-4">
         {/* Überschrift */}
         <h2 className="text-xl font-semibold text-foreground md:text-2xl">
-          Wo Arbeitsstandards für KI-Arbeit notwendig sind
+          Wo Arbeitsstandards für KI-Arbeit notwendig werden
         </h2>
 
         {/* Einordnung */}

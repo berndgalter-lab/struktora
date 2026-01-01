@@ -52,7 +52,7 @@ export const FinalCTA = () => {
             href="mailto:hallo@struktora.com"
             className="inline-flex items-center justify-center rounded-md border border-border px-6 py-3 text-base font-medium text-foreground transition-colors hover:bg-muted/50"
           >
-            Austausch anfragen
+            Anwendungsfall besprechen
           </a>
         </div>
       </div>
