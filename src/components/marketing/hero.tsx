@@ -14,7 +14,7 @@ export const Hero = () => {
         {/* Sub-Headline */}
         <p className="mx-auto mt-8 max-w-2xl text-base text-muted-foreground md:mt-10 md:text-lg">
           Struktora macht KI im Unternehmen steuerbar, überprüfbar und
-          verantwortet, indem wiederkehrende Aufgaben als feste
+          zuordenbar, indem wiederkehrende Aufgaben als feste
           Arbeitsstandards ausgeführt werden.
         </p>
 

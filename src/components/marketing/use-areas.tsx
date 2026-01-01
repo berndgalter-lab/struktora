@@ -12,10 +12,6 @@ export const UseAreas = () => {
           Arbeitsstandards sind überall dort notwendig, wo Aufgaben regelmäßig
           auftreten und nach ähnlichen Mustern bearbeitet werden.
         </p>
-        <p className="mt-3 text-base text-muted-foreground md:text-lg">
-          Nicht für Ausnahmen. Sondern für Arbeit, die im Alltag zuverlässig
-          funktionieren muss.
-        </p>
 
         {/* Fünf Einsatzbereiche */}
         <div className="mt-10 space-y-6 md:mt-12">
@@ -66,8 +62,8 @@ export const UseAreas = () => {
 
         {/* Abschließender Ordnungssatz */}
         <p className="mt-10 text-base font-medium text-foreground md:mt-12 md:text-lg">
-          Überall dort, wo Arbeit regelmäßig anfällt, müssen Standards definiert
-          werden – oder die Organisation trägt die Folgekosten.
+          Wo Arbeit regelmäßig anfällt, brauchen Sie Standards – sonst zahlen
+          Sie Nacharbeit.
         </p>
       </div>
     </section>

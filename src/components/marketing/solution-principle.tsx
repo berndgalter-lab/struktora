@@ -9,9 +9,7 @@ export const SolutionPrinciple = () => {
 
         {/* Einordnung */}
         <p className="mt-6 text-base text-muted-foreground md:text-lg">
-          Wenn KI ein verlässlicher Bestandteil der täglichen Arbeit sein soll,
-          muss sie genauso behandelt werden wie andere wiederkehrende Aufgaben
-          im Unternehmen.
+          Wenn KI verlässlich funktionieren soll, braucht sie feste Standards.
         </p>
 
         {/* Die vier Prinzipien */}

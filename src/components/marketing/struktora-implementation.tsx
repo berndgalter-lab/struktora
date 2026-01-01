@@ -12,10 +12,6 @@ export const StruktoraImplementation = () => {
           Struktora übersetzt wiederkehrende Aufgaben aus dem Arbeitsalltag in
           feste, ausführbare Arbeitsstandards für KI-gestützte Arbeit.
         </p>
-        <p className="mt-4 text-base text-muted-foreground md:text-lg">
-          Dabei steht nicht das KI-Modell im Mittelpunkt, sondern der Ablauf,
-          die Eingaben und das erwartete Ergebnis.
-        </p>
 
         {/* Kernbeschreibung */}
         <p className="mt-8 text-base font-medium text-foreground md:mt-10 md:text-lg">

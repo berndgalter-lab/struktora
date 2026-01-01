@@ -13,10 +13,6 @@ export const ManagementBenefits = () => {
             Arbeitsstandards verändern nicht, was gearbeitet wird. Sie
             verändern, wie verlässlich Arbeit im Alltag funktioniert.
           </p>
-          <p className="mt-3 text-base text-muted-foreground md:text-lg">
-            Statt individueller Entscheidungen entsteht ein steuerbarer Ablauf –
-            unabhängig von Person, Erfahrung oder Tagesform.
-          </p>
         </div>
 
         {/* Nutzenpunkte – 2-Spalten-Grid */}

@@ -7,8 +7,13 @@ export const Reframe = () => {
           Warum individuelle KI-Nutzung im Unternehmen nicht funktioniert
         </h2>
 
+        {/* Einleitungssatz */}
+        <p className="mt-6 text-base text-muted-foreground md:text-lg">
+          Individuelle Prompts erzeugen im Unternehmen zwangsläufig Streuung.
+        </p>
+
         {/* Beobachtbare Realität */}
-        <ul className="mt-8 space-y-3 text-base text-muted-foreground">
+        <ul className="mt-6 space-y-3 text-base text-muted-foreground">
           <li>• Gleiche Aufgaben führen zu unterschiedlichen Ergebnissen</li>
           <li>
             • Qualität hängt vom einzelnen Mitarbeiter ab, nicht vom Prozess

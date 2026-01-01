@@ -11,7 +11,7 @@ export const TargetAudience = () => {
         <div className="mt-6 max-w-2xl">
           <p className="text-base text-muted-foreground md:text-lg">
             Struktora richtet sich an Organisationen, die KI nicht ausprobieren,
-            sondern als verlässlichen Bestandteil ihrer Arbeitsabläufe einsetzen
+            sondern als verlässlichen Bestandteil ihres Arbeitsalltags einsetzen
             wollen.
           </p>
           <p className="mt-4 text-base text-muted-foreground md:text-lg">

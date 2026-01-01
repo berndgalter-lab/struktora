@@ -30,7 +30,7 @@ export const Footer = () => {
         </div>
         <div className="mt-4 text-center">
           <p className="text-xs text-slate-400">
-            Angebot richtet sich primär an Kunden mit Sitz in der EU (DACH).
+            Das Angebot richtet sich an Kunden mit Sitz in der EU (DACH).
           </p>
         </div>
       </div>

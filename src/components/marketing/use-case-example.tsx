@@ -21,18 +21,10 @@ export const UseCaseExample = () => {
             <h3 className="mb-3 text-base font-medium text-foreground">
               Ausgangssituation
             </h3>
-            <p className="mb-3 text-muted-foreground">
-              Eine Kundenanfrage geht ein. In vielen Unternehmen liegt diese
-              Entscheidung heute beim einzelnen Mitarbeiter:
-            </p>
-            <ul className="space-y-1.5 text-muted-foreground">
-              <li>– wie die Anfrage interpretiert wird</li>
-              <li>– welche Informationen relevant sind</li>
-              <li>– wie der Ton der Antwort ausfällt</li>
-              <li>– ob und wie geprüft wird</li>
-            </ul>
-            <p className="mt-4 text-muted-foreground">
-              Das Ergebnis ist nicht systemisch abgesichert.
+            <p className="text-muted-foreground">
+              Eine Kundenanfrage wird vom einzelnen Mitarbeiter interpretiert,
+              formuliert und geprüft. Ergebnis und Ton sind nicht systemisch
+              abgesichert.
             </p>
           </div>
 
