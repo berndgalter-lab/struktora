@@ -25,7 +25,7 @@ export const Footer = () => {
             </Link>
           </div>
           <div className="text-sm text-slate-500">
-            © {new Date().getFullYear()} struktora. Alle Rechte vorbehalten.
+            © 2026 struktora. Alle Rechte vorbehalten.
           </div>
         </div>
         <div className="mt-4 text-center">
