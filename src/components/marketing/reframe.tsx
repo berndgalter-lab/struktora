@@ -14,10 +14,6 @@ export const Reframe = () => {
           Aufgaben unterschiedlich und entscheidet selbst, ob ein Ergebnis
           „passt".
         </p>
-        <p className="mt-4 text-base text-muted-foreground md:text-lg">
-          Im Einzelfall mag das funktionieren – im Unternehmenskontext führt es
-          jedoch zwangsläufig zu strukturellen Problemen.
-        </p>
 
         {/* Beobachtbare Realität */}
         <ul className="mt-8 space-y-3 text-base text-muted-foreground">

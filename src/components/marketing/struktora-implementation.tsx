@@ -30,15 +30,9 @@ export const StruktoraImplementation = () => {
         </ul>
 
         {/* Erklärende Absätze */}
-        <p className="mt-6 text-base text-muted-foreground">
+        <p className="mb-4 mt-6 text-base text-muted-foreground md:mb-8">
           So entsteht eine einheitliche Arbeitsweise – unabhängig von Erfahrung,
           Schreibstil oder persönlicher Prompt-Kompetenz.
-        </p>
-
-        {/* Übergangssatz */}
-        <p className="mb-4 mt-10 text-base font-medium text-foreground md:mb-8 md:mt-12 md:text-lg">
-          Wie das im Arbeitsalltag konkret aussieht, zeigt ein typischer
-          Anwendungsfall.
         </p>
       </div>
     </section>

@@ -26,16 +26,10 @@ export const SolutionPrinciple = () => {
         </ul>
 
         {/* Verstärkender Satz */}
-        <p className="mt-6 text-sm text-muted-foreground/80 md:text-base">
+        <p className="mb-4 mt-6 text-sm text-muted-foreground/80 md:mb-8 md:text-base">
           So entsteht Vergleichbarkeit – unabhängig davon, welcher Mitarbeiter
           eine Aufgabe ausführt oder welches KI-Modell im Hintergrund eingesetzt
           wird.
-        </p>
-
-        {/* Fixierender Schlusssatz */}
-        <p className="mb-4 mt-10 text-base font-medium text-foreground md:mb-8 md:mt-12 md:text-lg">
-          Erst wenn KI-Arbeit standardisiert ist, kann sie skaliert,
-          verantwortet und dauerhaft in Organisationen verankert werden.
         </p>
       </div>
     </section>

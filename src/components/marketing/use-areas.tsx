@@ -16,10 +16,6 @@ export const UseAreas = () => {
           Nicht für Ausnahmen. Sondern für Arbeit, die im Alltag zuverlässig
           funktionieren muss.
         </p>
-        <p className="mt-3 text-sm text-muted-foreground/70 md:text-base">
-          Ohne diese Standards bleibt jede einzelne Ausführung ein Einzelfall –
-          mit entsprechendem Abstimmungs- und Korrekturaufwand.
-        </p>
 
         {/* Fünf Einsatzbereiche */}
         <div className="mt-10 space-y-6 md:mt-12">
