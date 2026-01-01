@@ -31,10 +31,6 @@ export const StruktoraImplementation = () => {
 
         {/* Erklärende Absätze */}
         <p className="mt-6 text-base text-muted-foreground">
-          Mitarbeiter führen diese Standards aus, statt Aufgaben jedes Mal neu
-          zu formulieren oder zu interpretieren.
-        </p>
-        <p className="mt-4 text-base text-muted-foreground">
           So entsteht eine einheitliche Arbeitsweise – unabhängig von Erfahrung,
           Schreibstil oder persönlicher Prompt-Kompetenz.
         </p>

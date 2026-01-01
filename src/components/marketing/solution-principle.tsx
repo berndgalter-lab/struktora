@@ -13,10 +13,6 @@ export const SolutionPrinciple = () => {
           muss sie genauso behandelt werden wie andere wiederkehrende Aufgaben
           im Unternehmen.
         </p>
-        <p className="mt-4 text-base text-muted-foreground md:text-lg">
-          Nicht individuell. Nicht situationsabhängig. Sondern als klar
-          definierter Standard.
-        </p>
 
         {/* Die vier Prinzipien */}
         <p className="mt-8 text-base font-medium text-foreground md:mt-10 md:text-lg">

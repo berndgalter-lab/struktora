@@ -32,10 +32,6 @@ export const UseAreas = () => {
               Wiederkehrende Anfragen, Angebotsrückfragen oder Reklamationen
               folgen festen Abläufen.
             </p>
-            <p className="mt-1 text-sm text-muted-foreground/70">
-              Ohne Standard entscheidet der einzelne Bearbeiter über Tonfall,
-              Verbindlichkeit und Außenwirkung.
-            </p>
           </div>
 
           {/* Bereich 2 */}
@@ -46,10 +42,6 @@ export const UseAreas = () => {
             <p className="mt-1 text-muted-foreground">
               Standardisierte Kommunikation sorgt für klare Aussagen und
               einheitlichen Ton.
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground/70">
-              Ohne Standard entstehen Abweichungen, die im Nachgang geklärt,
-              korrigiert oder verantwortet werden müssen.
             </p>
           </div>
 
@@ -62,10 +54,6 @@ export const UseAreas = () => {
               Regelmäßig benötigte Inhalte, Entwürfe und Vorlagen entstehen nach
               festen Regeln und sind konsistent sowie nachvollziehbar aufgebaut.
             </p>
-            <p className="mt-1 text-sm text-muted-foreground/70">
-              Ohne Standard bleibt jede Vorlage subjektiv – und erzeugt im
-              nächsten Schritt erneuten Prüfaufwand.
-            </p>
           </div>
 
           {/* Bereich 4 */}
@@ -76,10 +64,6 @@ export const UseAreas = () => {
             <p className="mt-1 text-muted-foreground">
               Häufig wiederkehrende Inhalte werden systematisch erfasst und
               gepflegt.
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground/70">
-              Ohne Standard entstehen zwangsläufig widersprüchliche Antworten –
-              intern wie extern.
             </p>
           </div>
         </div>
