@@ -1,6 +1,6 @@
 export const UseCaseExample = () => {
   return (
-    <section className="bg-muted/20 py-16 md:py-20 lg:py-24">
+    <section className="bg-background py-16 md:py-20 lg:py-24">
       <div className="mx-auto max-w-3xl px-4">
         {/* Einordnung */}
         <p className="max-w-2xl text-base text-muted-foreground md:text-lg">
@@ -31,11 +31,8 @@ export const UseCaseExample = () => {
             <p className="mb-3 text-muted-foreground">
               Mit einem festen Arbeitsstandard ist der Ablauf klar vorgegeben:
             </p>
-            <ul className="space-y-1.5 text-muted-foreground">
-              <li>
-                – Die eingehende Anfrage wird in den vorgesehenen Kontext
-                eingefügt
-              </li>
+            <ul className="space-y-3 text-muted-foreground">
+              <li>– Die eingehende Anfrage wird in den vorgesehenen Kontext eingefügt</li>
               <li>– Relevante Punkte werden über definierte Felder erfasst</li>
               <li>– Tonalität und interne Vorgaben sind fest hinterlegt</li>
               <li>– Der Ablauf folgt einer klaren Reihenfolge</li>
@@ -52,7 +49,7 @@ export const UseCaseExample = () => {
             <h3 className="mb-3 text-base font-medium text-foreground">
               Ergebnis
             </h3>
-            <ul className="space-y-1.5 text-muted-foreground">
+            <ul className="space-y-3 text-muted-foreground">
               <li>– Einheitlicher Ton über alle Antworten hinweg</li>
               <li>– Nachvollziehbare Entscheidungen</li>
               <li>– Reduzierter Klärungs- und Korrekturaufwand</li>

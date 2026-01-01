@@ -1,9 +1,9 @@
 export const TargetAudience = () => {
   return (
-    <section className="bg-background py-16 md:py-20 lg:py-24">
+    <section className="bg-muted/20 py-16 md:py-20 lg:py-24">
       <div className="mx-auto max-w-4xl px-4">
         {/* Überschrift */}
-        <h2 className="text-xl font-semibold text-foreground md:text-2xl">
+        <h2 className="text-xl font-semibold tracking-tight text-foreground md:text-2xl">
           Für wen Struktora geeignet ist
         </h2>
 
@@ -31,23 +31,12 @@ export const TargetAudience = () => {
               Geeignet für Organisationen, die:
             </h3>
             <ul className="mt-4 space-y-3 text-muted-foreground">
-              <li>• wiederkehrende Aufgaben standardisieren wollen</li>
-              <li>
-                • gleichbleibende Qualität unabhängig vom Mitarbeiter benötigen
-              </li>
-              <li>
-                • Verantwortung, Freigaben und Abläufe klar definieren müssen
-              </li>
-              <li>
-                • KI-Ergebnisse nachvollziehbar und überprüfbar einsetzen wollen
-              </li>
-              <li>
-                • neue Mitarbeiter schnell und konsistent einarbeiten möchten
-              </li>
-              <li>
-                • Nacharbeit, Abstimmung und Korrekturschleifen reduzieren
-                wollen
-              </li>
+              <li>– wiederkehrende Aufgaben standardisieren wollen</li>
+              <li>– gleichbleibende Qualität unabhängig vom Mitarbeiter benötigen</li>
+              <li>– Verantwortung, Freigaben und Abläufe klar definieren müssen</li>
+              <li>– KI-Ergebnisse nachvollziehbar und überprüfbar einsetzen wollen</li>
+              <li>– neue Mitarbeiter schnell und konsistent einarbeiten möchten</li>
+              <li>– Nacharbeit, Abstimmung und Korrekturschleifen reduzieren wollen</li>
             </ul>
           </div>
 
@@ -57,17 +46,10 @@ export const TargetAudience = () => {
               Nicht geeignet für Teams, die:
             </h3>
             <ul className="mt-4 space-y-3 text-muted-foreground">
-              <li>
-                • KI als kreativen Spielraum oder Ideenquelle nutzen möchten
-              </li>
-              <li>
-                • individuelle Prompts und persönliche Arbeitsweisen bevorzugen
-              </li>
-              <li>• spontane Einzelanfragen ohne festen Rahmen bearbeiten</li>
-              <li>
-                • keine klaren Prozesse oder Verantwortlichkeiten etablieren
-                wollen
-              </li>
+              <li>– KI als kreativen Spielraum oder Ideenquelle nutzen möchten</li>
+              <li>– individuelle Prompts und persönliche Arbeitsweisen bevorzugen</li>
+              <li>– spontane Einzelanfragen ohne festen Rahmen bearbeiten</li>
+              <li>– keine klaren Prozesse oder Verantwortlichkeiten etablieren wollen</li>
             </ul>
           </div>
         </div>

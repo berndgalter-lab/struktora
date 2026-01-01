@@ -1,14 +1,14 @@
 export const HowItWorks = () => {
   return (
-    <section className="bg-muted/20 py-16 md:py-20 lg:py-24">
+    <section className="bg-background py-16 md:py-20 lg:py-24">
       <div className="mx-auto max-w-2xl px-4">
         {/* Überschrift */}
-        <h2 className="text-xl font-semibold text-foreground md:text-2xl">
+        <h2 className="text-xl font-semibold tracking-tight text-foreground md:text-2xl">
           Wie Struktora im Arbeitsalltag genutzt wird
         </h2>
 
         {/* Intro */}
-        <p className="mt-6 text-base font-medium text-foreground md:text-lg">
+        <p className="mt-6 text-base font-medium text-foreground md:mt-8 md:text-lg">
           Struktora wird nicht „bedient". Es wird ausgeführt.
         </p>
         <p className="mt-3 text-base text-muted-foreground md:text-lg">

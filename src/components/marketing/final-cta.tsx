@@ -1,14 +1,14 @@
 export const FinalCTA = () => {
   return (
-    <section className="border-t border-border/30 bg-muted/20 py-20 md:py-24 lg:py-28">
+    <section className="bg-background py-16 md:py-20 lg:py-24">
       <div className="mx-auto max-w-2xl px-4 text-center">
         {/* Überschrift */}
-        <h2 className="text-xl font-semibold text-foreground md:text-2xl">
+        <h2 className="text-xl font-semibold tracking-tight text-foreground md:text-2xl">
           Der nächste Schritt ist kein Commitment
         </h2>
 
         {/* Einleitung */}
-        <p className="mt-6 text-base text-muted-foreground md:text-lg">
+        <p className="mt-6 text-base text-muted-foreground md:mt-8 md:text-lg">
           Der Einstieg in Struktora beginnt nicht mit einer Entscheidung für ein
           System oder eine Plattform. Er beginnt mit einer konkreten Aufgabe aus
           dem Arbeitsalltag.

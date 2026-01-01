@@ -1,14 +1,14 @@
 export const ManagementBenefits = () => {
   return (
-    <section className="bg-muted/20 py-16 md:py-20 lg:py-24">
+    <section className="bg-background py-16 md:py-20 lg:py-24">
       <div className="mx-auto max-w-4xl px-4">
         {/* Überschrift */}
-        <h2 className="text-xl font-semibold text-foreground md:text-2xl">
+        <h2 className="text-xl font-semibold tracking-tight text-foreground md:text-2xl">
           Was Unternehmen durch Arbeitsstandards gewinnen
         </h2>
 
         {/* Einleitung */}
-        <div className="mt-6 max-w-2xl">
+        <div className="mt-6 max-w-2xl md:mt-8">
           <p className="text-base text-muted-foreground md:text-lg">
             Arbeitsstandards verändern nicht, was gearbeitet wird. Sie
             verändern, wie verlässlich Arbeit im Alltag funktioniert.

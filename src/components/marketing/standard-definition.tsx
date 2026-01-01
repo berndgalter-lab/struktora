@@ -1,10 +1,10 @@
 export const StandardDefinition = () => {
   return (
-    <section className="bg-muted/20 py-16 md:py-20 lg:py-24">
+    <section className="bg-background py-16 md:py-20 lg:py-24">
       <div className="mx-auto max-w-5xl px-4">
         {/* Überschrift + Einleitung */}
         <div className="mx-auto max-w-2xl md:mx-0">
-          <h2 className="text-xl font-semibold text-foreground md:text-2xl">
+          <h2 className="text-xl font-semibold tracking-tight text-foreground md:text-2xl">
             Was ein Arbeitsstandard für KI-Arbeit festlegt
           </h2>
           <p className="mt-6 text-base text-muted-foreground md:text-lg">

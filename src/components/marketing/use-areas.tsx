@@ -1,14 +1,14 @@
 export const UseAreas = () => {
   return (
-    <section className="bg-background py-16 md:py-20 lg:py-24">
+    <section className="bg-muted/20 py-16 md:py-20 lg:py-24">
       <div className="mx-auto max-w-2xl px-4">
         {/* Überschrift */}
-        <h2 className="text-xl font-semibold text-foreground md:text-2xl">
+        <h2 className="text-xl font-semibold tracking-tight text-foreground md:text-2xl">
           Wo Arbeitsstandards für KI-Arbeit notwendig werden
         </h2>
 
         {/* Einordnung */}
-        <p className="mt-6 max-w-2xl text-base text-muted-foreground md:text-lg">
+        <p className="mt-6 max-w-2xl text-base text-muted-foreground md:mt-8 md:text-lg">
           Arbeitsstandards sind überall dort notwendig, wo Aufgaben regelmäßig
           auftreten und nach ähnlichen Mustern bearbeitet werden.
         </p>
