@@ -18,19 +18,12 @@ export const SolutionPrinciple = () => {
         <p className="mt-8 text-base font-medium text-foreground md:mt-10 md:text-lg">
           Ein Arbeitsstandard für KI-Arbeit bedeutet:
         </p>
-        <ul className="mt-4 list-none space-y-2 text-base text-muted-foreground">
+        <ul className="mb-4 mt-4 list-none space-y-2 text-base text-muted-foreground md:mb-8">
           <li>– Aufgaben sind eindeutig abgegrenzt und nicht interpretierbar</li>
           <li>– Eingaben folgen festen Feldern statt freier Formulierungen</li>
           <li>– Abläufe sind vorgegeben und für alle gleich</li>
           <li>– Ergebnisse sind reproduzierbar, überprüfbar und zuordenbar</li>
         </ul>
-
-        {/* Verstärkender Satz */}
-        <p className="mb-4 mt-6 text-sm text-muted-foreground/80 md:mb-8 md:text-base">
-          So entsteht Vergleichbarkeit – unabhängig davon, welcher Mitarbeiter
-          eine Aufgabe ausführt oder welches KI-Modell im Hintergrund eingesetzt
-          wird.
-        </p>
       </div>
     </section>
   );

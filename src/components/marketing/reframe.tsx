@@ -7,14 +7,6 @@ export const Reframe = () => {
           Warum individuelle KI-Nutzung im Unternehmen nicht funktioniert
         </h2>
 
-        {/* Einordnung */}
-        <p className="mt-6 text-base text-muted-foreground md:text-lg">
-          In vielen Unternehmen wird KI heute genutzt wie ein persönliches
-          Werkzeug: Jeder Mitarbeiter formuliert eigene Prompts, interpretiert
-          Aufgaben unterschiedlich und entscheidet selbst, ob ein Ergebnis
-          „passt".
-        </p>
-
         {/* Beobachtbare Realität */}
         <ul className="mt-8 space-y-3 text-base text-muted-foreground">
           <li>• Gleiche Aufgaben führen zu unterschiedlichen Ergebnissen</li>
