@@ -1,6 +1,6 @@
 export const TransitionToExample = () => {
   return (
-    <section className="bg-muted/20 py-10 md:py-12">
+    <section className="bg-background py-10 md:py-12">
       <div className="mx-auto max-w-xl px-4 text-center">
         <h3 className="text-base font-medium text-foreground md:text-lg">
           Vom Prinzip zur Anwendung: Kundenanfragen als Arbeitsstandard

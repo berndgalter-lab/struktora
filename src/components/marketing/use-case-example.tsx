@@ -1,6 +1,6 @@
 export const UseCaseExample = () => {
   return (
-    <section className="bg-background py-16 md:py-20 lg:py-24">
+    <section className="bg-muted/20 py-16 md:py-20 lg:py-24">
       <div className="mx-auto max-w-3xl px-4">
         {/* Einordnung */}
         <p className="max-w-2xl text-base text-muted-foreground md:text-lg">

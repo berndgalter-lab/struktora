@@ -1,6 +1,6 @@
 export const StandardDefinition = () => {
   return (
-    <section className="bg-background py-16 md:py-20 lg:py-24">
+    <section className="bg-muted/20 py-16 md:py-20 lg:py-24">
       <div className="mx-auto max-w-5xl px-4">
         {/* Überschrift + Einleitung */}
         <div className="mx-auto max-w-2xl md:mx-0">
