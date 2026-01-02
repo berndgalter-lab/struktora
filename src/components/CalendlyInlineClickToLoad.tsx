@@ -133,18 +133,28 @@ export default function CalendlyInlineClickToLoad({
     }
   }, [isLoaded, isScriptReady, calendlyUrl]);
 
-  return (
-    <section className="w-full">
-      <div className="mx-auto max-w-3xl">
-        <h1 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
-          {title}
-        </h1>
-        <p className="mt-3 text-base text-muted-foreground md:text-lg">
-          {intro}
-        </p>
+  const hasHeader = title || intro;
 
-        {!isLoaded ? (
-          <div className="mt-6 rounded-xl border border-border bg-background p-5 md:p-6">
+  return (
+    <div className="w-full">
+      {hasHeader && (
+        <div className="mx-auto max-w-3xl">
+          {title && (
+            <h1 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
+              {title}
+            </h1>
+          )}
+          {intro && (
+            <p className="mt-3 text-base text-muted-foreground md:text-lg">
+              {intro}
+            </p>
+          )}
+        </div>
+      )}
+
+      {!isLoaded ? (
+        <div className={hasHeader ? "mx-auto mt-6 max-w-3xl" : ""}>
+          <div className="rounded-xl border border-border bg-background p-5 md:p-6">
             <button
               type="button"
               onClick={() => setIsLoaded(true)}
@@ -154,13 +164,19 @@ export default function CalendlyInlineClickToLoad({
             </button>
             <p className="mt-3 text-sm text-muted-foreground">{privacyHint}</p>
           </div>
-        ) : (
-          <div className="mt-6 overflow-hidden rounded-xl border border-border bg-background">
-            <div style={{ height }} ref={containerRef} />
-          </div>
-        )}
-      </div>
-    </section>
+        </div>
+      ) : (
+        <div
+          className={
+            hasHeader
+              ? "mx-auto mt-6 max-w-3xl overflow-hidden rounded-xl border border-border bg-background"
+              : "overflow-hidden rounded-xl border border-border bg-background"
+          }
+        >
+          <div style={{ height }} ref={containerRef} />
+        </div>
+      )}
+    </div>
   );
 }
 
