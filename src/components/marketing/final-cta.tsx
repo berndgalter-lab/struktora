@@ -52,8 +52,12 @@ export const FinalCTA = () => {
             href="mailto:hallo@struktora.com"
             className="inline-flex items-center justify-center rounded-md border border-border px-6 py-3 text-base font-medium text-foreground transition-colors hover:bg-muted/50"
           >
-            Anwendungsfall besprechen
+            Arbeitsstandard prüfen lassen
           </a>
+          <p className="mt-3 text-center text-sm text-muted-foreground">
+            Wir schauen auf eine konkrete Aufgabe aus Ihrem Alltag und prüfen,
+            ob ein Arbeitsstandard sinnvoll ist.
+          </p>
         </div>
       </div>
     </section>

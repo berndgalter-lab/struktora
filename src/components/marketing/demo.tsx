@@ -99,8 +99,8 @@ export const Demo = () => {
                     Kernpunkte der Antwort
                   </label>
                   <div className="space-y-1 rounded border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-600">
-                    <p>• Lieferzeit bestätigen</p>
-                    <p>• Mengenrabatt möglich</p>
+                    <p>– Lieferzeit bestätigen</p>
+                    <p>– Mengenrabatt möglich</p>
                   </div>
                 </div>
 

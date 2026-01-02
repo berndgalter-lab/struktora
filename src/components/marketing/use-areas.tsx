@@ -60,6 +60,64 @@ export const UseAreas = () => {
           </div>
         </div>
 
+        {/* Beispiel aus dem Maschinenbau */}
+        <div className="mt-12 rounded-lg bg-muted/30 p-6 md:mt-16 md:p-8">
+          <h3 className="text-lg font-semibold text-foreground md:text-xl">
+            Beispiel aus dem Maschinenbau
+          </h3>
+
+          <p className="mt-4 text-base text-muted-foreground">
+            Ein typischer Anwendungsfall: Technische Rückfragen zu Lieferzeiten,
+            Ersatzteilen oder Angebotsdetails.
+          </p>
+          <p className="mt-2 text-base text-muted-foreground">
+            Im Vertrieb beantworten mehrere Mitarbeiter täglich ähnliche
+            Anfragen – heute oft mit unterschiedlichem Detailgrad, Ton und
+            technischer Genauigkeit.
+          </p>
+
+          {/* Ohne Arbeitsstandard */}
+          <div className="mt-6">
+            <p className="text-sm font-medium text-foreground">
+              Ohne Arbeitsstandard
+            </p>
+            <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
+              <li>– 10–15 Minuten pro Anfrage</li>
+              <li>– Unterschiedliche Aussagen bei gleichen Fragen</li>
+              <li>– Rückfragen durch Technik oder Vertrieb</li>
+              <li>
+                – Korrekturschleifen, weil Formulierungen nicht einheitlich sind
+              </li>
+            </ul>
+          </div>
+
+          {/* Mit Arbeitsstandard */}
+          <div className="mt-6">
+            <p className="text-sm font-medium text-foreground">
+              Mit Arbeitsstandard in Struktora
+            </p>
+            <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
+              <li>
+                – Klare Eingabefelder: Maschinentyp, Anfrageart, Lieferstatus,
+                interne Vorgaben
+              </li>
+              <li>– Feste Tonalität und definierte technische Tiefe</li>
+              <li>– Einheitlicher Ablauf für jede Anfrage</li>
+            </ul>
+          </div>
+
+          {/* Ergebnis */}
+          <div className="mt-6">
+            <p className="text-sm font-medium text-foreground">Ergebnis</p>
+            <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
+              <li>– 2–4 Minuten pro Anfrage</li>
+              <li>– Einheitliche Aussagen gegenüber Kunden</li>
+              <li>– Weniger Rückfragen und weniger Korrekturen</li>
+              <li>– Verantwortung ist im Prozess klar zuordenbar</li>
+            </ul>
+          </div>
+        </div>
+
         {/* Abschließender Ordnungssatz */}
         <p className="mt-10 text-base font-medium text-foreground md:mt-12 md:text-lg">
           Wo Arbeit regelmäßig anfällt, brauchen Sie Standards – sonst zahlen

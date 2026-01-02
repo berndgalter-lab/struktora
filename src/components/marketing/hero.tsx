@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
   return (
-    <section className="bg-background py-20 md:py-28 lg:py-32">
+    <section className="bg-background py-14 md:py-20 lg:py-24">
       <div className="mx-auto max-w-4xl px-4 text-center">
         {/* Hero Text Container - enger geführt */}
         <div className="mx-auto max-w-3xl">
@@ -30,13 +30,13 @@ export const Hero = () => {
         {/* CTAs - mehr Abstand nach oben */}
         <div className="mt-12 flex flex-col items-center gap-4 md:mt-14">
           <Button size="lg" className="px-8" asChild>
-            <a href="#demo">Arbeitsstandards verstehen</a>
+            <a href="#demo">Arbeitsstandard prüfen</a>
           </Button>
           <a
             href="#demo"
             className="text-sm text-muted-foreground/70 underline-offset-4 transition-colors hover:text-foreground hover:underline"
           >
-            Beispiel im Arbeitsalltag ansehen
+            Beispiel aus dem Maschinenbau ansehen
           </a>
         </div>
 
@@ -49,6 +49,13 @@ export const Hero = () => {
             <span>EU-Datenverarbeitung</span>
           </div>
         </div>
+
+        {/* Kurz gesagt */}
+        <p className="mx-auto mt-8 mb-8 max-w-2xl text-center text-base text-muted-foreground md:mt-10 md:mb-10 md:text-lg">
+          Kurz gesagt: Struktora macht KI-Ergebnisse im Unternehmen
+          reproduzierbar, überprüfbar und unabhängig vom einzelnen Mitarbeiter –
+          durch feste Arbeitsstandards statt individueller Prompts.
+        </p>
       </div>
     </section>
   );

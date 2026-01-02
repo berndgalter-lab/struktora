@@ -91,8 +91,9 @@ export const HowItWorks = () => {
 
         {/* Satz nach Schritten */}
         <p className="mt-8 text-base text-muted-foreground md:mt-10 md:text-lg">
-          Der Mitarbeiter entscheidet nicht wie gearbeitet wird. Er stellt
-          sicher, dass korrekt gearbeitet wird.
+          Ihre Mitarbeiter müssen nicht mehr überlegen, wie sie formulieren
+          sollen. Sie folgen dem Ablauf und wissen, dass das Ergebnis im Rahmen
+          stimmt.
         </p>
         <p className="mt-4 text-base font-medium text-foreground md:text-lg">
           Für die Organisation bedeutet das: Der Ablauf ist unabhängig von

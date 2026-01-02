@@ -10,6 +10,7 @@ import { WhatStruktoraIsNot } from "@/components/marketing/what-struktora-is-not
 import { HowItWorks } from "@/components/marketing/how-it-works";
 import { TargetAudience } from "@/components/marketing/target-audience";
 import { ManagementBenefits } from "@/components/marketing/management-benefits";
+import { PracticalExperience } from "@/components/marketing/practical-experience";
 import { GettingStarted } from "@/components/marketing/getting-started";
 import { FinalCTA } from "@/components/marketing/final-cta";
 
@@ -28,6 +29,7 @@ export default function LandingPage() {
       <HowItWorks />
       <TargetAudience />
       <ManagementBenefits />
+      <PracticalExperience />
       <GettingStarted />
       <FinalCTA />
     </>
