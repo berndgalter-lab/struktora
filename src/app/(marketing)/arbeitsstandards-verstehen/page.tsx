@@ -9,7 +9,7 @@ export default function ArbeitsstandardsVerstehenPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-base text-muted-foreground md:text-lg">
             Arbeitsstandards machen KI-Arbeit im Unternehmen reproduzierbar,
-            überprüfbar und unabhängig vom einzelnen Mitarbeiter.
+            überprüfbar und verlässlich – unabhängig vom einzelnen Mitarbeiter.
           </p>
         </div>
       </section>
@@ -27,7 +27,7 @@ export default function ArbeitsstandardsVerstehenPage() {
           <p className="mt-4 text-base text-muted-foreground md:text-lg">
             Er beschreibt einen klar definierten Ablauf für eine konkrete,
             wiederkehrende Aufgabe – mit festen Eingaben, klaren Regeln und
-            einem überprüfbaren Ergebnis.
+            einem eindeutig überprüfbaren Ergebnis.
           </p>
           <p className="mt-4 text-base font-medium text-foreground md:text-lg">
             Ziel eines Arbeitsstandards ist nicht Kreativität, sondern
@@ -178,8 +178,8 @@ export default function ArbeitsstandardsVerstehenPage() {
           </p>
           <p className="mt-4 text-base font-medium text-foreground md:text-lg">
             Sie ersetzen individuelle Entscheidungen durch einen klar
-            definierten Rahmen – für wiederkehrende Aufgaben, die im Alltag
-            verlässlich funktionieren müssen.
+            definierten Rahmen – für wiederkehrende Aufgaben, die im
+            Unternehmensalltag verlässlich funktionieren müssen.
           </p>
         </div>
       </section>
