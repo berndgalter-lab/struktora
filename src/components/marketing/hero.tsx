@@ -30,7 +30,7 @@ export const Hero = () => {
         {/* CTAs - mehr Abstand nach oben */}
         <div className="mt-12 flex flex-col items-center gap-4 md:mt-14">
           <Button size="lg" className="px-8" asChild>
-            <a href="mailto:hallo@struktora.com">Arbeitsstandard prüfen</a>
+            <a href="/check">Arbeitsstandard prüfen</a>
           </Button>
           <a
             href="/beispiel"
