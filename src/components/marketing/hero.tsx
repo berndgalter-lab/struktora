@@ -33,7 +33,7 @@ export const Hero = () => {
             <a href="/arbeitsstandards-verstehen">Arbeitsstandard prüfen</a>
           </Button>
           <a
-            href="#demo"
+            href="/beispiel"
             className="text-sm text-muted-foreground/70 underline-offset-4 transition-colors hover:text-foreground hover:underline"
           >
             Beispiel aus dem Maschinenbau ansehen
