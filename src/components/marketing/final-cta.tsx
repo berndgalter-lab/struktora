@@ -33,11 +33,19 @@ export const FinalCTA = () => {
 
         {/* Erwartungshaltung */}
         <p className="mt-8 text-base text-muted-foreground md:text-lg">
-          Ein erster Austausch dient dazu, genau eine wiederkehrende Aufgabe zu
-          identifizieren und zu prüfen, ob ein Arbeitsstandard sinnvoll ist.
+          Ein erster Austausch dient dazu, eine konkrete wiederkehrende Aufgabe
+          zu betrachten und zu prüfen, ob sie durch einen bestehenden
+          Arbeitsstandard in Struktora abgedeckt werden kann.
         </p>
         <p className="mt-2 text-base text-foreground md:text-lg">
           Nicht mehr. Nicht weniger.
+        </p>
+
+        {/* Klarstellung */}
+        <p className="mt-6 text-base text-muted-foreground">
+          Struktora erstellt in diesem Schritt keine individuellen
+          Arbeitsstandards, sondern prüft ausschließlich, ob eine Aufgabe durch
+          einen vorhandenen Standard abgedeckt werden kann.
         </p>
 
         {/* Abschlusssatz */}
@@ -54,6 +62,9 @@ export const FinalCTA = () => {
           >
             Arbeitsstandard prüfen
           </a>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Prüfung, ob ein bestehender Arbeitsstandard zu Ihrer Aufgabe passt.
+          </p>
         </div>
       </div>
     </section>

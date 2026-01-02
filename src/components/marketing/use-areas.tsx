@@ -94,7 +94,8 @@ export const UseAreas = () => {
           {/* Mit Arbeitsstandard */}
           <div className="mt-6">
             <p className="text-sm font-medium text-foreground">
-              Mit Arbeitsstandard in Struktora
+              Mit einem vordefinierten Arbeitsstandard in Struktora, der genau
+              für diesen Anfragetyp vorgesehen ist
             </p>
             <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
               <li>

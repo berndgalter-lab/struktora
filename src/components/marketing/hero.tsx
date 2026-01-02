@@ -29,9 +29,15 @@ export const Hero = () => {
 
         {/* CTAs - mehr Abstand nach oben */}
         <div className="mt-12 flex flex-col items-center gap-4 md:mt-14">
-          <Button size="lg" className="px-8" asChild>
-            <a href="/check">Arbeitsstandard prüfen</a>
-          </Button>
+          <div className="flex flex-col items-center">
+            <Button size="lg" className="px-8" asChild>
+              <a href="/check">Arbeitsstandard prüfen</a>
+            </Button>
+            <p className="mt-3 text-sm text-muted-foreground">
+              Prüfung, ob ein bestehender Arbeitsstandard zu Ihrer Aufgabe
+              passt.
+            </p>
+          </div>
           <a
             href="/beispiel"
             className="text-sm text-muted-foreground/70 underline-offset-4 transition-colors hover:text-foreground hover:underline"

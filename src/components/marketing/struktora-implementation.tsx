@@ -9,13 +9,14 @@ export const StruktoraImplementation = () => {
 
         {/* Einordnung */}
         <p className="mt-6 text-base text-muted-foreground md:mt-8 md:text-lg">
-          Struktora übersetzt wiederkehrende Aufgaben aus dem Arbeitsalltag in
-          feste, ausführbare Arbeitsstandards für KI-gestützte Arbeit.
+          Struktora stellt feste, ausführbare Arbeitsstandards für
+          wiederkehrende Aufgaben aus dem Arbeitsalltag bereit.
         </p>
 
         {/* Kernbeschreibung */}
         <p className="mt-8 text-base font-medium text-foreground md:mt-10 md:text-lg">
-          Jeder Arbeitsstandard in Struktora folgt einer klaren Struktur:
+          Jeder vordefinierte Arbeitsstandard in Struktora folgt einer klaren
+          Struktur:
         </p>
         <ul className="mb-4 mt-4 list-none space-y-3 text-base text-muted-foreground md:mb-8">
           <li>– Der Zweck der Aufgabe ist eindeutig definiert</li>
