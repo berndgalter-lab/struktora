@@ -9,65 +9,81 @@ export default function CheckPage() {
           Arbeitsstandard prüfen lassen
         </h1>
 
-        {/* Subline */}
+        {/* Subline (GEÄNDERT) */}
         <p className="mt-4 text-base text-muted-foreground md:text-lg">
           Wir prüfen eine konkrete, wiederkehrende Aufgabe aus Ihrem
-          Arbeitsalltag und zeigen, wie daraus ein Arbeitsstandard wird. Dauer:
-          15 Minuten.
+          Arbeitsalltag und zeigen, ob sie durch einen bestehenden
+          Arbeitsstandard in Struktora abgedeckt werden kann. Dauer: 15 Minuten.
         </p>
 
-        {/* Block: Worum es geht */}
+        {/* Block: Worum es geht (GEÄNDERT) */}
         <div className="mt-8">
           <h2 className="text-base font-medium text-foreground">
             Worum es geht
           </h2>
           <ul className="mt-3 space-y-2 text-muted-foreground">
+            <li>– Eine konkrete, wiederkehrende Aufgabe benennen</li>
             <li>
-              – 1 Aufgabe auswählen (z. B. Kundenanfragen, technische
-              Rückfragen, Follow-ups)
+              – Kurz klären, in welchem Rahmen diese Aufgabe heute bearbeitet
+              wird
             </li>
-            <li>– 2–3 Minuten Kontext klären (Inputs, Regeln, Ton)</li>
             <li>
-              – Ergebnis: Sie sehen, ob ein Arbeitsstandard sinnvoll ist und wie
-              er aufgebaut wäre
+              – Ergebnis: Sie sehen, ob ein bestehender Arbeitsstandard diese
+              Aufgabe abdecken kann – oder nicht
             </li>
           </ul>
         </div>
 
-        {/* Block: Für wen das passt */}
+        {/* Block: Für wen das passt (GEÄNDERT) */}
         <div className="mt-6">
           <h2 className="text-base font-medium text-foreground">
             Für wen das passt
           </h2>
           <ul className="mt-3 space-y-2 text-muted-foreground">
-            <li>– Technische B2B-Teams mit wiederkehrenden Textaufgaben</li>
-            <li>– Wenn einheitliche Aussagen und klarer Ablauf wichtig sind</li>
+            <li>– Technische B2B-Teams mit wiederkehrenden Aufgaben</li>
+            <li>
+              – Wenn einheitliche Aussagen, klare Abläufe und reproduzierbare
+              Ergebnisse wichtig sind
+            </li>
           </ul>
         </div>
 
-        {/* Block: Nicht passend */}
-        <p className="mt-6 text-sm text-muted-foreground/80">
-          Nicht passend, wenn es um kreative Einzeltexte oder einmalige
-          Sonderfälle geht.
-        </p>
+        {/* Block: Nicht passend (GEÄNDERT) */}
+        <div className="mt-6">
+          <p className="text-sm text-muted-foreground/80">
+            Nicht passend, wenn es um:
+          </p>
+          <ul className="mt-2 space-y-1 text-sm text-muted-foreground/80">
+            <li>– kreative Einzeltexte</li>
+            <li>– einmalige Sonderfälle</li>
+            <li>– oder individuell ausgearbeitete Lösungen geht.</li>
+          </ul>
+        </div>
 
         {/* Trenner + Calendly */}
         <div className="mt-10 border-t border-border/30 pt-8">
-          <h2 className="mb-6 text-lg font-medium text-foreground">
+          <h2 className="text-lg font-medium text-foreground">
             Termin auswählen
           </h2>
 
-          <CalendlyInlineClickToLoad
-            url="https://calendly.com/bernd-galter-struktora"
-            buttonLabel="Termin anzeigen"
-            privacyHint="Hinweis: Beim Klick wird Calendly als externer Dienst geladen. Dabei können Daten übertragen werden."
-            height={820}
-            utm={{
-              utmSource: "website",
-              utmMedium: "cta",
-              utmCampaign: "arbeitsstandard-check",
-            }}
-          />
+          {/* Subline unter Headline (NEU) */}
+          <p className="mt-2 text-sm text-muted-foreground">
+            Prüfung, ob ein bestehender Arbeitsstandard zu Ihrer Aufgabe passt.
+          </p>
+
+          <div className="mt-6">
+            <CalendlyInlineClickToLoad
+              url="https://calendly.com/bernd-galter-struktora"
+              buttonLabel="Termin anzeigen"
+              privacyHint="Hinweis: Beim Klick wird Calendly als externer Dienst geladen. Dabei können Daten übertragen werden."
+              height={820}
+              utm={{
+                utmSource: "website",
+                utmMedium: "cta",
+                utmCampaign: "arbeitsstandard-check",
+              }}
+            />
+          </div>
         </div>
       </div>
     </main>
