@@ -191,7 +191,7 @@ export default function BeispielMaschinenbauPage() {
             href="mailto:hallo@struktora.com"
             className="mt-8 inline-flex items-center justify-center rounded-md bg-foreground px-6 py-3 text-base font-medium text-background transition-colors hover:bg-foreground/90"
           >
-            Arbeitsstandard prüfen lassen
+            Arbeitsstandard prüfen
           </a>
         </div>
       </section>
