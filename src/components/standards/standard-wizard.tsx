@@ -2,7 +2,9 @@
 
 import { useState, useCallback } from 'react';
 import { useVariant, useExecuteStandard } from '@/hooks/use-standards';
+import { useEntitlements } from '@/hooks/use-entitlements';
 import { TextField, TextareaField, SelectField } from './wizard-fields';
+import { UpgradePrompt } from '@/components/entitlements';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Loader2, Copy, Check, ArrowLeft, RefreshCw } from 'lucide-react';
@@ -16,6 +18,7 @@ interface StandardWizardProps {
 export function StandardWizard({ variantId, onBack }: StandardWizardProps) {
   const { variant, loading: loadingVariant, error: variantError } = useVariant(variantId);
   const { execute, loading: executing, error: executeError } = useExecuteStandard();
+  const { hasExecutionsRemaining, loading: loadingEntitlements } = useEntitlements();
   
   const [inputs, setInputs] = useState<Record<string, string>>({});
   const [output, setOutput] = useState<string | null>(null);
@@ -123,11 +126,31 @@ export function StandardWizard({ variantId, onBack }: StandardWizardProps) {
   };
 
   // Loading State
-  if (loadingVariant) {
+  if (loadingVariant || loadingEntitlements) {
     return (
       <div className="flex items-center justify-center p-8">
         <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
       </div>
+    );
+  }
+
+  // Execution Limit Check
+  if (!hasExecutionsRemaining()) {
+    return (
+      <Card>
+        <CardContent className="p-6">
+          <UpgradePrompt
+            title="Limit erreicht"
+            message="Du hast dein monatliches Generierungslimit erreicht. Upgrade für mehr Generierungen."
+          />
+          {onBack && (
+            <Button variant="outline" onClick={onBack} className="mt-4">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Zurück
+            </Button>
+          )}
+        </CardContent>
+      </Card>
     );
   }
 
