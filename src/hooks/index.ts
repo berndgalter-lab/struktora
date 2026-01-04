@@ -1,10 +1,7 @@
 // Hook Exports
 
-// User (funktioniert)
+// User
 export { useUser } from './use-user';
 
-// Standards (neu)
+// Standards
 export { useStandards, useVariant, useExecuteStandard } from './use-standards';
-
-// Legacy: use-team.ts und use-recipe.ts sind Platzhalter
-// Diese werden später implementiert oder entfernt

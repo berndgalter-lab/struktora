@@ -53,6 +53,7 @@
   },
   "nav": {
     "dashboard": "Dashboard",
+    "standards": "Standards",
     "recipes": "Workflows",
     "settings": "Settings",
     "profile": "Company Profile",

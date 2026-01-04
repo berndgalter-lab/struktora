@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import {
   LayoutDashboard,
-  Zap,
+  Layers,
   Settings,
   LogOut,
   Menu,
@@ -22,7 +22,7 @@ import { useUser } from "@/hooks/use-user";
 
 const navItems = [
   { href: "/dashboard", icon: LayoutDashboard, labelKey: "dashboard" },
-  { href: "/dashboard", icon: Zap, labelKey: "recipes" },
+  { href: "/dashboard/standards", icon: Layers, labelKey: "standards" },
   { href: "/dashboard/settings", icon: Settings, labelKey: "settings" },
 ];
 

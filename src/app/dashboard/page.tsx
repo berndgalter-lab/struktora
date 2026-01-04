@@ -1,23 +1,13 @@
 "use client";
 
-import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, Layers, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { recipes, categories } from "@/lib/recipes";
-import { RecipeCard } from "@/components/dashboard/recipe-card";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function DashboardPage() {
   const t = useTranslations("dashboard");
-  const tCategories = useTranslations("dashboard.categories");
-  const [activeCategory, setActiveCategory] = useState<string | null>(null);
-
-  // Filter recipes by category
-  const filteredRecipes = activeCategory
-    ? recipes.filter((r) => r.category === activeCategory)
-    : recipes;
 
   // TODO: Replace with real user data from useUser hook
   const hasProfile = false; // Placeholder
@@ -27,6 +17,9 @@ export default function DashboardPage() {
       {/* Welcome */}
       <div>
         <h1 className="text-2xl font-bold text-slate-900">{t("welcome")}</h1>
+        <p className="mt-1 text-slate-500">
+          Starte einen AI-gestützten Workflow oder verwalte deine Einstellungen.
+        </p>
       </div>
 
       {/* Profile Warning */}
@@ -47,37 +40,33 @@ export default function DashboardPage() {
         </div>
       )}
 
-      {/* Category Tabs */}
-      <div className="flex flex-wrap gap-2">
-        <Button
-          variant={activeCategory === null ? "default" : "outline"}
-          size="sm"
-          onClick={() => setActiveCategory(null)}
-        >
-          Alle
-        </Button>
-        {categories.map((category) => (
-          <Button
-            key={category}
-            variant={activeCategory === category ? "default" : "outline"}
-            size="sm"
-            onClick={() => setActiveCategory(category)}
-          >
-            {tCategories(category)}
-          </Button>
-        ))}
-      </div>
-
-      {/* Recipe Grid */}
-      <div>
-        <h2 className="mb-4 text-lg font-semibold text-slate-900">
-          {t("allRecipes")}
-        </h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredRecipes.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} />
-          ))}
-        </div>
+      {/* Quick Actions */}
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Standards Card */}
+        <Card className="group hover:border-blue-200 hover:shadow-md transition-all">
+          <CardHeader>
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 text-blue-600 group-hover:bg-blue-100 transition-colors">
+                <Layers className="h-5 w-5" />
+              </div>
+              <div>
+                <CardTitle className="text-lg">Standards</CardTitle>
+                <CardDescription>AI-gestützte Workflows</CardDescription>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <p className="mb-4 text-sm text-slate-600">
+              Wähle aus vorgefertigten Standards für E-Mails, Texte, Meetings und mehr.
+            </p>
+            <Button asChild className="w-full group-hover:bg-blue-600">
+              <Link href="/dashboard/standards">
+                Standards öffnen
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </CardContent>
+        </Card>
       </div>
     </div>
   );
