@@ -78,7 +78,7 @@ export default function VariablesSettingsPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-3xl font-bold">Kommunikations-Einstellungen</h1>
+        <h2 className="text-xl font-semibold">Kommunikations-Einstellungen</h2>
         <p className="text-muted-foreground mt-1">
           Definiere die Standard-Einstellungen für alle generierten Texte.
         </p>

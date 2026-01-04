@@ -3,12 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { Building2, MessageSquare, Users, CreditCard } from "lucide-react";
+import { Building2, MessageSquare, Sliders, Users, CreditCard } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const settingsNav = [
   { href: "/dashboard/settings/profile", icon: Building2, labelKey: "profile" },
   { href: "/dashboard/settings/policy", icon: MessageSquare, labelKey: "policy" },
+  { href: "/dashboard/settings/variables", icon: Sliders, labelKey: "variables" },
   { href: "/dashboard/settings/team", icon: Users, labelKey: "team" },
   { href: "/dashboard/settings/billing", icon: CreditCard, labelKey: "billing" },
 ];
