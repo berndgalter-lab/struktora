@@ -105,7 +105,11 @@ export function useEntitlements() {
       default:
         if (feature.startsWith('family_')) {
           const familySlug = feature.replace('family_', '');
-          return entitlements.activeFamilies.length === 0 || entitlements.activeFamilies.includes(familySlug);
+          // Leeres Array ODER null/undefined = alle aktiv
+          if (!entitlements.activeFamilies || entitlements.activeFamilies.length === 0) {
+            return true;
+          }
+          return entitlements.activeFamilies.includes(familySlug);
         }
         return false;
     }
@@ -116,7 +120,11 @@ export function useEntitlements() {
    */
   const isFamilyActive = useCallback((familySlug: string): boolean => {
     if (!entitlements) return false;
-    return entitlements.activeFamilies.length === 0 || entitlements.activeFamilies.includes(familySlug);
+    // Leeres Array ODER null/undefined = alle aktiv
+    if (!entitlements.activeFamilies || entitlements.activeFamilies.length === 0) {
+      return true;
+    }
+    return entitlements.activeFamilies.includes(familySlug);
   }, [entitlements]);
   
   /**

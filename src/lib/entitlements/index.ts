@@ -80,8 +80,8 @@ export async function getEntitlements(teamId: string): Promise<EntitlementsData>
  * Prüft ob eine Familie aktiv ist
  */
 export function isFamilyActive(entitlements: EntitlementsData, familySlug: string): boolean {
-  // Leeres Array = alle Familien aktiv
-  if (entitlements.activeFamilies.length === 0) {
+  // Leeres Array ODER null/undefined = alle Familien aktiv
+  if (!entitlements.activeFamilies || !Array.isArray(entitlements.activeFamilies) || entitlements.activeFamilies.length === 0) {
     return true;
   }
   return entitlements.activeFamilies.includes(familySlug);
