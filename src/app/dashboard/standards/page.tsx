@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useStandards } from '@/hooks/use-standards';
 import { useEntitlements } from '@/hooks/use-entitlements';
 import { FamilySection } from '@/components/standards';
@@ -8,7 +9,15 @@ import { Loader2 } from 'lucide-react';
 
 export default function StandardsPage() {
   const { families, loading: loadingStandards, error: standardsError } = useStandards();
-  const { isFamilyActive, loading: loadingEntitlements } = useEntitlements();
+  const { entitlements, isFamilyActive, loading: loadingEntitlements } = useEntitlements();
+
+  // DEBUG - nach dem Laden
+  useEffect(() => {
+    if (!loadingEntitlements) {
+      console.log('Entitlements:', entitlements);
+      console.log('isFamilyActive("kommunikation"):', isFamilyActive('kommunikation'));
+    }
+  }, [entitlements, loadingEntitlements, isFamilyActive]);
 
   const loading = loadingStandards || loadingEntitlements;
 
